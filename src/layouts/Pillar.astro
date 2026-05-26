@@ -1,0 +1,56 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  intro: string;
+}
+
+const { title, description, intro } = Astro.props;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | InsuranceExit.us</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name">InsuranceExit.us</a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+    </div>
+
+    <Disclaimer />
+
+    <article>
+      <h1>{title}</h1>
+      <p style="font-size: 1.15rem; color: #444; margin: 1rem 0 2rem;">{intro}</p>
+      <slot />
+    </article>
+
+    <footer class="article-footer">
+      <Disclaimer />
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+
+interface Props {
+  state: string;
+  slug: string;
+  lastUpdated: string;
+  status?: 'draft' | 'published';
+}
+
+const { state, slug, lastUpdated, status = 'draft' } = Astro.props;
+const title = `Insurance Crisis in ${state} — What Homeowners Need to Know in 2026`;
+const description = `Homeowners insurance non-renewal trends, carriers leaving, residual market options, and hazards in ${state}.`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | InsuranceExit.us</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+  {status === 'draft' && <meta name="robots" content="noindex,nofollow" />}
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name">InsuranceExit.us</a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/is-my-zip-next/">Is My ZIP Next</a> &rsaquo;
+      <span>{state}</span>
+    </div>
+
+    <Disclaimer />
+
+    {status === 'draft' && (
+      <div style="background: #fee; border-left: 4px solid #c00; padding: 0.75rem 1rem; margin: 1rem 0; font-family: system-ui, sans-serif; font-size: 0.9rem; color: #800;">
+        <strong>DRAFT — not for publication.</strong> This page is a structural stub. Content forthcoming. Required structure follows CLAUDE.md §7.
+      </div>
+    )}
+
+    <article>
+      <h1>{title}</h1>
+
+      <h2>1. The one-paragraph summary</h2>
+      <p><em>[Forthcoming — most recent state-of-the-market summary for {state}, dated.]</em></p>
+
+      <h2>2. Non-renewal and cancellation rates</h2>
+      <p><em>[Forthcoming — most recent NAIC and {state} DOI data, in table form, with dates.]</em></p>
+
+      <h2>3. Major carriers leaving, pausing, or shrinking</h2>
+      <p><em>[Forthcoming — table of carriers with announcement dates.]</em></p>
+
+      <h2>4. The residual market option in {state}</h2>
+      <p><em>[Forthcoming — what it covers, what it doesn't, how to apply.]</em></p>
+
+      <h2>5. Top hazards driving the crisis</h2>
+      <p><em>[Forthcoming — wildfire / hurricane / hail / flood / freeze ranked for {state}.]</em></p>
+
+      <h2>6. What state regulators have done</h2>
+      <p><em>[Forthcoming — recent rate filings, moratoriums, market-stabilization laws.]</em></p>
+
+      <h2>7. Fortification programs available</h2>
+      <p><em>[Forthcoming — state grants, IBHS FORTIFIED uptake, mandated premium discounts.]</em></p>
+
+      <h2>8. What homeowners are reporting</h2>
+      <p><em>[Forthcoming — sourced from public {state} DOI complaint data or news reporting.]</em></p>
+
+      <h2>9. Three things to do in the next 30 days</h2>
+      <p><em>[Forthcoming — concrete, dated, plain-English steps.]</em></p>
+
+      <h2>10. Sources and date of last update</h2>
+      <p><em>[Forthcoming — Treasury FIO January 2025 report, Senate Budget Committee December 2024 staff report, NAIC, {state} DOI, plus state-specific filings.]</em></p>
+
+      <slot />
+    </article>
+
+    <footer class="article-footer">
+      <p class="last-updated">Last updated: {lastUpdated}</p>
+      <Disclaimer />
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice.</p>
+  </footer>
+</body>
+</html>

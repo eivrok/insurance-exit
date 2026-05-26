@@ -183,7 +183,6 @@ Every article should follow this skeleton unless there is a strong reason to dev
 - [ ] Top disclaimer present and verbatim
 - [ ] Bottom disclaimer present and verbatim
 - [ ] Treasury FIO January 2025 report cited by full name (where relevant)
-- [ ] Senate Budget Committee December 2024 staff report cited by full name (where relevant)
 - [ ] Every statistic dated
 - [ ] Every industry term defined in plain English on first use
 - [ ] At least one table, decision tree, or bullet comparison
@@ -196,6 +195,7 @@ Every article should follow this skeleton unless there is a strong reason to dev
 - [ ] Fair to both "fortify" and "sell" outcomes (if pillar applies)
 - [ ] No carrier, agent, lawyer, or contractor recommendation
 - [ ] No affiliate, lead-gen, or chatbot elements
+- 
 
 ---
 

@@ -1,0 +1,46 @@
+---
+import Pillar from '@layouts/Pillar.astro';
+
+const states = [
+  { name: 'Florida', slug: 'florida', hook: 'Citizens solvency, hurricane risk, AOB reform fallout.' },
+  { name: 'California', slug: 'california', hook: 'State Farm drawdown, FAIR Plan stress, wildfire scores.' },
+  { name: 'Louisiana', slug: 'louisiana', hook: 'Louisiana Citizens, post-Ida carrier exits, depopulation.' },
+  { name: 'Texas', slug: 'texas', hook: 'Hail belt non-renewals, freeze-event claims, TWIA coverage.' },
+  { name: 'Arizona', slug: 'arizona', hook: 'Wildland-urban interface growth, brush score thresholds.' },
+  { name: 'Colorado', slug: 'colorado', hook: 'Marshall Fire aftermath, hail deductibles, mountain WUI risk.' },
+  { name: 'New Mexico', slug: 'new-mexico', hook: 'Hermits Peak / Calf Canyon settlement, carrier appetite.' },
+  { name: 'Idaho', slug: 'idaho', hook: 'Smoke damage exclusions, rapid-growth WUI areas.' },
+  { name: 'Montana', slug: 'montana', hook: 'Large-loss wildfire seasons, thin carrier roster.' },
+];
+---
+<Pillar
+  title="Is My ZIP Next"
+  description="State-by-state homeowners insurance risk explainers for high-risk US states."
+  intro="You haven't been non-renewed yet, but you can see the trend in your state. Pick your state below for a structured rundown — carriers leaving, residual market, top hazards, regulator response, and what to do this month."
+>
+  <h2>State pages</h2>
+  <ul class="state-list">
+    {states.map((s) => (
+      <li>
+        <a href={`/is-my-zip-next/${s.slug}/`}><strong>{s.name}</strong></a> — {s.hook}
+      </li>
+    ))}
+  </ul>
+
+  <h2>Cross-state articles</h2>
+  <ul>
+    <li><strong>State Farm's California policy drawdown 2023-2028 in one chart</strong> — coming soon</li>
+    <li><strong>Wildfire score vs. Verisk score vs. CoreLogic — which does my insurer use?</strong> — coming soon</li>
+  </ul>
+
+  <p style="margin-top: 2rem; font-size: 0.9rem; color: #555;">
+    <em>All state pages are currently DRAFT structural stubs. Section structure follows CLAUDE.md §7. Content forthcoming as research is completed and dated.</em>
+  </p>
+</Pillar>
+
+<style>
+.state-list { list-style: none; margin-left: 0; }
+.state-list li { padding: 0.5rem 0; border-bottom: 1px solid #eee; }
+.state-list a { color: #1a4a8a; text-decoration: none; }
+.state-list a:hover { text-decoration: underline; }
+</style>
