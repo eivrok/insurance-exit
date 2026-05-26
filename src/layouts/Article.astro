@@ -1,0 +1,65 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  pillar: 'non-renewed' | 'is-my-zip-next' | 'fortifying-vs-selling' | 'residual-markets';
+  lastUpdated: string;
+}
+
+const { title, description, pillar, lastUpdated } = Astro.props;
+
+const pillarLabels: Record<string, string> = {
+  'non-renewed': 'I Just Got Non-Renewed',
+  'is-my-zip-next': 'Is My ZIP Next',
+  'fortifying-vs-selling': 'Fortifying vs. Selling',
+  'residual-markets': 'Residual Markets',
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{title} | InsuranceExit.us</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name">InsuranceExit.us</a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Home</a> &rsaquo;
+      <a href={`/${pillar}/`}>{pillarLabels[pillar]}</a>
+    </div>
+
+    <Disclaimer />
+
+    <article>
+      <h1>{title}</h1>
+      <slot />
+    </article>
+
+    <footer class="article-footer">
+      <p class="last-updated">Last updated: {lastUpdated}</p>
+      <Disclaimer />
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice.</p>
+  </footer>
+</body>
+</html>

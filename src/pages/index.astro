@@ -1,0 +1,91 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="InsuranceExit.us — Information for US homeowners facing insurance non-renewal due to climate risk." />
+  <title>InsuranceExit.us — Homeowners Insurance Non-Renewal Guide</title>
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name">InsuranceExit.us</a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <Disclaimer />
+
+    <section style="margin: 3rem 0;">
+      <h1 style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 1rem;">
+        Your homeowners insurance was non-renewed.<br />What now?
+      </h1>
+      <p style="font-size: 1.2rem; color: #444; max-width: 640px;">
+        Straight information for US homeowners in high-risk states — no affiliate links, no quotes, no spin. Florida, California, Louisiana, Texas, and beyond.
+      </p>
+    </section>
+
+    <section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
+      <a href="/non-renewed/" class="pillar-card">
+        <h2>I Just Got Non-Renewed</h2>
+        <p>Decision trees and checklists for the first 72 hours. What the letter actually means. What to do before your policy expires.</p>
+      </a>
+      <a href="/is-my-zip-next/" class="pillar-card">
+        <h2>Is My ZIP Next</h2>
+        <p>State-by-state and ZIP-level risk explainers. Who's already leaving and where the market is heading.</p>
+      </a>
+      <a href="/fortifying-vs-selling/" class="pillar-card">
+        <h2>Fortifying vs. Selling</h2>
+        <p>Honest cost-benefit analysis. IBHS FORTIFIED standards, retrofit ROI, and the math on when selling makes more sense.</p>
+      </a>
+      <a href="/residual-markets/" class="pillar-card">
+        <h2>Residual Markets</h2>
+        <p>FAIR Plans, Citizens, and last-resort options explained state by state — what they cover, what they don't.</p>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice.</p>
+  </footer>
+</body>
+</html>
+
+<style>
+.pillar-card {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.pillar-card:hover {
+  border-color: #1a4a8a;
+  box-shadow: 0 2px 8px rgba(26,74,138,0.1);
+}
+.pillar-card h2 {
+  font-size: 1.15rem;
+  color: #1a4a8a;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+}
+.pillar-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 0;
+}
+</style>
