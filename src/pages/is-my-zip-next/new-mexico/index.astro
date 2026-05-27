@@ -1,4 +1,168 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
 ---
-<StatePage state="New Mexico" slug="new-mexico" lastUpdated="2026-05-26" status="draft" />
+<StatePage state="New Mexico" slug="new-mexico" lastUpdated="May 2026" status="published">
+
+  <Fragment slot="summary">
+    <p>As of Q1 2026, New Mexico's homeowners insurance market is under stress primarily from wildfire risk in the northern mountain communities and from the lingering economic impact of the 2022 Hermits Peak/Calf Canyon Fire — the largest wildfire in New Mexico history. That fire burned over 341,000 acres in San Miguel and Mora counties, destroyed approximately 900 structures, and generated a federal disaster declaration and a congressionally authorized federal compensation program. The fire's aftermath has stressed an already thin insurance market in a state with lower household incomes and fewer carrier options than western neighbors like Colorado or Arizona. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified New Mexico among the states with rising non-renewal rates in fire-exposed counties during the study period. Carrier appetite for WUI properties in northern New Mexico remains limited, and homeowners in Taos, Mora, San Miguel, and Rio Arriba counties face a particularly constrained market.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>New Mexico's market stress is concentrated in WUI zones in the northern mountains and foothills. The state's overall homeowners insurance market is smaller than neighboring states, which means carrier exits have an outsized effect on available options in rural counties.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2018–2020</td>
+          <td>Multiple smaller WUI fires — northern NM counties</td>
+          <td>Increasing fire frequency in Taos, Rio Arriba, and Colfax counties; early carrier tightening in WUI zones</td>
+        </tr>
+        <tr>
+          <td>May–August 2022</td>
+          <td>Hermits Peak / Calf Canyon Fire — San Miguel and Mora counties</td>
+          <td>341,000+ acres burned; ~900 structures destroyed; largest wildfire in NM history; federal compensation program created</td>
+        </tr>
+        <tr>
+          <td>2022–2024</td>
+          <td>Post-Hermits Peak carrier exits</td>
+          <td>Several admitted carriers restricted or exited northern NM WUI areas following 2022 fire; NM OSI tracking elevated non-renewal complaints in San Miguel, Mora, Taos, and Rio Arriba counties</td>
+        </tr>
+        <tr>
+          <td>Q1 2026</td>
+          <td>Ongoing market thinning</td>
+          <td>Admitted carrier options in northern NM WUI zones down to a small number; surplus lines dominant in highest-risk areas</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>New Mexico Office of the Superintendent of Insurance (OSI) data shows elevated non-renewal complaint rates in Taos, Mora, San Miguel, and Rio Arriba counties post-2022. Premium increases of 30 to 80 percent above 2020 levels have been documented in WUI-adjacent ZIP codes where admitted coverage is still available.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Multiple admitted carriers (aggregate per OSI)</td>
+          <td>Non-renewals and new-business restrictions in northern NM WUI ZIP codes</td>
+          <td>Ongoing 2022–2026; accelerated post-Hermits Peak Fire</td>
+        </tr>
+        <tr>
+          <td>State Farm</td>
+          <td>WUI restrictions in highest-fire-score areas of northern NM</td>
+          <td>2022–2024</td>
+        </tr>
+        <tr>
+          <td>Farmers Insurance</td>
+          <td>Restrictions in high-fire-risk ZIP codes in northern NM</td>
+          <td>2022–2024</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>New Mexico's admitted carrier market was thin before 2022. The state's geography — lower population density, higher rural poverty rates, and significant tribal land adjacent to WUI zones — limits the economic attractiveness for national carriers. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — identified the Hermits Peak/Calf Canyon compensation program as a case study in how federal disaster programs interact with private insurance market failures.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>New Mexico does not have a well-capitalized state-run FAIR Plan equivalent comparable to California's or Florida Citizens. The state's residual market options are limited.</p>
+    <p><strong>New Mexico FAIR Plan:</strong> New Mexico maintains a basic FAIR Plan that provides fire and allied-lines coverage for properties that cannot obtain admitted market coverage. Coverage is narrow — primarily fire, lightning, and some allied perils. No liability coverage in the basic form. Coverage limits are set at levels that may be insufficient for contemporary rebuild costs, particularly for older rural adobe and frame homes that are now expensive to restore.</p>
+    <p><strong>Surplus lines as the primary alternative:</strong> In practice, many northern New Mexico homeowners who lose admitted coverage end up with surplus lines carriers. Surplus lines carriers operating in New Mexico are not covered by the New Mexico Insurance Guaranty Association for property claims — if a surplus lines carrier becomes insolvent, your claims may go unpaid. Premiums are typically two to four times prior admitted-market rates for WUI properties.</p>
+    <p><strong>Hermits Peak / Calf Canyon Compensation Program:</strong> Congress created a specific federal compensation program for Hermits Peak/Calf Canyon Fire victims through the Hermits Peak Calf Canyon Fire Assistance Act (2022). This program pays compensation for losses not covered by insurance or FEMA assistance. As of Q1 2026, the program has been processing claims with significant backlogs. If you or a family member suffered losses in that fire and have not filed a claim, contact the Federal Emergency Management Agency's Hermits Peak/Calf Canyon Claims Office.</p>
+    <p><strong>How to get the FAIR Plan:</strong> Through any licensed New Mexico property insurance agent, after demonstrating that admitted coverage is unavailable.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for NM</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Very high in northern WUI areas</td>
+          <td>Northern New Mexico's ponderosa and mixed-conifer forests carry extreme fire risk during drought conditions. The Hermits Peak/Calf Canyon Fire demonstrated how quickly a fire can overwhelm rural communities. Taos, Mora, San Miguel, Rio Arriba, and Colfax counties are the primary exposure areas.</td>
+        </tr>
+        <tr>
+          <td><strong>Post-fire flooding and debris flow</strong></td>
+          <td>High in burn scar areas</td>
+          <td>Post-fire debris flows are a serious secondary hazard in New Mexico's mountain terrain. After the 2022 fire, burn scar flooding affected communities in San Miguel and Mora counties during monsoon season 2022 and 2023. Standard homeowners policies do not cover flood.</td>
+        </tr>
+        <tr>
+          <td><strong>Monsoon flooding</strong></td>
+          <td>Moderate — statewide in monsoon season</td>
+          <td>New Mexico's July-September monsoon generates flash flooding across desert arroyos and urban areas. Albuquerque and Rio Rancho metro areas face flash flood risk in low-lying areas. Standard homeowners policies do not cover flood.</td>
+        </tr>
+        <tr>
+          <td><strong>Severe thunderstorm / hail</strong></td>
+          <td>Moderate</td>
+          <td>Monsoon-season thunderstorms generate hail across central and eastern New Mexico. Less severe than the Texas or Colorado hail belt but a consistent source of claims frequency.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>New Mexico Office of the Superintendent of Insurance (OSI) has limited regulatory tools to address the market contraction in WUI areas. New Mexico's regulatory framework does not include prior-approval rate regulation or strong mandates for carrier market participation.</p>
+    <ul>
+      <li><strong>Non-renewal notice requirements:</strong> New Mexico requires 30-day advance written notice for non-renewals (the shorter window among western states). OSI can investigate complaints about inadequate notice but has limited authority to block individual non-renewals.</li>
+      <li><strong>Rate regulation:</strong> New Mexico uses a file-and-use framework. Carriers can implement rates on filing without prior approval. OSI reviews filings for reasonableness and can challenge egregious increases after the fact.</li>
+      <li><strong>Hermits Peak / Calf Canyon legislative response:</strong> The state legislature allocated funds to assist Hermits Peak fire victims with insurance navigation and gap-filling, complementing the federal compensation program. New Mexico Division of Vocational Rehabilitation and other state agencies provided supplemental support.</li>
+      <li><strong>No FORTIFIED mandate:</strong> As of Q1 2026, New Mexico has not enacted legislation requiring carrier discounts for IBHS FORTIFIED certification or other wildfire mitigation measures.</li>
+      <li><strong>NMFA emergency loans:</strong> New Mexico Finance Authority administered emergency reconstruction loans for Hermits Peak fire victims who faced gaps between compensation program payments and rebuilding costs.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>IBHS FORTIFIED — no New Mexico mandate:</strong> New Mexico has no statewide requirement that carriers offer discounts for FORTIFIED certification. Some carriers writing WUI properties in New Mexico voluntarily offer credits, but this is not standard. Ask your carrier specifically.</p>
+    <p><strong>New Mexico State Forestry Division:</strong> The State Forestry Division provides technical assistance and some funding for defensible space work on private properties in WUI zones. Contact the New Mexico Energy, Minerals, and Natural Resources Department (EMNRD) for current program availability. Funding and staffing are limited.</p>
+    <p><strong>Defensible space — the baseline requirement:</strong> In northern New Mexico WUI communities, demonstrating maintained defensible space (clearing within 30 to 100 feet of the structure per EMNRD guidelines) is the most recognized mitigation action for insurance purposes. Some carriers require proof of compliance before writing or renewing WUI properties.</p>
+    <p><strong>Community Wildfire Protection Plans:</strong> Several northern New Mexico communities have developed CWPPs through EMNRD and local fire districts. Homes in communities with active CWPPs may have better carrier options than equivalent homes in communities without them. Check with your local fire district or county emergency manager.</p>
+    <p><strong>FEMA Hazard Mitigation grants:</strong> Post-Hermits Peak, FEMA approved significant hazard mitigation funding for New Mexico. These grants can fund home elevation, defensible space work, and other mitigation measures for eligible properties. Contact New Mexico Department of Homeland Security and Emergency Management (DHSEM).</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>New Mexico OSI data and press reporting for 2022 through early 2026 show these patterns:</p>
+    <ul>
+      <li><strong>Hermits Peak compensation delays</strong> — fire victims describing multi-year delays in receiving federal compensation program payments, forcing some to take high-interest loans to fund immediate repairs or to leave damaged properties unoccupied while waiting for payment. As of Q1 2026, claim processing backlogs were still significant.</li>
+      <li><strong>Thin market in rural counties</strong> — homeowners in Mora and San Miguel counties reporting that admitted carrier options dropped to one or two carriers post-2022, with those carriers applying significant premium increases. When those carriers issued non-renewals in 2023–2024, some homeowners had no admitted-market alternatives at any price.</li>
+      <li><strong>Post-fire debris flow flood claims denied</strong> — homeowners in communities near Hermits Peak burn scars filing claims for monsoon-season flood damage from debris flows, only to find their homeowners policy did not cover flood. Several had not enrolled in NFIP because they were not in a mapped floodplain — they did not anticipate that a wildfire would create a flood hazard from burn scar runoff.</li>
+      <li><strong>Adobe and historical structure underinsurance</strong> — northern New Mexico has a significant stock of adobe and historical structures with high replacement costs that may not be reflected in standard coverage limits. Homeowners with traditional adobe construction should verify that their coverage limit reflects current adobe or alternative construction costs, which are substantially higher than conventional wood-frame construction per square foot.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>If you were affected by the Hermits Peak/Calf Canyon Fire and have not filed a federal compensation claim, do so now.</strong> The Hermits Peak Calf Canyon Claims Office processes claims for property loss, personal injury, and economic harm. The program covers losses not addressed by insurance or FEMA assistance. Contact the Claims Office directly through the program's official federal website. Deadlines and procedures change; get current information from a primary source, not secondhand.</li>
+      <li><strong>Get a New Mexico State Forestry Division assessment before your next renewal.</strong> A written EMNRD assessment documenting your defensible space, home hardening features, and access conditions is the most carrier-recognized mitigation documentation available in New Mexico. In a thin market, documentation of mitigation efforts can be the difference between getting a quote and being declined. Schedule through your local fire district or EMNRD office.</li>
+      <li><strong>If you live near a post-2022 burn scar, consider NFIP flood coverage even if you're not in a mapped floodplain.</strong> Burn scars dramatically increase flash flood and debris flow risk for 3 to 5 years post-fire. NFIP policies can be purchased without being in a Special Flood Hazard Area — the premium is lower outside mapped floodplains. Given New Mexico's monsoon season and the active burn scars from 2022, this coverage is worth evaluating for any property within a few miles of significant 2022 fire perimeters.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>New Mexico Office of the Superintendent of Insurance (OSI). Market data and complaint statistics, 2022 to 2025. Accessed May 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). New Mexico market data, 2024. Accessed May 2026.</li>
+      <li>Hermits Peak Calf Canyon Claims Office. Federal compensation program data. Accessed May 2026.</li>
+      <li>New Mexico Energy, Minerals, and Natural Resources Department (EMNRD). State Forestry Division wildfire risk resources. Accessed May 2026.</li>
+      <li>NOAA and USGS. New Mexico wildfire and flood hazard data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: May 2026.</em></p>
+  </Fragment>
+
+</StatePage>

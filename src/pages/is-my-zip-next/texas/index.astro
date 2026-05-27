@@ -1,4 +1,188 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
 ---
-<StatePage state="Texas" slug="texas" lastUpdated="2026-05-26" status="draft" />
+<StatePage state="Texas" slug="texas" lastUpdated="May 2026" status="published">
+
+  <Fragment slot="summary">
+    <p>As of Q1 2026, Texas presents a fragmented homeowners insurance market where stress is concentrated rather than statewide. The coastal Gulf region faces hurricane and storm surge exposure that drives non-renewals in Harris, Galveston, and Brazoria counties. North and central Texas face a different problem — hail and severe convective storm losses have driven carriers to apply wind/hail deductibles of 1 to 3 percent of insured value and, in the most exposed ZIP codes, to exit the market entirely. The February 2021 Winter Storm Uri generated approximately $15 billion in insured losses from frozen pipes, becoming the costliest winter storm event in Texas history. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified Texas as having significant non-renewal rate increases in coastal counties during the study period. The Texas Windstorm Insurance Association (TWIA) serves as the insurer of last resort for wind and hail coverage in the 14 Gulf Coast counties where admitted carriers will not cover wind risk.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>Texas non-renewal stress is concentrated in three geographic zones: Gulf Coast counties (hurricane and storm surge), North Texas hail corridor (Tarrant, Dallas, Denton, Collin counties), and the statewide freeze-risk exposure revealed by Winter Storm Uri.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>August 2017</td>
+          <td>Hurricane Harvey — Harris County and Gulf Coast</td>
+          <td>~$30B insured losses; raised carrier awareness of Gulf Coast accumulation risk</td>
+        </tr>
+        <tr>
+          <td>February 2021</td>
+          <td>Winter Storm Uri — statewide pipe freeze event</td>
+          <td>~$15B insured losses; largest winter storm event in TX history; exposed carrier underpricing of freeze risk</td>
+        </tr>
+        <tr>
+          <td>2021–2024</td>
+          <td>Hail corridor non-renewals — north/central TX</td>
+          <td>Multiple carriers tightened underwriting or exited Tarrant, Dallas, Denton, Collin counties; wind/hail deductibles increased statewide</td>
+        </tr>
+        <tr>
+          <td>2023–2024</td>
+          <td>Rate increases and market tightening — statewide</td>
+          <td>Texas DOI approved significant rate increases; average statewide homeowners premiums up roughly 30 to 50 percent from 2020 levels as of Q1 2026</td>
+        </tr>
+        <tr>
+          <td>Q1 2026</td>
+          <td>TWIA enrollment — coastal counties</td>
+          <td>Approximately 240,000 to 250,000 TWIA policies in force; steady growth from 2017 levels</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Texas Department of Insurance (TDI) data for 2022 through 2025 shows premium increases and wind/hail deductible disputes as the top complaint categories. Non-renewal complaints are concentrated in Gulf Coast ZIP codes and in the hail-belt suburban counties north of Dallas-Fort Worth.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Multiple admitted carriers (unnamed per TDI aggregate data)</td>
+          <td>Non-renewals in TWIA-eligible coastal counties</td>
+          <td>Ongoing since 2017; accelerated post-Uri (2021)</td>
+        </tr>
+        <tr>
+          <td>Farmers Insurance</td>
+          <td>Restricted new homeowners policies in high-hail-risk ZIP codes</td>
+          <td>2022–2023</td>
+        </tr>
+        <tr>
+          <td>State Farm</td>
+          <td>Applied higher wind/hail deductibles; some ZIP code-level non-renewals</td>
+          <td>Ongoing 2021–2026</td>
+        </tr>
+        <tr>
+          <td>Allstate</td>
+          <td>Rate increases and non-renewals in coastal and hail-belt areas</td>
+          <td>2022–2024</td>
+        </tr>
+        <tr>
+          <td>Multiple smaller admitted carriers</td>
+          <td>Exited coastal TWIA-eligible counties entirely</td>
+          <td>2017–2024</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Texas differs from Florida and Louisiana in that several large national carriers (State Farm, Allstate, USAA) remain active in the Texas market outside the TWIA-eligible coastal zone. The market stress is more geographically concentrated. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — noted Texas as a state where hail-driven losses are reshaping underwriting nationally, not just in hurricane-exposed areas.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>Texas has two distinct residual market mechanisms depending on your location.</p>
+    <p><strong>Texas Windstorm Insurance Association (TWIA):</strong> TWIA provides wind and hail coverage for homeowners in 14 Gulf Coast counties (Aransas, Bee, Brooks, Cameron, Calhoun, Galveston, Jefferson, Jim Hogg, Kenedy, Kleberg, Matagorda, Nueces, Refugio, San Patricio, and Willacy) and parts of Harris County. It covers wind and hail only — not fire, theft, liability, or other standard perils. You need a separate policy (typically from the Texas FAIR Plan or admitted market) for those coverages.</p>
+    <p><strong>What TWIA covers:</strong> Wind and hail damage to dwelling and personal property. Policy limits up to $1.77 million for residential structures as of 2025.</p>
+    <p><strong>TWIA deductible:</strong> Wind deductible typically 1 to 5 percent of insured value in most coastal counties. On a $350,000 home, a 2 percent deductible means $7,000 out of pocket before TWIA coverage begins.</p>
+    <p><strong>Assessment risk:</strong> TWIA can issue post-event bonds and levy surcharges on all Texas insurance policies if its losses exceed reserves. This is similar to Florida Citizens' assessment mechanism.</p>
+    <p><strong>How to get TWIA:</strong> Must have been denied wind and hail coverage by two admitted carriers in writing. Apply through a licensed Texas agent. Eligible property must be in a TWIA-eligible county.</p>
+    <p><strong>Texas FAIR Plan:</strong> Separate from TWIA, the Texas FAIR Plan provides basic fire and allied-lines coverage for homeowners who cannot get standard admitted-market coverage. It does not provide wind coverage in TWIA-eligible areas. Combined, a TWIA policy plus a Texas FAIR Plan policy approximate what a standard homeowners policy covers — but at higher combined cost.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for TX</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hurricane / tropical storm</strong></td>
+          <td>Very high — Gulf Coast</td>
+          <td>Gulf Coast counties face direct hurricane exposure. Harvey (2017) showed that even nominally "inland" areas like Houston face catastrophic storm surge and flooding. TWIA-eligible zone covers the highest-risk corridor.</td>
+        </tr>
+        <tr>
+          <td><strong>Hail / severe convective storms</strong></td>
+          <td>Very high — statewide</td>
+          <td>Texas ranks first nationally in annual hail insured losses most years. North Texas suburbs (Tarrant, Denton, Collin counties) see multiple severe hail events per year. Carriers use wind/hail deductibles (percentage of insured value, not a flat dollar amount) to manage this exposure.</td>
+        </tr>
+        <tr>
+          <td><strong>Winter freeze</strong></td>
+          <td>High — redefined post-Uri</td>
+          <td>Uri (2021) demonstrated that Texas homes — built without freeze-proof plumbing standards common in northern states — are highly vulnerable to extended hard freezes. Carriers have repriced freeze risk; pipe freeze claims now require documentation of winterization measures.</td>
+        </tr>
+        <tr>
+          <td><strong>Flooding</strong></td>
+          <td>High — especially Houston metro and river valleys</td>
+          <td>Texas has high flood exposure in the Houston-Galveston metropolitan area and along major river corridors. Standard homeowners policies do not cover flood. NFIP enrollment is critical in Harvey-exposed areas.</td>
+        </tr>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Moderate — west Texas and Hill Country</td>
+          <td>West Texas and the Hill Country face wildfire risk during drought conditions. Less of a market driver than the Gulf Coast hurricane or North Texas hail exposures, but relevant in Bastrop, Travis, Hays, and Llano counties.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>Texas Department of Insurance (TDI) Commissioner Cassie Brown (as of Q1 2026) oversees a market that operates under Texas' unique regulatory framework — Texas is one of the few states that allows "file and use" rate filings, meaning carriers can implement rate changes immediately upon filing without waiting for prior approval. This gives carriers more flexibility but means rate increases can arrive with less advance notice for consumers.</p>
+    <ul>
+      <li><strong>File and use:</strong> Texas carriers file rates and can use them immediately. TDI reviews filings for adequacy and reasonableness but does not require prior approval. Consumers can request a formal hearing on rate increases but the carrier can charge the new rate while the process runs.</li>
+      <li><strong>TWIA reform (HB 3 and SB 900, 2011 and subsequent):</strong> After Hurricane Ike (2008) exposed TWIA's structural weaknesses, Texas passed legislation restructuring TWIA's funding, requiring premium adequacy, and creating a tiered catastrophe funding stack. These reforms are ongoing.</li>
+      <li><strong>TWIA rate increases (2022–2025):</strong> TWIA has received multiple rate increase approvals in the 2022 to 2025 period — some exceeding 15 to 20 percent per cycle — to move toward actuarial adequacy. Policyholders should expect continued increases.</li>
+      <li><strong>Uri response:</strong> Following Winter Storm Uri, TDI increased its scrutiny of carrier claims handling for freeze-related losses. Texas also passed legislation addressing the electric grid failures that contributed to the 2021 freeze, though the insurance market impact of grid reforms will take years to assess.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>IBHS FORTIFIED — no Texas mandate, limited discounts:</strong> Unlike Alabama or Louisiana, Texas has no statewide mandate requiring carriers to offer FORTIFIED discounts. Some individual carriers do offer credits for FORTIFIED Roof or higher certifications, particularly in TWIA-eligible areas. Ask your specific carrier before investing in certification.</p>
+    <p><strong>TWIA credits for wind mitigation:</strong> TWIA offers premium discounts for wind mitigation features including hip roofs, roof deck nailing patterns, secondary water barriers, and impact-resistant windows or shutters. A TWIA inspection (conducted through licensed inspectors at no cost to the policyholder) documents eligible features. These credits can reduce TWIA wind premiums by 10 to 40 percent depending on the feature set.</p>
+    <p><strong>Winterization for Uri-era freeze risk:</strong> Some carriers now require or incentivize pipe freeze mitigation — insulating exposed pipes, heat tape on vulnerable runs, and interior temperature maintenance requirements. Check your policy's freeze coverage conditions; some policies now include a "reasonable precautions" requirement that could affect claims if a freeze event occurs in an unheated home.</p>
+    <p><strong>FEMA BRIC and FMA grants:</strong> FEMA mitigation grants are administered through the Texas Division of Emergency Management (TDEM) and local governments. Elevation-related mitigation for NFIP-insured properties in Harris County and the Gulf Coast is among the most well-funded uses in Texas.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>TDI complaint data and Texas press reporting for 2021 through early 2026 show these patterns:</p>
+    <ul>
+      <li><strong>Wind/hail deductible shock</strong> — homeowners discovering their policy has a wind/hail deductible of 1 to 3 percent of insured value only after a hail claim, when they expected a flat $2,500 or $5,000 deductible. On a $400,000 home, a 2 percent deductible is $8,000. Many homeowners did not realize their deductible was a percentage rather than a fixed amount.</li>
+      <li><strong>TWIA assignment confusion</strong> — coastal homeowners receiving non-renewals from admitted carriers who did not know TWIA was available for wind coverage, or who did not understand they needed both a TWIA wind policy and a separate policy for all other perils.</li>
+      <li><strong>Uri freeze claims disputes</strong> — carriers denying freeze claims citing "failure to take reasonable precautions" provisions for vacant homes or homes where heat was turned off. TDI opened investigations into several carriers' Uri claims handling practices.</li>
+      <li><strong>Hail deductibles on older roofs</strong> — carriers in the North Texas hail belt restricting coverage on roofs over 10 to 15 years old, requiring full replacement as a condition of continued coverage, or applying higher deductibles specifically to roofs below a certain condition rating.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>Verify whether your deductibles are percentage-based or fixed-dollar.</strong> Pull out your current policy declarations page and look for "wind and hail deductible." If it says "2%" rather than "$2,000," calculate what that means for your home's insured value. For most Texas homeowners, this is the single most important policy detail to understand before a storm hits. If you're shopping for new coverage, ask every agent you talk to to specify both the all-perils deductible and the wind/hail deductible in dollar terms for your home's insured value.</li>
+      <li><strong>If you're in a TWIA-eligible county, get a TWIA inspection.</strong> TWIA inspections are free and can unlock premium discounts of 10 to 40 percent for existing wind mitigation features your home may already have (hip roof, reinforced roof-to-wall connections, impact-resistant windows). Schedule through TWIA's website or a licensed agent. The inspection takes about an hour and costs you nothing.</li>
+      <li><strong>Check your roof age and condition.</strong> Many Texas carriers are now restricting or declining coverage on roofs over 10 to 15 years old. If your roof is approaching this threshold, get a licensed inspector's condition report before your next renewal. If the carrier raises your deductible or declines renewal based on roof condition, you have documentation of actual condition that can support a dispute — and if replacement is necessary, knowing before the renewal notice gives you time to plan.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>Texas Department of Insurance (TDI). Market data and complaint statistics, 2021 to 2025. Accessed May 2026.</li>
+      <li>Texas Windstorm Insurance Association (TWIA). Policy count and financial data, 2024–2025. Accessed May 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). Texas market data, 2024. Accessed May 2026.</li>
+      <li>NOAA National Hurricane Center. Texas historical hurricane data. Accessed May 2026.</li>
+      <li>NOAA Storm Prediction Center. Texas hail and severe weather statistics. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: May 2026.</em></p>
+  </Fragment>
+
+</StatePage>

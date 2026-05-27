@@ -46,7 +46,7 @@ const description = `Homeowners insurance non-renewal trends, carriers leaving, 
 
     {status === 'draft' && (
       <div style="background: #fee; border-left: 4px solid #c00; padding: 0.75rem 1rem; margin: 1rem 0; font-family: system-ui, sans-serif; font-size: 0.9rem; color: #800;">
-        <strong>DRAFT — not for publication.</strong> This page is a structural stub. Content forthcoming. Required structure follows CLAUDE.md §7.
+        <strong>DRAFT — not for publication.</strong> This page is a structural stub. Content forthcoming.
       </div>
     )}
 
@@ -54,36 +54,34 @@ const description = `Homeowners insurance non-renewal trends, carriers leaving, 
       <h1>{title}</h1>
 
       <h2>1. The one-paragraph summary</h2>
-      <p><em>[Forthcoming — most recent state-of-the-market summary for {state}, dated.]</em></p>
+      <slot name="summary"><p><em>[Forthcoming — most recent state-of-the-market summary for {state}, dated.]</em></p></slot>
 
       <h2>2. Non-renewal and cancellation rates</h2>
-      <p><em>[Forthcoming — most recent NAIC and {state} DOI data, in table form, with dates.]</em></p>
+      <slot name="nonrenewal-rates"><p><em>[Forthcoming — most recent NAIC and {state} DOI data, in table form, with dates.]</em></p></slot>
 
       <h2>3. Major carriers leaving, pausing, or shrinking</h2>
-      <p><em>[Forthcoming — table of carriers with announcement dates.]</em></p>
+      <slot name="carriers"><p><em>[Forthcoming — table of carriers with announcement dates.]</em></p></slot>
 
       <h2>4. The residual market option in {state}</h2>
-      <p><em>[Forthcoming — what it covers, what it doesn't, how to apply.]</em></p>
+      <slot name="residual-market"><p><em>[Forthcoming — what it covers, what it doesn't, how to apply.]</em></p></slot>
 
       <h2>5. Top hazards driving the crisis</h2>
-      <p><em>[Forthcoming — wildfire / hurricane / hail / flood / freeze ranked for {state}.]</em></p>
+      <slot name="hazards"><p><em>[Forthcoming — wildfire / hurricane / hail / flood / freeze ranked for {state}.]</em></p></slot>
 
       <h2>6. What state regulators have done</h2>
-      <p><em>[Forthcoming — recent rate filings, moratoriums, market-stabilization laws.]</em></p>
+      <slot name="regulators"><p><em>[Forthcoming — recent rate filings, moratoriums, market-stabilization laws.]</em></p></slot>
 
       <h2>7. Fortification programs available</h2>
-      <p><em>[Forthcoming — state grants, IBHS FORTIFIED uptake, mandated premium discounts.]</em></p>
+      <slot name="fortification"><p><em>[Forthcoming — state grants, IBHS FORTIFIED uptake, mandated premium discounts.]</em></p></slot>
 
       <h2>8. What homeowners are reporting</h2>
-      <p><em>[Forthcoming — sourced from public {state} DOI complaint data or news reporting.]</em></p>
+      <slot name="homeowners-reporting"><p><em>[Forthcoming — sourced from public {state} DOI complaint data or news reporting.]</em></p></slot>
 
       <h2>9. Three things to do in the next 30 days</h2>
-      <p><em>[Forthcoming — concrete, dated, plain-English steps.]</em></p>
+      <slot name="next-steps"><p><em>[Forthcoming — concrete, dated, plain-English steps.]</em></p></slot>
 
       <h2>10. Sources and date of last update</h2>
-      <p><em>[Forthcoming — Treasury FIO January 2025 report, Senate Budget Committee December 2024 staff report, NAIC, {state} DOI, plus state-specific filings.]</em></p>
-
-      <slot />
+      <slot name="sources"><p><em>[Forthcoming — Treasury FIO January 2025 report, Senate Budget Committee December 2024 staff report, NAIC, {state} DOI, plus state-specific filings.]</em></p></slot>
     </article>
 
     <footer class="article-footer">

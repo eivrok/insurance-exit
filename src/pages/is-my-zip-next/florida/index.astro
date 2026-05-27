@@ -1,4 +1,189 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
 ---
-<StatePage state="Florida" slug="florida" lastUpdated="2026-05-26" status="draft" />
+<StatePage state="Florida" slug="florida" lastUpdated="May 2026" status="published">
+
+  <Fragment slot="summary">
+    <p>As of Q1 2026, Florida has the most stressed homeowners insurance market of any state. At least 15 admitted carriers became insolvent or withdrew from Florida between 2022 and 2024, leaving hundreds of thousands of homeowners scrambling for coverage. Florida Citizens Property Insurance Corporation, the state's insurer of last resort, peaked at roughly 1.5 million policies in 2023 before a managed depopulation program began reducing that count. Premiums in coastal counties are running 40 to 100 percent above 2020 levels even where admitted coverage is still available. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified Florida as having the highest non-renewal rate increases of any state in the study period.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>Florida's non-renewal story breaks into two phases. The FIO January 2025 report covered 2018 to 2022 and found Florida's coastal counties had non-renewal rates rising faster than any comparable market nationally. The post-2022 period accelerated that trend sharply.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2022</td>
+          <td>Hurricane Ian (September) — Category 4, made landfall near Fort Myers</td>
+          <td>Estimated $60B+ in insured losses; triggered carrier insolvency cascade</td>
+        </tr>
+        <tr>
+          <td>2022–2024</td>
+          <td>Admitted carrier insolvencies and withdrawals</td>
+          <td>At least 15 carriers insolvent or exited, per Florida OIR and NAIC data as of Q1 2024</td>
+        </tr>
+        <tr>
+          <td>2023 peak</td>
+          <td>Citizens Property Insurance enrollment peak</td>
+          <td>Approximately 1.5 million policies — largest in Citizens' history</td>
+        </tr>
+        <tr>
+          <td>Q1 2026</td>
+          <td>Citizens depopulation ongoing</td>
+          <td>Estimated 1.1 to 1.2 million Citizens policies remaining</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Florida OIR tracks complaint data showing premium increases and non-renewal notices as the two most common consumer complaints since 2022. As of Q4 2025, non-renewal complaints remain elevated above pre-Ian levels even as the market shows early signs of stabilization in some inland counties.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Southern Fidelity Insurance</td>
+          <td>Declared insolvent, placed in receivership</td>
+          <td>June 2022</td>
+        </tr>
+        <tr>
+          <td>FedNat Holding Company</td>
+          <td>Entered run-off; significant non-renewals in FL</td>
+          <td>2022–2023</td>
+        </tr>
+        <tr>
+          <td>Avatar Property & Casualty</td>
+          <td>Placed in receivership</td>
+          <td>February 2023</td>
+        </tr>
+        <tr>
+          <td>Weston Property & Casualty</td>
+          <td>Placed in receivership</td>
+          <td>March 2023</td>
+        </tr>
+        <tr>
+          <td>Farmers Insurance</td>
+          <td>Announced withdrawal from Florida market</td>
+          <td>July 2023</td>
+        </tr>
+        <tr>
+          <td>State Farm</td>
+          <td>Reduced new business; continued renewals with rate increases</td>
+          <td>Ongoing 2022–2026</td>
+        </tr>
+        <tr>
+          <td>Bankers Insurance / First Protective</td>
+          <td>Placed in receivership</td>
+          <td>2023</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Several new entrants arrived in Florida from 2023 onward, some backed by reinsurers seeking to take advantage of higher premium rates. Their long-term stability is unproven. When Citizens' depopulation program pushes policies to these newer carriers, the financial strength question is real. Check A.M. Best ratings for any carrier taking over a Citizens policy.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>Florida Citizens Property Insurance Corporation is the state-chartered insurer of last resort. It is not a private company and not a state agency. It operates as a nonprofit government entity funded by premiums, investment income, and a legal authority to levy assessments on all Florida insurance policyholders if it runs short of funds.</p>
+    <p><strong>What Citizens covers:</strong> Dwelling, other structures, personal property, loss of use, personal liability, and medical payments. It is a more complete product than California's FAIR Plan.</p>
+    <p><strong>Wind deductible:</strong> Citizens applies a wind deductible separate from the standard deductible — typically 2 to 5 percent of the dwelling coverage amount in coastal zones. On a $350,000 home, a 2 percent deductible means $7,000 out of pocket before wind coverage begins.</p>
+    <p><strong>Flood:</strong> Not covered. A separate NFIP or private flood policy is required. In Florida, flood coverage is often as important as wind coverage.</p>
+    <p><strong>Assessment risk:</strong> If Citizens' claims exceed its resources, it can levy surcharges on all Florida insurance policyholders — including auto, commercial, and others who do not hold Citizens policies. This is called the "hurricane tax." The last emergency assessment was issued after the 2004–2005 hurricane seasons.</p>
+    <p><strong>How to apply:</strong> Through any licensed Florida insurance agent. You cannot apply directly. Citizens is available only if your premium from a private admitted carrier is more than 20 percent above Citizens' rate.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for FL</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hurricane / tropical storm</strong></td>
+          <td>Highest nationally</td>
+          <td>Florida has more hurricane landfalls than any other state. Southeast coast, Gulf Coast, and Panhandle all in active exposure zones.</td>
+        </tr>
+        <tr>
+          <td><strong>Flooding</strong></td>
+          <td>Very high</td>
+          <td>Both storm surge and inland flooding. Standard homeowners policies do not cover flood. NFIP enrollment is critical in Florida.</td>
+        </tr>
+        <tr>
+          <td><strong>Sinkholes</strong></td>
+          <td>High in central Florida</td>
+          <td>Central FL has significant sinkhole activity. Citizens covers "catastrophic ground cover collapse" but full sinkhole coverage is an endorsement. NOAA/USGS sinkhole maps available.</td>
+        </tr>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Moderate in north/central FL</td>
+          <td>Northern Florida brush fires are seasonal but rarely reach the scale of western US wildfires. Less of a driver of market disruption than hurricane.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>Florida's legislature and Office of Insurance Regulation have been the most active in the country in attempting to stabilize the homeowners market. Key actions since 2022:</p>
+    <ul>
+      <li><strong>SB 2A (December 2022 Special Session):</strong> Created a $1 billion reinsurance fund (FHCF expansion) to give carriers cheaper reinsurance access. Restricted Assignment of Benefits (AOB) agreements in property insurance — a major litigation driver.</li>
+      <li><strong>HB 837 (March 2023):</strong> Comprehensive tort reform. Eliminated one-way attorney fee provisions that had made Florida one of the most litigious insurance markets nationally. Reduced multiplier fees in bad-faith cases. Changed the standard for attorney fee awards in insurance disputes.</li>
+      <li><strong>Citizens rate "glide path":</strong> Legislation authorized Citizens to raise rates by up to 15 percent per year until Citizens rates reach actuarially sound levels. This is ongoing; Citizens policyholders should expect continued rate increases through at least 2027.</li>
+      <li><strong>Depopulation requirements:</strong> Citizens is required to push policies to private carriers when a private offer is within 20 percent of the Citizens rate. Policyholders have limited ability to decline these transfers.</li>
+    </ul>
+    <p>Florida OIR Commissioner Michael Yaworsky (as of Q1 2026) has described the market as "on the path to stabilization" while acknowledging that rate levels remain elevated. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — noted that Florida's legislative reforms were the most comprehensive of any state but cautioned that their effectiveness depends on sustained private carrier confidence in the market.</p>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>My Safe Florida Home program:</strong> Florida's state-funded home hardening program offers free wind inspections for Florida homeowners and matching grants for qualified wind-mitigation improvements. As of Q1 2026, the program had distributed over $150 million in grants since its reinstatement in 2022. Grant amounts vary by year and appropriation; the program has had waiting lists in prior cycles. Apply through the Florida Department of Financial Services (myfloridacfo.com).</p>
+    <p><strong>Wind mitigation credits:</strong> Florida law requires insurance companies to offer premium discounts for wind mitigation features. A certified wind mitigation inspection can result in credits for: hip roofs, roof-to-wall connections, impact-resistant windows, and reinforced doors. Credits vary significantly by carrier but can reduce wind premium by 20 to 60 percent for well-constructed homes.</p>
+    <p><strong>IBHS FORTIFIED:</strong> Some Florida carriers offer credits for IBHS FORTIFIED certification, but there is no statewide mandate in Florida equivalent to Alabama's law. Ask your carrier specifically about FORTIFIED credits before investing in certification.</p>
+    <p><strong>FEMA Flood Mitigation Assistance:</strong> FEMA's FMA grant program funds flood mitigation for NFIP-insured properties. Florida local governments often administer these grants. Elevation certificates from a licensed surveyor document your home's flood risk and can reduce NFIP premiums significantly.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>Florida OIR complaint data for 2022 through 2025 shows the following pattern:</p>
+    <ul>
+      <li><strong>Premium increases</strong> are the single most common complaint category — homeowners reporting renewal premiums 40 to 100 percent above prior year, often with no claims history.</li>
+      <li><strong>Non-renewal notices without explanation</strong> — particularly in coastal zones where carriers exited entire ZIP codes without individual property reasoning.</li>
+      <li><strong>Carrier insolvency confusion</strong> — homeowners whose carrier went into receivership often did not understand that the Florida Insurance Guaranty Association (FIGA) covered claims up to $300,000 for admitted carriers. Many spent time and legal fees pursuing claims that were eligible for guaranty coverage.</li>
+      <li><strong>Citizens depopulation surprise</strong> — policyholders transferred to private carriers as part of the depopulation program often did not understand they had a limited window to decline the transfer and could lose Citizens eligibility if they missed it.</li>
+    </ul>
+    <p>Qualitative reports in Florida press through early 2026 document homeowners in Lee, Collier, Sarasota, and Charlotte counties — the Hurricane Ian impact area — still paying 60 to 100 percent more than their pre-Ian premiums as of Q1 2026, even after the market reform legislation.</p>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>If you received a non-renewal notice, call OIR's consumer helpline (1-877-693-5236).</strong> Florida OIR maintains a consumer assistance division that can help you identify available carriers in your area and understand your rights. Filing a complaint with OIR costs nothing and contributes to the data regulators use to monitor the market.</li>
+      <li><strong>Get a wind mitigation inspection before shopping for coverage.</strong> A certified wind mitigation inspection (roughly $150 to $300 from a licensed inspector) documents your home's wind-resistant features. Many carriers require this before quoting, and the credits it unlocks can significantly reduce premiums. Do this before contacting agents.</li>
+      <li><strong>If your primary concern is affordability, apply to Citizens and also apply to My Safe Florida Home.</strong> Citizens is the floor on availability. My Safe Florida Home grants can reduce the cost of the improvements that might qualify you for a private carrier alternative. Both applications can run in parallel.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>Florida Office of Insurance Regulation (OIR). Market conduct reports and complaint data, 2022 to 2025. Accessed May 2026.</li>
+      <li>Florida Citizens Property Insurance Corporation. 2025 Annual Report. Accessed May 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). Florida market data, 2024. Accessed May 2026.</li>
+      <li>Florida Department of Financial Services. My Safe Florida Home program. Accessed May 2026.</li>
+      <li>NOAA National Hurricane Center. Florida historical hurricane data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: May 2026.</em></p>
+  </Fragment>
+
+</StatePage>
