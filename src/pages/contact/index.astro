@@ -1,0 +1,65 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — InsuranceExit.org</title>
+  <meta name="description" content="Get in touch with InsuranceExit.org about questions or feedback." />
+  <link rel="canonical" href="https://insuranceexit.org/contact/" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name">InsuranceExit.org</a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="max-width: 760px; margin: 0 auto; padding: 0 1.5rem;">
+    <Disclaimer />
+
+    <article style="margin: 2rem 0;">
+      <h1>Contact</h1>
+      <p>Questions or feedback about InsuranceExit.org? Use the form below to get in touch.</p>
+
+      <form name="contact" method="POST" netlify style="margin: 2rem 0;">
+        <div style="margin-bottom: 1.25rem;">
+          <label for="name" style="display: block; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.375rem; color: var(--text);">Name</label>
+          <input type="text" id="name" name="name" required style="width: 100%; padding: 0.75rem; font-family: var(--font-body); font-size: 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); color: var(--text);" />
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="email" style="display: block; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.375rem; color: var(--text);">Email</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 0.75rem; font-family: var(--font-body); font-size: 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); color: var(--text);" />
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <label for="message" style="display: block; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.375rem; color: var(--text);">Message</label>
+          <textarea id="message" name="message" rows="6" required style="width: 100%; padding: 0.75rem; font-family: var(--font-body); font-size: 1rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg); color: var(--text);"></textarea>
+        </div>
+
+        <button type="submit" style="background: var(--accent); color: white; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer;">Send</button>
+      </form>
+    </article>
+
+    <Disclaimer />
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
+  </footer>
+</body>
+</html>
