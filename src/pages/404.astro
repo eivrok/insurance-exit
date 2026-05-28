@@ -1,40 +1,18 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
-
-interface Props {
-  title: string;
-  description: string;
-  intro: string;
-}
-
-const { title, description, intro } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
-const fullTitle = `${title} | InsuranceExit.us`;
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{fullTitle}</title>
-  <meta name="description" content={description} />
-  <link rel="canonical" href={canonicalURL} />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <!-- Open Graph -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content={fullTitle} />
-  <meta property="og:description" content={description} />
-  <meta property="og:url" content={canonicalURL} />
-  <meta property="og:site_name" content="InsuranceExit.us" />
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content={fullTitle} />
-  <meta name="twitter:description" content={description} />
-  <!-- Fonts -->
+  <meta name="robots" content="noindex" />
+  <title>Page Not Found | InsuranceExit.us</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 </head>
 <body>
   <header>
@@ -50,18 +28,18 @@ const fullTitle = `${title} | InsuranceExit.us`;
   </header>
 
   <main>
-    <div class="breadcrumb">
-      <a href="/">Home</a>
-    </div>
-
     <Disclaimer />
-
-    <article>
-      <h1>{title}</h1>
-      <p style="font-size: 1.15rem; color: #444; margin: 1rem 0 2rem;">{intro}</p>
-      <slot />
+    <article style="max-width: 760px; margin: 4rem auto; padding: 0 1.5rem;">
+      <h1>Page not found</h1>
+      <p>That page doesn't exist or may have moved. Use the navigation above, or start with one of these:</p>
+      <ul>
+        <li><a href="/non-renewed/what-a-non-renewal-letter-actually-means/">What a non-renewal letter actually means</a></li>
+        <li><a href="/non-renewed/your-30-60-90-day-decision-tree/">Your 30-60-90 day decision tree</a></li>
+        <li><a href="/is-my-zip-next/">Is my ZIP next? — State pages</a></li>
+        <li><a href="/residual-markets/what-fair-plan-really-covers-in-california/">What FAIR Plan really covers in California</a></li>
+        <li><a href="/glossary/">Glossary of insurance terms</a></li>
+      </ul>
     </article>
-
     <footer class="article-footer">
       <Disclaimer />
     </footer>
