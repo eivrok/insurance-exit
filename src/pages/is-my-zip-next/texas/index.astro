@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.texas;
 ---
 <StatePage state="Texas" slug="texas" lastUpdated="May 2026" status="published">
 
@@ -58,31 +60,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Multiple admitted carriers (unnamed per TDI aggregate data)</td>
-          <td>Non-renewals in TWIA-eligible coastal counties</td>
-          <td>Ongoing since 2017; accelerated post-Uri (2021)</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Restricted new homeowners policies in high-hail-risk ZIP codes</td>
-          <td>2022–2023</td>
-        </tr>
-        <tr>
-          <td>State Farm</td>
-          <td>Applied higher wind/hail deductibles; some ZIP code-level non-renewals</td>
-          <td>Ongoing 2021–2026</td>
-        </tr>
-        <tr>
-          <td>Allstate</td>
-          <td>Rate increases and non-renewals in coastal and hail-belt areas</td>
-          <td>2022–2024</td>
-        </tr>
-        <tr>
-          <td>Multiple smaller admitted carriers</td>
-          <td>Exited coastal TWIA-eligible counties entirely</td>
-          <td>2017–2024</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>Texas differs from Florida and Louisiana in that several large national carriers (State Farm, Allstate, USAA) remain active in the Texas market outside the TWIA-eligible coastal zone. The market stress is more geographically concentrated. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — noted Texas as a state where hail-driven losses are reshaping underwriting nationally, not just in hurricane-exposed areas.</p>

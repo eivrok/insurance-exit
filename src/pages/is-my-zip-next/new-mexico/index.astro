@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions['new-mexico'];
 ---
 <StatePage state="New Mexico" slug="new-mexico" lastUpdated="May 2026" status="published">
 
@@ -53,21 +55,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Multiple admitted carriers (aggregate per OSI)</td>
-          <td>Non-renewals and new-business restrictions in northern NM WUI ZIP codes</td>
-          <td>Ongoing 2022–2026; accelerated post-Hermits Peak Fire</td>
-        </tr>
-        <tr>
-          <td>State Farm</td>
-          <td>WUI restrictions in highest-fire-score areas of northern NM</td>
-          <td>2022–2024</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Restrictions in high-fire-risk ZIP codes in northern NM</td>
-          <td>2022–2024</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>New Mexico's admitted carrier market was thin before 2022. The state's geography — lower population density, higher rural poverty rates, and significant tribal land adjacent to WUI zones — limits the economic attractiveness for national carriers. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — identified the Hermits Peak/Calf Canyon compensation program as a case study in how federal disaster programs interact with private insurance market failures.</p>

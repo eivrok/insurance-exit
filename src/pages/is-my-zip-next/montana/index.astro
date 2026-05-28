@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.montana;
 ---
 <StatePage state="Montana" slug="montana" lastUpdated="May 2026" status="published">
 
@@ -58,26 +60,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Multiple admitted carriers (aggregate per CSI)</td>
-          <td>Non-renewals and new-business restrictions in western Montana WUI ZIP codes</td>
-          <td>Ongoing 2020–2026</td>
-        </tr>
-        <tr>
-          <td>State Farm</td>
-          <td>Elevated wildfire score requirements; WUI non-renewals in Montana</td>
-          <td>2021–2024</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Restrictions in high-fire-risk Montana ZIP codes</td>
-          <td>2022–2024</td>
-        </tr>
-        <tr>
-          <td>Allstate</td>
-          <td>Non-renewals in WUI areas</td>
-          <td>2022–2024</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>Montana's admitted carrier market was not large before the current disruption. The state's population and premium volume are insufficient to attract many national carriers' active attention, and the carriers that remain tend to apply conservative WUI underwriting thresholds. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — identified Montana as among the states where thin carrier markets amplify the impact of individual carrier exits, leaving homeowners with few alternatives when a single carrier changes its underwriting approach.</p>

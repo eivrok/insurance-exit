@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.louisiana;
 ---
 <StatePage state="Louisiana" slug="louisiana" lastUpdated="May 2026" status="published">
 
@@ -58,41 +60,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Lighthouse Property Insurance</td>
-          <td>Went into receivership</td>
-          <td>August 2021</td>
-        </tr>
-        <tr>
-          <td>Access Home Insurance</td>
-          <td>Went into receivership</td>
-          <td>October 2021</td>
-        </tr>
-        <tr>
-          <td>State National Insurance</td>
-          <td>Withdrew from Louisiana homeowners market</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <td>Southern Fidelity Insurance</td>
-          <td>Declared insolvent (also active in FL)</td>
-          <td>June 2022</td>
-        </tr>
-        <tr>
-          <td>Maison Insurance Company</td>
-          <td>Went into receivership</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <td>Americas Insurance Company</td>
-          <td>Went into receivership</td>
-          <td>2022</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Announced withdrawal from Louisiana</td>
-          <td>July 2023</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>Louisiana Insurance Guaranty Association (LIGA) covered claims from insolvent carriers up to $500,000 for admitted carriers. Many homeowners affected by the 2021–2022 insolvency wave did not know LIGA existed and lost time and legal fees pursuing claims that were eligible for guaranty coverage. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — specifically cited Louisiana's post-Ida carrier exit cascade as a case study in how climate events can cause cascading market failures in a short window.</p>

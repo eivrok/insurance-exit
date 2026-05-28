@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.idaho;
 ---
 <StatePage state="Idaho" slug="idaho" lastUpdated="May 2026" status="published">
 
@@ -53,26 +55,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Multiple admitted carriers (aggregate per DOI)</td>
-          <td>Non-renewals and new-business restrictions in Boise foothills and northern Idaho WUI ZIP codes</td>
-          <td>Ongoing 2021–2026</td>
-        </tr>
-        <tr>
-          <td>State Farm</td>
-          <td>Elevated wildfire score requirements; some WUI non-renewals in Idaho</td>
-          <td>2022–2024</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Restrictions in high-fire-risk Idaho ZIP codes</td>
-          <td>2022–2024</td>
-        </tr>
-        <tr>
-          <td>Allstate</td>
-          <td>Non-renewals in WUI areas</td>
-          <td>2022–2024</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>Idaho has not experienced the mass carrier insolvencies seen in Florida and Louisiana. The stress is more consistent with the earlier stages of the California pattern — incremental WUI withdrawal by major carriers before broader market failure. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — noted Idaho and other rapidly growing western WUI states as markets at high risk of accelerating insurance market disruption as more structures move into historically fire-prone landscapes.</p>

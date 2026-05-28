@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.california;
 ---
 <StatePage state="California" slug="california" lastUpdated="May 2026" status="published">
 
@@ -63,41 +65,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>State Farm General</td>
-          <td>Stopped writing new homeowners policies in California</td>
-          <td>May 2023</td>
-        </tr>
-        <tr>
-          <td>State Farm General</td>
-          <td>Issued ~72,000 non-renewals statewide</td>
-          <td>March 2024</td>
-        </tr>
-        <tr>
-          <td>Allstate</td>
-          <td>Paused new homeowners and condo policies in California</td>
-          <td>Late 2022 (confirmed publicly in 2023)</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Capped new homeowners policies; reduced exposure in high-risk ZIP codes</td>
-          <td>2023–2024</td>
-        </tr>
-        <tr>
-          <td>AIG / Lexington Insurance</td>
-          <td>Restricted new policies in wildfire-exposed areas</td>
-          <td>2022–2023</td>
-        </tr>
-        <tr>
-          <td>Tokio Marine / Pacific Specialty</td>
-          <td>Non-renewals in high-risk wildfire zones</td>
-          <td>2023</td>
-        </tr>
-        <tr>
-          <td>State Farm General</td>
-          <td>CDI agreement: 20% rate increase approved in exchange for commitment to maintain CA presence</td>
-          <td>June 2024</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>Several surplus lines carriers (not licensed the standard California way) remain active in wildfire-exposed areas, but at premiums that can run three to ten times the prior admitted-market rate. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — noted California as one of the clearest examples of admitted-market withdrawal forcing homeowners into the residual market or surplus lines.</p>

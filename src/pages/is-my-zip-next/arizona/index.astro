@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.arizona;
 ---
 <StatePage state="Arizona" slug="arizona" lastUpdated="May 2026" status="published">
 
@@ -53,26 +55,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Multiple admitted carriers (aggregate per DIFI)</td>
-          <td>Non-renewals and new-business restrictions in WUI ZIP codes</td>
-          <td>Ongoing 2022–2026; specific carriers vary by ZIP code</td>
-        </tr>
-        <tr>
-          <td>State Farm</td>
-          <td>Elevated wildfire scores required; some non-renewals in AZ WUI areas</td>
-          <td>2022–2024</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Restrictions in high-fire-risk ZIP codes</td>
-          <td>2022–2024</td>
-        </tr>
-        <tr>
-          <td>Allstate</td>
-          <td>Non-renewals in Prescott-area and Flagstaff-area WUI zones</td>
-          <td>2022–2024</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>Arizona has not experienced mass carrier insolvencies on the scale of Florida or Louisiana, but the pattern of incremental WUI withdrawal mirrors the early stages of California's market deterioration. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — flagged Arizona as among the states where WUI population growth is outpacing the insurance market's ability to manage accumulation risk at current pricing.</p>

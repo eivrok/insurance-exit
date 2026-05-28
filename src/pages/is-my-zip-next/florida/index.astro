@@ -1,5 +1,7 @@
 ---
 import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.florida;
 ---
 <StatePage state="Florida" slug="florida" lastUpdated="May 2026" status="published">
 
@@ -53,41 +55,13 @@ import StatePage from '@layouts/StatePage.astro';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Southern Fidelity Insurance</td>
-          <td>Declared insolvent, placed in receivership</td>
-          <td>June 2022</td>
-        </tr>
-        <tr>
-          <td>FedNat Holding Company</td>
-          <td>Entered run-off; significant non-renewals in FL</td>
-          <td>2022–2023</td>
-        </tr>
-        <tr>
-          <td>Avatar Property & Casualty</td>
-          <td>Placed in receivership</td>
-          <td>February 2023</td>
-        </tr>
-        <tr>
-          <td>Weston Property & Casualty</td>
-          <td>Placed in receivership</td>
-          <td>March 2023</td>
-        </tr>
-        <tr>
-          <td>Farmers Insurance</td>
-          <td>Announced withdrawal from Florida market</td>
-          <td>July 2023</td>
-        </tr>
-        <tr>
-          <td>State Farm</td>
-          <td>Reduced new business; continued renewals with rate increases</td>
-          <td>Ongoing 2022–2026</td>
-        </tr>
-        <tr>
-          <td>Bankers Insurance / First Protective</td>
-          <td>Placed in receivership</td>
-          <td>2023</td>
-        </tr>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
     <p>Several new entrants arrived in Florida from 2023 onward, some backed by reinsurers seeking to take advantage of higher premium rates. Their long-term stability is unproven. When Citizens' depopulation program pushes policies to these newer carriers, the financial strength question is real. Check A.M. Best ratings for any carrier taking over a Citizens policy.</p>
