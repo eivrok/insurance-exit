@@ -139,6 +139,55 @@ const breadcrumbSchema = JSON.stringify({
 
     <footer class="article-footer">
       <p class="last-updated">Last updated: {lastUpdated}</p>
+
+      {status === 'published' && (
+        <div style="margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg-subtle);">
+          <p style="margin: 0 0 0.75rem; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500; color: var(--text);">Was this helpful?</p>
+          <button
+            id="helpful-btn"
+            type="button"
+            style="background: var(--accent); color: white; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; transition: all 120ms ease;"
+            onmouseover="this.style.background='var(--accent-hover)'"
+            onmouseout="this.style.background='var(--accent)'"
+            onclick="submitHelpful(event)"
+          >
+            👍 Yes, helpful
+          </button>
+          <span id="helpful-feedback" style="display: none; margin-left: 1rem; font-family: var(--font-ui); font-size: 0.875rem; color: var(--accent);">✓ Thanks for the feedback</span>
+        </div>
+      )}
+
+      <!-- Hidden Netlify form for vote capture -->
+      <form name="votes" method="POST" netlify hidden style="display: none;">
+        <input type="hidden" name="article" id="article-slug" />
+        <input type="hidden" name="helpful" value="yes" />
+      </form>
+
+      <script>
+        function submitHelpful(event) {
+          event.preventDefault();
+          const form = document.querySelector('form[name="votes"]');
+          const articleSlug = document.getElementById('article-slug');
+          const btn = document.getElementById('helpful-btn');
+          const feedback = document.getElementById('helpful-feedback');
+
+          articleSlug.value = '{slug}';
+
+          // Submit form
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(new FormData(form)).toString()
+          }).catch(() => {
+            // Silently fail (Netlify Forms may not always respond)
+          });
+
+          // Show feedback
+          btn.style.display = 'none';
+          feedback.style.display = 'inline';
+        }
+      </script>
+
       <Disclaimer />
     </footer>
   </main>
