@@ -9,7 +9,7 @@ interface Props {
 
 const { title, description, intro } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
-const fullTitle = `${title} | InsuranceExit.us`;
+const fullTitle = `${title} | InsuranceExit.org`;
 ---
 <!doctype html>
 <html lang="en">
@@ -25,7 +25,7 @@ const fullTitle = `${title} | InsuranceExit.us`;
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:site_name" content="InsuranceExit.us" />
+  <meta property="og:site_name" content="InsuranceExit.org" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={fullTitle} />
@@ -39,7 +39,7 @@ const fullTitle = `${title} | InsuranceExit.us`;
 <body>
   <header>
     <nav>
-      <a href="/" class="site-name">InsuranceExit.us</a>
+      <a href="/" class="site-name">InsuranceExit.org</a>
       <ul>
         <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
         <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
@@ -68,7 +68,7 @@ const fullTitle = `${title} | InsuranceExit.us`;
   </main>
 
   <footer class="site-footer">
-    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
   </footer>
 </body>
 </html>

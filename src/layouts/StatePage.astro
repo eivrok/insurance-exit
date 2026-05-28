@@ -6,20 +6,32 @@ interface Props {
   slug: string;
   lastUpdated: string;
   status?: 'draft' | 'published';
+  severity?: 'elevated' | 'high' | 'critical';
 }
 
-const { state, slug, lastUpdated, status = 'draft' } = Astro.props;
+const { state, slug, lastUpdated, status = 'draft', severity } = Astro.props;
+
+const severityLabel: Record<string, string> = {
+  critical: 'Market Crisis',
+  high: 'High Stress',
+  elevated: 'Elevated Risk',
+};
+const severityColors: Record<string, string> = {
+  critical: 'oklch(50% 0.18 25)',
+  high:     'oklch(55% 0.18 52)',
+  elevated: 'oklch(56% 0.14 68)',
+};
 const title = `Insurance Crisis in ${state} — What Homeowners Need to Know in 2026`;
 const description = `Homeowners insurance non-renewal trends, carriers leaving, residual market options, and hazards in ${state}.`;
-const fullTitle = `${title} | InsuranceExit.us`;
+const fullTitle = `${title} | InsuranceExit.org`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://insuranceexit.us/" },
-    { "@type": "ListItem", "position": 2, "name": "Is My ZIP Next", "item": "https://insuranceexit.us/is-my-zip-next/" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://insuranceexit.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Is My ZIP Next", "item": "https://insuranceexit.org/is-my-zip-next/" },
     { "@type": "ListItem", "position": 3, "name": state, "item": canonicalURL },
   ]
 });
@@ -39,7 +51,7 @@ const breadcrumbSchema = JSON.stringify({
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:site_name" content="InsuranceExit.us" />
+  <meta property="og:site_name" content="InsuranceExit.org" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={fullTitle} />
@@ -55,7 +67,7 @@ const breadcrumbSchema = JSON.stringify({
 <body>
   <header>
     <nav>
-      <a href="/" class="site-name">InsuranceExit.us</a>
+      <a href="/" class="site-name">InsuranceExit.org</a>
       <ul>
         <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
         <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
@@ -80,7 +92,17 @@ const breadcrumbSchema = JSON.stringify({
       </div>
     )}
 
+    <div
+      class:list={['severity-band', severity && `severity-band--${severity}`]}
+      style={severity ? `--severity-color: ${severityColors[severity]}` : ''}
+    >
     <article>
+      {severity && (
+        <div class={`severity-badge severity-badge--${severity}`}>
+          <span class="severity-dot"></span>
+          {severityLabel[severity]}
+        </div>
+      )}
       <h1>{title}</h1>
 
       <h2>1. The one-paragraph summary</h2>
@@ -113,6 +135,7 @@ const breadcrumbSchema = JSON.stringify({
       <h2>10. Sources and date of last update</h2>
       <slot name="sources"><p><em>[Forthcoming — Treasury FIO January 2025 report, Senate Budget Committee December 2024 staff report, NAIC, {state} DOI, plus state-specific filings.]</em></p></slot>
     </article>
+    </div>
 
     <footer class="article-footer">
       <p class="last-updated">Last updated: {lastUpdated}</p>
@@ -121,7 +144,7 @@ const breadcrumbSchema = JSON.stringify({
   </main>
 
   <footer class="site-footer">
-    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
   </footer>
 </body>
 </html>

@@ -1,8 +1,9 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
-const title = "InsuranceExit.us — Homeowners Insurance Non-Renewal Guide";
+import Icons from '@components/Icons.astro';
+const title = "InsuranceExit.org — Homeowners Insurance Non-Renewal Guide";
 const description = "Straight information for US homeowners facing insurance non-renewal due to climate risk. No affiliate links, no quotes, no spin.";
-const canonicalURL = "https://insuranceexit.us/";
+const canonicalURL = "https://insuranceexit.org/";
 ---
 <!doctype html>
 <html lang="en">
@@ -18,7 +19,7 @@ const canonicalURL = "https://insuranceexit.us/";
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:site_name" content="InsuranceExit.us" />
+  <meta property="og:site_name" content="InsuranceExit.org" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={title} />
@@ -32,7 +33,7 @@ const canonicalURL = "https://insuranceexit.us/";
 <body>
   <header>
     <nav>
-      <a href="/" class="site-name">InsuranceExit.us</a>
+      <a href="/" class="site-name">InsuranceExit.org</a>
       <ul>
         <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
         <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
@@ -46,6 +47,8 @@ const canonicalURL = "https://insuranceexit.us/";
     <Disclaimer />
 
     <section class="home-hero" aria-labelledby="hero-heading">
+      <div class="home-hero-rule"></div>
+      <p class="home-dateline">Updated May 2026 &middot; U.S. Homeowners Insurance Crisis</p>
       <h1 id="hero-heading">
         Your homeowners insurance was non-renewed.<br />What now?
       </h1>
@@ -56,26 +59,38 @@ const canonicalURL = "https://insuranceexit.us/";
 
     <section class="pillar-grid" aria-label="Site sections">
       <a href="/non-renewed/" class="pillar-card">
-        <h2>I Just Got Non-Renewed</h2>
-        <p>Decision trees and checklists for the first 72 hours. What the letter actually means. What to do before your policy expires.</p>
+        <div class="pillar-card-icon"><Icons name="non-renewed" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>I Just Got Non-Renewed</h2>
+          <p>Decision trees and checklists for the first 72 hours. What the letter actually means. What to do before your policy expires.</p>
+        </div>
       </a>
       <a href="/is-my-zip-next/" class="pillar-card">
-        <h2>Is My ZIP Next</h2>
-        <p>State-by-state and ZIP-level risk explainers. Who's already leaving and where the market is heading.</p>
+        <div class="pillar-card-icon"><Icons name="zip-next" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>Is My ZIP Next</h2>
+          <p>State-by-state and ZIP-level risk explainers. Who's already leaving and where the market is heading.</p>
+        </div>
       </a>
       <a href="/fortifying-vs-selling/" class="pillar-card">
-        <h2>Fortifying vs. Selling</h2>
-        <p>Honest cost-benefit analysis. IBHS FORTIFIED standards, retrofit ROI, and the math on when selling makes more sense.</p>
+        <div class="pillar-card-icon"><Icons name="fortifying" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>Fortifying vs. Selling</h2>
+          <p>Honest cost-benefit analysis. IBHS FORTIFIED standards, retrofit ROI, and the math on when selling makes more sense.</p>
+        </div>
       </a>
       <a href="/residual-markets/" class="pillar-card">
-        <h2>Residual Markets</h2>
-        <p>FAIR Plans, Citizens, and last-resort options explained state by state — what they cover, what they don't.</p>
+        <div class="pillar-card-icon"><Icons name="residual" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>Residual Markets</h2>
+          <p>FAIR Plans, Citizens, and last-resort options explained state by state — what they cover, what they don't.</p>
+        </div>
       </a>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
   </footer>
 </body>
 </html>

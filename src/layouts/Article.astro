@@ -18,14 +18,14 @@ const pillarLabels: Record<string, string> = {
 };
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
-const fullTitle = `${title} | InsuranceExit.us`;
+const fullTitle = `${title} | InsuranceExit.org`;
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://insuranceexit.us/" },
-    { "@type": "ListItem", "position": 2, "name": pillarLabels[pillar], "item": `https://insuranceexit.us/${pillar}/` },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://insuranceexit.org/" },
+    { "@type": "ListItem", "position": 2, "name": pillarLabels[pillar], "item": `https://insuranceexit.org/${pillar}/` },
     { "@type": "ListItem", "position": 3, "name": title, "item": canonicalURL },
   ]
 });
@@ -36,7 +36,7 @@ const articleSchema = JSON.stringify({
   "headline": title,
   "description": description,
   "url": canonicalURL,
-  "publisher": { "@type": "Organization", "name": "InsuranceExit.us", "url": "https://insuranceexit.us" },
+  "publisher": { "@type": "Organization", "name": "InsuranceExit.org", "url": "https://insuranceexit.org" },
   "dateModified": lastUpdated,
 });
 ---
@@ -54,7 +54,7 @@ const articleSchema = JSON.stringify({
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
-  <meta property="og:site_name" content="InsuranceExit.us" />
+  <meta property="og:site_name" content="InsuranceExit.org" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content={fullTitle} />
@@ -71,7 +71,7 @@ const articleSchema = JSON.stringify({
 <body>
   <header>
     <nav>
-      <a href="/" class="site-name">InsuranceExit.us</a>
+      <a href="/" class="site-name">InsuranceExit.org</a>
       <ul>
         <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
         <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
@@ -101,7 +101,7 @@ const articleSchema = JSON.stringify({
   </main>
 
   <footer class="site-footer">
-    <p>InsuranceExit.us — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/glossary/">Glossary</a></p>
   </footer>
 </body>
 </html>

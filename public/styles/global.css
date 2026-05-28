@@ -174,14 +174,14 @@ main {
 
 /* ---- Disclaimer ---- */
 .disclaimer {
-  background: var(--warm-bg);
-  border-left: 3px solid var(--warm);
+  background: var(--surface);
+  border-left: 3px solid var(--border-strong);
   padding: 0.875rem 1.125rem;
   margin: 1.25rem 0;
   font-family: var(--font-ui);
   font-size: 0.875rem;
   line-height: 1.65;
-  color: oklch(38% 0.072 52);
+  color: var(--text-muted);
   border-radius: 0 4px 4px 0;
 }
 .disclaimer em { font-style: normal; }
@@ -356,6 +356,24 @@ article tbody tr:hover td {
    ============================================================ */
 .home-hero {
   margin: 3rem 0 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+.home-hero-rule {
+  width: 2.5rem;
+  height: 3px;
+  background: var(--accent);
+  margin-bottom: 1rem;
+  border-radius: 1px;
+}
+.home-dateline {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.875rem;
 }
 .home-hero h1 {
   font-family: var(--font-display);
@@ -367,10 +385,10 @@ article tbody tr:hover td {
 }
 .home-hero p {
   font-family: var(--font-ui);
-  font-size: clamp(1rem, 2vw, 1.1875rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   color: var(--text-muted);
-  max-width: 600px;
-  line-height: 1.65;
+  max-width: 580px;
+  line-height: 1.7;
 }
 
 .pillar-grid {
@@ -381,19 +399,19 @@ article tbody tr:hover td {
 }
 
 .pillar-card {
-  display: block;
-  padding: 1.5rem 1.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  padding: 1.625rem;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 4px;
   text-decoration: none;
   color: inherit;
-  background: #fff;
-  transition: border-color 140ms ease, box-shadow 140ms ease, transform 140ms ease;
+  background: var(--bg);
+  transition: border-color 140ms ease;
 }
 .pillar-card:hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
   text-decoration: none;
   color: inherit;
 }
@@ -401,12 +419,18 @@ article tbody tr:hover td {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
+.pillar-card-icon {
+  color: var(--accent);
+  opacity: 0.8;
+  flex-shrink: 0;
+  display: flex;
+}
 .pillar-card h2 {
   font-family: var(--font-display);
-  font-size: 1.1875rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 0.5rem;
+  color: var(--text);
+  margin: 0 0 0.375rem;
   line-height: 1.25;
   letter-spacing: -0.01em;
 }
@@ -416,6 +440,58 @@ article tbody tr:hover td {
   color: var(--text-muted);
   line-height: 1.6;
   margin: 0;
+}
+.pillar-card-text { display: flex; flex-direction: column; }
+
+/* ============================================================
+   SEVERITY BAND — state pages signature element
+   ============================================================ */
+.severity-band {
+  border-left: 4px solid var(--severity-color, var(--border-strong));
+  padding-left: 1.25rem;
+  margin-left: -1.25rem;
+}
+
+.severity-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-family: var(--font-ui);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.625rem;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+}
+.severity-badge--critical {
+  background: oklch(96% 0.025 25);
+  color: oklch(40% 0.18 25);
+  border: 1px solid oklch(84% 0.06 25);
+  --severity-dot-color: oklch(50% 0.18 25);
+  --severity-color: oklch(50% 0.18 25);
+}
+.severity-badge--high {
+  background: oklch(96.5% 0.028 52);
+  color: oklch(40% 0.16 52);
+  border: 1px solid oklch(84% 0.07 55);
+  --severity-dot-color: oklch(55% 0.18 52);
+  --severity-color: oklch(55% 0.18 52);
+}
+.severity-badge--elevated {
+  background: oklch(97% 0.020 70);
+  color: oklch(38% 0.12 65);
+  border: 1px solid oklch(86% 0.05 68);
+  --severity-dot-color: oklch(56% 0.14 68);
+  --severity-color: oklch(56% 0.14 68);
+}
+.severity-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--severity-dot-color);
+  flex-shrink: 0;
 }
 
 /* ============================================================
