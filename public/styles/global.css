@@ -395,7 +395,9 @@ article tbody tr:hover td {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.25rem;
-  margin: 2rem 0;
+  margin: 2rem auto;
+  max-width: var(--width-content);
+  padding: 0 1.5rem;
 }
 
 .pillar-card {
