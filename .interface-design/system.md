@@ -116,7 +116,7 @@ Elevation is expressed through:
   letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 ```
 - Accent rule above dateline (editorial magazine convention)
-- Dateline: "Updated May 2026 · U.S. Homeowners Insurance Crisis" — keeps page dated at a glance
+- Dateline: "U.S. Homeowners Insurance Crisis" — keeps page dated at a glance
 
 ### Severity Badge (StatePage.astro)
 ```astro
