@@ -27,6 +27,8 @@ const title = `Insurance Crisis in ${state}`;
 const description = `Homeowners insurance non-renewal trends, carriers leaving, residual market options, and hazards in ${state}.`;
 const fullTitle = `${title} | InsuranceExit.org`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const ogImageURL = new URL('/og-default.jpg', Astro.site).href;
+const ogImageAlt = 'Line drawing of a single-family house under rain — InsuranceExit.org';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -54,10 +56,16 @@ const breadcrumbSchema = JSON.stringify({
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalURL} />
   <meta property="og:site_name" content="InsuranceExit.org" />
+  <meta property="og:image" content={ogImageURL} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content={ogImageAlt} />
   <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={fullTitle} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageURL} />
+  <meta name="twitter:image:alt" content={ogImageAlt} />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
