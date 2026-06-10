@@ -1,0 +1,58 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Page Not Found | InsuranceExit.org</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/global.css" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+          <path d="M3 10l9-9 9 9v11a2 2 0 01-2 2H5a2 2 0 01-2-2V10z" />
+          <path d="M9 21v-7h6v7" />
+        </svg>
+        InsuranceExit.org
+      </a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <Disclaimer />
+    <article style="max-width: 760px; margin: 4rem auto; padding: 0 1.5rem;">
+      <h1>Page not found</h1>
+      <p>That page doesn't exist or may have moved. Use the navigation above, or start with one of these:</p>
+      <ul>
+        <li><a href="/non-renewed/what-a-non-renewal-letter-actually-means/">What a non-renewal letter actually means</a></li>
+        <li><a href="/non-renewed/your-30-60-90-day-decision-tree/">Your 30-60-90 day decision tree</a></li>
+        <li><a href="/is-my-zip-next/">Is my ZIP next? — State pages</a></li>
+        <li><a href="/residual-markets/what-fair-plan-really-covers-in-california/">What FAIR Plan really covers in California</a></li>
+        <li><a href="/glossary/">Glossary of insurance terms</a></li>
+      </ul>
+    </article>
+    <footer class="article-footer">
+      <Disclaimer />
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/glossary/">Glossary</a></p>
+  </footer>
+</body>
+</html>

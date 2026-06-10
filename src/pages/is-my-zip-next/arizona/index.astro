@@ -1,0 +1,165 @@
+---
+import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.arizona;
+---
+<StatePage state="Arizona" slug="arizona" lastUpdated="June 2026" status="published" severity="elevated">
+
+  <Fragment slot="tldr">
+    <div style="background: var(--surface); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 0 0 2rem; border-radius: 4px;">
+      <p style="margin: 0; color: var(--text); line-height: 1.6;"><strong>What you need to know:</strong> Arizona's insurance stress is concentrated in wildfire-exposed areas — especially the Prescott, Flagstaff, and Payson regions and surrounding WUI zones. If you live in those areas and received a non-renewal, expect limited admitted carrier options. Arizona has no state FAIR Plan or insurer of last resort, so high-risk homeowners typically fall back on surplus lines carriers. Get a wildfire mitigation inspection to improve your chances with private carriers.</p>
+    </div>
+  </Fragment>
+
+  <Fragment slot="summary">
+    <p>As of Q2 2026, Arizona's homeowners insurance market is under increasing stress in wildfire-exposed areas, particularly in the wildland-urban interface (WUI) zones around Prescott, Flagstaff, Payson, and the White Mountains. The state does not face the mass-market collapse seen in Florida or Louisiana, but a growing number of homeowners in ponderosa pine and chaparral country are receiving non-renewals or finding that admitted carriers will not write them at any price. The rapid population growth along Arizona's WUI corridors — especially in Yavapai, Coconino, and Gila counties — has placed more insured structures in areas carriers are actively withdrawing from. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified Arizona as one of the states with rising non-renewal rates in wildfire-exposed counties during the study period. Monsoon season hail and flooding also contribute to claims frequency across the Phoenix metropolitan area.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>Arizona's non-renewal stress is geographically specific — concentrated in the WUI zones above 5,000 feet elevation and in fire-prone desert scrub areas. The Phoenix metro and Tucson face different pressures: heat, hail during monsoon season, and flooding in desert wash areas.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2011</td>
+          <td>Wallow Fire — Apache and Greenlee counties</td>
+          <td>Largest wildfire in AZ history at time (538,000 acres); raised carrier awareness of Arizona's extreme wildfire potential</td>
+        </tr>
+        <tr>
+          <td>2019–2023</td>
+          <td>Multiple large fires — Yavapai, Coconino, Gila counties</td>
+          <td>Several 100,000+ acre fires in WUI corridors near Prescott, Flagstaff, Payson; WUI non-renewals began escalating</td>
+        </tr>
+        <tr>
+          <td>2022–2024</td>
+          <td>Carrier restrictions in WUI ZIP codes</td>
+          <td>Multiple admitted carriers limiting new business or issuing non-renewals in Prescott area, Flagstaff foothills, and White Mountains communities</td>
+        </tr>
+        <tr>
+          <td>Q1 2026</td>
+          <td>Ongoing WUI market tightening</td>
+          <td>Arizona Department of Insurance and Financial Institutions (DIFI) tracking elevated non-renewal complaint rates in Yavapai, Coconino, and Gila counties</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Arizona DIFI data shows non-renewal complaints concentrated in Yavapai County (Prescott area), Coconino County (Flagstaff area), and Gila County (Payson area). Statewide premium increases of 20 to 40 percent above 2020 levels have been documented in WUI-adjacent ZIP codes.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p>Arizona has not experienced mass carrier insolvencies on the scale of Florida or Louisiana, but the pattern of incremental WUI withdrawal mirrors the early stages of California's market deterioration. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — flagged Arizona as among the states where WUI population growth is outpacing the insurance market's ability to manage accumulation risk at current pricing.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>Arizona does not have a state FAIR Plan or government-backed insurer of last resort. Unlike California or Florida, the state has historically relied on a competitive private market, and as of 2026 there is no residential FAIR Plan to fall back on — though state officials have discussed creating a wildfire backstop. (Confirm current status with the Arizona Department of Insurance and Financial Institutions, as availability could change.)</p>
+    <p><strong>No insurer of last resort:</strong> If admitted carriers decline you, Arizona has no public pool that is required to write you. That makes early shopping and documented wildfire mitigation more important here than in FAIR Plan states — there is no guaranteed backstop.</p>
+    <p><strong>Surplus lines as the primary alternative:</strong> In practice, many Arizona WUI homeowners who lose admitted coverage end up with surplus lines carriers — insurance companies not licensed in Arizona through the standard process, which can write risks the admitted market won't. Surplus lines carriers have fewer consumer protections (not covered by the Arizona Insurance Guaranty Fund if they become insolvent), and their premiums in wildfire-exposed areas can run three to five times the prior admitted-market rate.</p>
+    <p><strong>How to find coverage:</strong> Work with a licensed Arizona agent or a surplus lines broker. The Arizona Department of Insurance and Financial Institutions (DIFI) publishes a list of surplus lines insurers for high-risk properties.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for AZ</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Very high in WUI areas</td>
+          <td>Arizona's ponderosa pine forests above 5,000 feet carry some of the highest fire risk in the United States during drought conditions. The WUI corridor from Prescott through Flagstaff to the White Mountains is the primary insurer concern. Brush score thresholds (Verisk FireLine, CoreLogic) are used by most carriers to determine eligibility.</td>
+        </tr>
+        <tr>
+          <td><strong>Monsoon flooding / flash floods</strong></td>
+          <td>High — statewide in monsoon season</td>
+          <td>Arizona's July-September monsoon season generates intense rainfall over short periods, causing flash flooding in desert washes, low-lying areas, and urban channels. Standard homeowners policies do not cover flood. NFIP enrollment is relevant in Phoenix and Tucson metro areas.</td>
+        </tr>
+        <tr>
+          <td><strong>Hail</strong></td>
+          <td>Moderate — Phoenix and Tucson metro</td>
+          <td>Monsoon-season thunderstorms generate hail that damages roofs in the Phoenix and Tucson metros. Less severe than the North Texas hail belt but a consistent source of claims frequency.</td>
+        </tr>
+        <tr>
+          <td><strong>Extreme heat / drought</strong></td>
+          <td>Increasing</td>
+          <td>Extreme heat events are increasing in frequency and intensity. Direct heat-related structural damage to homes is less common, but drought conditions increase wildfire risk and can cause soil shrinkage affecting foundations in clay-soil areas.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>Arizona Department of Insurance and Financial Institutions (DIFI) Director Scott Kipper (as of Q1 2026) has focused on consumer education and market monitoring rather than the sweeping legislative reforms seen in Florida and Louisiana. Arizona's market disruption is less severe overall, allowing for a more measured regulatory response.</p>
+    <ul>
+      <li><strong>Non-renewal notice requirements:</strong> Arizona requires 45-day advance written notice for non-renewals (60 days in some circumstances). DIFI can investigate complaints about inadequate notice but has limited authority to block individual non-renewals based on risk assessment.</li>
+      <li><strong>Rate regulation:</strong> Arizona uses a "file and use" system for most lines. Carriers file rates with DIFI and can use them immediately. DIFI reviews filings for reasonableness but does not require prior approval. This limits DIFI's ability to slow rate increases.</li>
+      <li><strong>Surplus lines disclosure:</strong> Arizona requires surplus lines agents to inform policyholders that surplus lines carriers are not covered by the Arizona Insurance Guaranty Fund — meaning if the carrier becomes insolvent, your claims may not be paid. This disclosure is required by law but not always prominent in the transaction.</li>
+      <li><strong>Wildfire mitigation — no mandate yet:</strong> As of Q1 2026, Arizona has not enacted legislation mandating carrier discounts for wildfire mitigation or IBHS FORTIFIED certification equivalent to Alabama's or Louisiana's laws. DIFI has encouraged voluntary carrier adoption of discount programs but has not required them.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>IBHS FORTIFIED — no Arizona mandate:</strong> Arizona does not require carriers to offer FORTIFIED certification discounts. Some carriers writing in Arizona WUI areas voluntarily offer credits for FORTIFIED Roof or higher, but this is not universal. Ask your specific carrier before investing in certification.</p>
+    <p><strong>Defensible space — primary mitigation tool:</strong> In Arizona WUI areas, defensible space (clearing vegetation within 30 to 100 feet of the home, per Arizona State Forestry Division guidelines) is the most widely recognized and carrier-friendly mitigation measure. Several carriers require proof of defensible space compliance before writing or renewing WUI properties. An Arizona State Forestry Division inspection documents defensible space condition and is free through your local fire district or forestry office.</p>
+    <p><strong>Home hardening for wildfire:</strong> Class A fire-rated roofing, enclosed eaves and vents, ember-resistant vent covers, and noncombustible exterior materials reduce ignition risk. While Arizona does not mandate discounts for these features, documenting them can help you negotiate with carriers that have discretion in WUI underwriting decisions.</p>
+    <p><strong>FEMA BRIC grants:</strong> FEMA's Building Resilient Infrastructure and Communities program funds community and household mitigation. Arizona Emergency Management administers these grants. Demand typically exceeds funding.</p>
+    <p><strong>Community Wildfire Protection Plans (CWPPs):</strong> Many Arizona WUI communities have adopted CWPPs — locally developed plans for reducing wildfire risk at the neighborhood level. Homes in communities with active CWPPs can sometimes access better carrier terms than equivalent homes in communities without such plans. Check with your local fire district.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>DIFI complaint data and Arizona press reporting for 2022 through early 2026 show these patterns:</p>
+    <ul>
+      <li><strong>Non-renewals in Prescott and Payson areas</strong> — homeowners in Yavapai County reporting non-renewals from admitted carriers citing wildfire score thresholds, often without explanation of what the score was or how the carrier determined it. Under California law (SB 1060), carriers must disclose wildfire scores on request; Arizona has no equivalent requirement.</li>
+      <li><strong>Surplus lines sticker shock</strong> — homeowners who lose admitted coverage and turn to a surplus lines broker finding premiums two to four times their prior admitted-market rate, with lower coverage limits and no guaranty fund protection.</li>
+      <li><strong>Flash flood claims in the Phoenix metro</strong> — monsoon season flash flood claims frequently denied because homeowners did not carry separate flood coverage and assumed their homeowners policy covered "water damage." Standard homeowners policies cover sudden water damage from plumbing failures but not flooding from external sources.</li>
+      <li><strong>Wildfire score opacity</strong> — carriers declining new applications or issuing non-renewals based on Verisk FireLine or CoreLogic scores without telling homeowners what the score is or allowing any appeal. Arizona has no disclosure requirement, so homeowners often have no recourse short of filing a DIFI complaint.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>Get your defensible space inspected before your next renewal.</strong> In Arizona WUI areas, demonstrating maintained defensible space (30 to 100 feet of vegetation clearance per Arizona State Forestry Division standards) is the most effective thing you can do to maintain admitted-market insurability. Contact your local fire district for a free inspection. Get it in writing. Bring that documentation to your next renewal conversation with your agent.</li>
+      <li><strong>Ask your agent to identify what wildfire score your property has.</strong> While Arizona does not require score disclosure, some agents can access Verisk FireLine or CoreLogic scores for your property and tell you where you stand. Knowing your score tells you whether you're at the margin for carrier eligibility and whether mitigation investments would change your score enough to matter.</li>
+      <li><strong>If you're shopping for coverage after a non-renewal, understand the surplus lines difference.</strong> Before signing with a surplus lines carrier, ask your agent explicitly: Is this carrier listed on the Arizona non-admitted surplus lines approved list? What is their AM Best rating? Are they covered by the Arizona Insurance Guaranty Fund if they become insolvent (the answer will be no for surplus lines carriers — confirm you understand this before signing).</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>Arizona Department of Insurance and Financial Institutions (DIFI). Market data, complaint statistics, and residual-market/FAIR Plan status. 2022 to 2026. Accessed June 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). Arizona market data, 2024. Accessed May 2026.</li>
+      <li>Arizona State Forestry Division. Defensible space guidelines. Accessed May 2026.</li>
+      <li>NOAA and USGS. Arizona wildfire and flash flood hazard data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: June 2026.</em></p>
+  </Fragment>
+
+</StatePage>

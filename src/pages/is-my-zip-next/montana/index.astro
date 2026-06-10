@@ -1,0 +1,178 @@
+---
+import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.montana;
+---
+<StatePage state="Montana" slug="montana" lastUpdated="June 2026" status="published" severity="high">
+
+  <Fragment slot="tldr">
+    <div style="background: var(--surface); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 0 0 2rem; border-radius: 4px;">
+      <p style="margin: 0; color: var(--text); line-height: 1.6;"><strong>What you need to know:</strong> Montana's insurance market is under pressure from wildfire risk, especially in WUI communities (Missoula, Bozeman, Whitefish, Hamilton). Carrier options in Montana were already limited before the current market stress. If you're non-renewed in a wildfire-exposed area, private options are scarce — get a wildfire mitigation inspection immediately to improve your standing. Montana FAIR Plan is available but has limitations. Act fast; options narrow quickly in rural markets.</p>
+    </div>
+  </Fragment>
+
+  <Fragment slot="summary">
+    <p>As of Q2 2026, Montana's homeowners insurance market faces growing stress from wildfire risk across a state where admitted carrier options were already thin before the current market disruption. Montana consistently ranks among the top states nationally in annual acres burned relative to total land area, and its WUI (wildland-urban interface) communities — from Missoula and Bozeman to Whitefish and Hamilton — are growing faster than the state's insurance market can comfortably accommodate. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified Montana as among the states with rising non-renewal rates in wildfire-exposed counties. Montana's small population and rural geography mean that even modest carrier exits have outsized effects on homeowner options. Statewide homeowners insurance premiums have increased roughly 25 to 50 percent above 2020 levels in WUI-adjacent areas, and the admitted carrier roster for Montana WUI properties has contracted noticeably since 2020. By the numbers: Montana's average annual homeowners premium rose about 18 percent in 2025 to roughly $2,399, and is projected to rise another 1.6 percent in 2026, to about $2,437. Nearly a third of Montana properties — 29 percent, the highest share of any state — carry high wildfire risk.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>Montana's non-renewal stress is concentrated in WUI areas around Missoula, Bozeman, Whitefish, Hamilton, and rural Ravalli, Gallatin, Flathead, and Missoula counties. The rapid growth of Bozeman and the broader Gallatin Valley has placed more insured structures in grassland and forest-adjacent WUI terrain.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2017</td>
+          <td>Record fire season — western Montana</td>
+          <td>Over 1.3 million acres burned statewide; communities near Missoula and the Bitterroot Valley under evacuation orders; significant WUI damage</td>
+        </tr>
+        <tr>
+          <td>2020–2022</td>
+          <td>Multiple large fire seasons — statewide</td>
+          <td>Repeated 500,000+ acre seasons; carriers began elevating WUI underwriting scrutiny</td>
+        </tr>
+        <tr>
+          <td>2021–2024</td>
+          <td>Admitted carrier tightening in WUI areas</td>
+          <td>Multiple admitted carriers restricted new business or issued non-renewals in Missoula, Ravalli, Gallatin, and Flathead county WUI ZIP codes</td>
+        </tr>
+        <tr>
+          <td>2022–2024</td>
+          <td>Bozeman and Gallatin Valley growth pressures</td>
+          <td>Rapid new construction in WUI-adjacent terrain; insurability questions emerging for new developments in fire-prone grassland corridors east and south of Bozeman</td>
+        </tr>
+        <tr>
+          <td>Q1 2026</td>
+          <td>Market thinning ongoing</td>
+          <td>Montana Commissioner of Securities and Insurance tracking elevated complaint rates in western Montana WUI counties; statewide admitted carrier roster for WUI properties contracted</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Montana Commissioner of Securities and Insurance (CSI) data shows non-renewal and premium increase complaints concentrated in Missoula, Ravalli, Gallatin, and Flathead counties. Rural Bitterroot Valley communities report some of the thinnest admitted-market options in the state.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p>Montana's admitted carrier market was not large before the current disruption. The state's population and premium volume are insufficient to attract many national carriers' active attention, and the carriers that remain tend to apply conservative WUI underwriting thresholds. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — identified Montana as among the states where thin carrier markets amplify the impact of individual carrier exits, leaving homeowners with few alternatives when a single carrier changes its underwriting approach.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>Montana does not have a FAIR Plan equivalent with broad coverage comparable to California or Florida. The residual market options are limited.</p>
+    <p><strong>Montana FAIR Plan:</strong> Montana maintains a basic FAIR Plan that provides fire and allied-lines coverage for properties that cannot obtain admitted market coverage. Coverage is narrow — fire, lightning, and some allied perils. No liability coverage in the basic form. Coverage limits may be insufficient for higher-value properties in Bozeman, Whitefish, and other areas where home values have risen significantly since 2018.</p>
+    <p><strong>Surplus lines as the primary alternative:</strong> Many Montana WUI homeowners who lose admitted coverage end up with surplus lines carriers. Surplus lines carriers are not covered by the Montana Insurance Guaranty Association for property claims — if the carrier becomes insolvent, your claims may go unpaid. Premiums for WUI properties in Montana's surplus lines market typically run two to five times prior admitted-market rates.</p>
+    <p><strong>How to get the FAIR Plan:</strong> Through any licensed Montana property insurance agent, after demonstrating that admitted coverage is unavailable.</p>
+    <p><strong>High-value home gap:</strong> Bozeman and the Gallatin Valley have seen dramatic home value appreciation. Homes valued at $700,000 to $1.5 million or more may find that the Montana FAIR Plan's coverage limits are insufficient for their replacement cost. This gap is particularly acute for newer construction in subdivisions that were developed during the 2018–2023 growth surge.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for MT</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Very high — WUI areas</td>
+          <td>Montana's forests and grasslands carry some of the highest wildfire potential in the continental United States. The 2017 fire season demonstrated how quickly fires can threaten WUI communities in the Bitterroot, Missoula, and Flathead valleys. Drought conditions, fueled by ongoing western drought cycles, keep fire risk elevated.</td>
+        </tr>
+        <tr>
+          <td><strong>Smoke / air quality</strong></td>
+          <td>High — statewide in fire season</td>
+          <td>Montana experiences extended periods of poor air quality from both in-state and regional fires. As with Idaho, standard homeowners policies typically cover smoke damage only from a proximate fire, not from regional smoke events.</td>
+        </tr>
+        <tr>
+          <td><strong>Flooding / snowmelt</strong></td>
+          <td>Moderate — river valleys</td>
+          <td>Spring snowmelt flooding is significant in Montana's river corridors (Clark Fork, Yellowstone, Missouri, Flathead). Standard homeowners policies do not cover flood. NFIP enrollment is relevant in valley communities.</td>
+        </tr>
+        <tr>
+          <td><strong>Severe winter weather</strong></td>
+          <td>High — statewide</td>
+          <td>Montana's winters produce extreme cold, heavy snow loads, and ice events that cause roof damage, ice dams, and frozen pipe failures. These perils are generally covered by standard homeowners policies (unlike flood), but winter storm claims frequency affects carrier profitability statewide.</td>
+        </tr>
+        <tr>
+          <td><strong>Hail</strong></td>
+          <td>Moderate — eastern Montana</td>
+          <td>Eastern Montana and the high plains face spring and summer hail events. Less severe than the Texas or Colorado hail belt, but a source of claims frequency for properties east of the Rockies.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>Montana Commissioner of Securities and Insurance (CSI) is a constitutional officer — the commissioner is elected statewide, not appointed by the governor, giving the office significant independence but also meaning priorities can shift with elections. As of Q1 2026, Commissioner Troy Downing has focused on consumer protection and market monitoring.</p>
+    <ul>
+      <li><strong>Non-renewal notice requirements:</strong> Montana requires 45-day advance written notice for non-renewals. CSI can investigate complaints but has limited authority to block individual non-renewals based on risk assessment.</li>
+      <li><strong>Rate regulation:</strong> Montana uses a file-and-use framework. Carriers file rates and can use them without prior CSI approval. CSI reviews for reasonableness.</li>
+      <li><strong>No FORTIFIED mandate:</strong> Montana has not enacted legislation requiring carrier discounts for IBHS FORTIFIED certification. Some carriers voluntarily offer credits, but this is not standard or required.</li>
+      <li><strong>CSI consumer assistance:</strong> Montana CSI's consumer protection bureau assists homeowners navigating non-renewal situations. The bureau publishes a company directory and complaint history tool.</li>
+      <li><strong>Legislative activity (2023–2024):</strong> Montana's legislature has considered but not yet passed legislation modeled on Louisiana's FORTIFIED discount mandate or California's defensible space disclosure requirements. The Montana Insurance Commissioner has supported such measures but legislative passage remained pending as of Q1 2026.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>IBHS FORTIFIED — no Montana mandate:</strong> Montana has no statewide requirement that carriers offer discounts for FORTIFIED certification. Some carriers writing WUI properties in Montana voluntarily offer credits for FORTIFIED Roof or higher levels, but this is not uniform. Ask your specific carrier before investing in certification.</p>
+    <p><strong>Montana DNRC (Department of Natural Resources and Conservation):</strong> The DNRC's Forestry Division provides wildfire risk assessments and defensible space guidance for Montana homeowners in WUI areas. Free assessments are available through DNRC regional offices or through the Firewise USA program administered by local fire districts. A written DNRC or Firewise assessment is the most recognized mitigation documentation for Montana carriers.</p>
+    <p><strong>Firewise USA communities:</strong> Several Montana communities participate in Firewise USA. Homes in designated Firewise communities can sometimes access better carrier options than equivalent homes in non-designated areas. Check with your local fire district or check the National Fire Protection Association's Firewise community map.</p>
+    <p><strong>Winter hardening:</strong> Montana's severe winters create roof load and ice dam risk. Class 4 impact-resistant roofing (also valued for hail resistance) and proper attic insulation to prevent ice dam formation are mitigation investments with dual wildfire and winter benefit. Some carriers offer modest credits for these features.</p>
+    <p><strong>FEMA BRIC grants:</strong> FEMA hazard mitigation grants are administered through Montana Disaster and Emergency Services (DES). Funding is competitive and availability varies by year.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>Montana CSI data and regional press reporting for 2020 through early 2026 show these patterns:</p>
+    <ul>
+      <li><strong>Thin-market non-renewals with no alternatives</strong> — homeowners in the Bitterroot Valley and Missoula area WUI zones reporting non-renewals from their primary carrier with no admitted-market replacement available at any price in their ZIP code. Montana's small admitted carrier roster means a single carrier's underwriting change can effectively end admitted-market availability for an entire ZIP code.</li>
+      <li><strong>Bozeman high-value coverage gaps</strong> — homeowners in newer Bozeman subdivisions discovering their FAIR Plan coverage limits are significantly below their home's replacement cost, and that surplus lines carriers are the only alternative but at two to three times their prior admitted-market premium.</li>
+      <li><strong>Smoke damage claim disputes</strong> — similar to Idaho, Montana homeowners filing claims for smoke-related interior and HVAC damage after regional fire seasons, only to find carriers denying on grounds that proximate fire is required for smoke coverage.</li>
+      <li><strong>Evacuation and temporary housing gaps</strong> — homeowners evacuated during WUI fire events discovering their loss of use or additional living expenses coverage was insufficient for Montana's limited short-term rental market in rural areas, where the cost of displacement significantly exceeded policy limits.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>Get a Montana DNRC or Firewise assessment before your next renewal.</strong> In Montana's thinning WUI market, written documentation of defensible space and home hardening features is the most effective tool for maintaining admitted-market eligibility. Contact your regional Montana DNRC Forestry office or local fire district for a free assessment. Bring the written documentation to your renewal conversation with your agent. In a market with few carriers, this documentation may be the difference between renewal and a non-renewal notice.</li>
+      <li><strong>Verify your coverage limit against current rebuild costs — especially in Bozeman and the Flathead Valley.</strong> Montana home values and construction costs have risen sharply since 2018. If your policy's coverage limit was set more than two or three years ago, it may be substantially below what it would cost to rebuild today. Contact a licensed contractor or public adjuster for an independent rebuild cost estimate. If there is a gap, ask your carrier about extended replacement cost or guaranteed replacement cost endorsements before your next renewal.</li>
+      <li><strong>If you're in a WUI area and haven't checked your carrier's financial stability, do it now.</strong> Montana's thin admitted carrier market includes some smaller regional carriers. Check your carrier's AM Best rating (aim for A- or better) through your agent or directly through AM Best. If you've been placed with a surplus lines carrier after losing admitted coverage, understand explicitly that you have no Montana Insurance Guaranty Association protection — the carrier's own financial strength is your only security against insolvency.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>Montana Commissioner of Securities and Insurance (CSI). Market data and complaint statistics, 2020 to 2026. Accessed June 2026.</li>
+      <li>Insurify and Consumer Federation of America. Montana premium-trend and wildfire-risk analysis, 2025–2026. Accessed June 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). Montana market data, 2024. Accessed May 2026.</li>
+      <li>Montana Department of Natural Resources and Conservation (DNRC). Forestry Division wildfire risk resources. Accessed May 2026.</li>
+      <li>NOAA and USGS. Montana wildfire and flood hazard data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: June 2026.</em></p>
+  </Fragment>
+
+</StatePage>

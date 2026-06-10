@@ -1,0 +1,36 @@
+---
+import Pillar from '@layouts/Pillar.astro';
+
+const states = [
+  { name: 'Florida', slug: 'florida', hook: 'Citizens solvency, hurricane risk, AOB reform fallout.' },
+  { name: 'California', slug: 'california', hook: 'State Farm drawdown, FAIR Plan stress, wildfire scores.' },
+  { name: 'Louisiana', slug: 'louisiana', hook: 'Louisiana Citizens, post-Ida carrier exits, depopulation.' },
+  { name: 'Texas', slug: 'texas', hook: 'Hail belt non-renewals, freeze-event claims, TWIA coverage.' },
+  { name: 'Arizona', slug: 'arizona', hook: 'Wildland-urban interface growth, brush score thresholds.' },
+  { name: 'Colorado', slug: 'colorado', hook: 'Marshall Fire aftermath, hail deductibles, mountain WUI risk.' },
+  { name: 'New Mexico', slug: 'new-mexico', hook: 'Hermits Peak / Calf Canyon settlement, carrier appetite.' },
+  { name: 'Idaho', slug: 'idaho', hook: 'Smoke damage exclusions, rapid-growth WUI areas.' },
+  { name: 'Montana', slug: 'montana', hook: 'Large-loss wildfire seasons, thin carrier roster.' },
+];
+---
+<Pillar
+  title="Is My ZIP Next"
+  description="State-by-state homeowners insurance risk explainers for high-risk US states."
+  intro="You haven't been non-renewed yet, but you can see the trend in your state. Pick your state below for a structured rundown — carriers leaving, residual market, top hazards, regulator response, and what to do this month."
+>
+  <h2>State pages</h2>
+  <ul class="state-list">
+    {states.map((s) => (
+      <li>
+        <a href={`/is-my-zip-next/${s.slug}/`}><strong>{s.name}</strong></a> — {s.hook}
+      </li>
+    ))}
+  </ul>
+
+  <h2>Cross-state articles</h2>
+  <ul>
+    <li><a href="/is-my-zip-next/state-farms-california-policy-drawdown-2023-2028-in-one-chart/"><strong>State Farm's California policy drawdown 2023 to 2028 in one chart</strong></a></li>
+    <li><a href="/is-my-zip-next/wildfire-score-vs-verisk-score-vs-corelogic-which-does-my-insurer-use/"><strong>Wildfire score vs. Verisk score vs. CoreLogic — which does my insurer use?</strong></a></li>
+  </ul>
+
+</Pillar>

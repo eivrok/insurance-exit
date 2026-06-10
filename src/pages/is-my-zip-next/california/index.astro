@@ -1,0 +1,192 @@
+---
+import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.california;
+---
+<StatePage state="California" slug="california" lastUpdated="June 2026" status="published" severity="critical">
+
+  <Fragment slot="tldr">
+    <div style="background: var(--surface); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 0 0 2rem; border-radius: 4px;">
+      <p style="margin: 0; color: var(--text); line-height: 1.6;"><strong>What you need to know:</strong> Wildfire risk is driving California's insurance crisis. State Farm stopped writing new policies in 2023 and non-renewed 72,000 policyholders. The California FAIR Plan now covers about 668,600 homes as of the end of 2025 — up 44 percent in a year and well over double its 2019 level. Major carriers are pulling out of high-risk ZIP codes. If you're non-renewed, FAIR Plan is your only option; get a wildfire mitigation inspection to improve your eligibility and future coverage options.</p>
+    </div>
+  </Fragment>
+
+  <Fragment slot="summary">
+    <p>As of Q2 2026, California's homeowners insurance market is under severe stress in wildfire-exposed areas. State Farm General — the largest homeowners insurer in California — stopped writing new policies in May 2023 and issued non-renewals for approximately 72,000 policies in early 2024. Allstate, Farmers, and several other carriers have restricted or paused new business in high-risk ZIP codes. The California FAIR Plan, the state's insurer of last resort, grew to about 668,600 policies by the end of 2025 — up 44 percent in a year and well over double its 2019 enrollment. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified California as one of the highest-risk states for non-renewal rate increases driven by climate hazards. The January 2025 Los Angeles wildfires (Palisades and Eaton fires) burned over 40,000 acres and destroyed more than 12,000 structures, accelerating the market stress that was already building. Those fires cost the FAIR Plan roughly $4 billion in claims and triggered its first member-insurer assessment in over 30 years.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>California Department of Insurance (CDI) data shows a sharp escalation in non-renewals starting in 2019 and continuing through the present. The FIO January 2025 report covered 2018 to 2022 and found California among the states with the steepest increases in non-renewal rates in wildfire-exposed counties.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2018–2019</td>
+          <td>Camp Fire (Paradise), Woolsey Fire</td>
+          <td>Camp Fire: 85 deaths, ~$16B insured losses; triggered first wave of carrier non-renewals in WUI zones</td>
+        </tr>
+        <tr>
+          <td>2020–2021</td>
+          <td>North Complex, Dixie, Caldor fires — record acreage</td>
+          <td>Three consecutive record fire seasons; second wave of non-renewals in Sierra Nevada foothill counties</td>
+        </tr>
+        <tr>
+          <td>May 2023</td>
+          <td>State Farm General stops new homeowners policies</td>
+          <td>Largest CA homeowners carrier exits new business; cited reinsurance costs and regulatory constraints</td>
+        </tr>
+        <tr>
+          <td>Q1 2024</td>
+          <td>State Farm General issues ~72,000 non-renewals</td>
+          <td>Concentrated in wildfire-exposed ZIP codes; CDI attempted to delay but lacked legal authority to block</td>
+        </tr>
+        <tr>
+          <td>Late 2024</td>
+          <td>California FAIR Plan passes 400,000 policies</td>
+          <td>Roughly double its 2019 enrollment; exposure concentrated in Los Angeles, San Diego, and foothill counties</td>
+        </tr>
+        <tr>
+          <td>January 2025</td>
+          <td>Palisades and Eaton wildfires, Los Angeles area</td>
+          <td>Over 40,000 acres, 12,000+ structures destroyed; ~$4B in FAIR Plan claims</td>
+        </tr>
+        <tr>
+          <td>February 2025</td>
+          <td>CDI approves $1 billion FAIR Plan assessment</td>
+          <td>First assessment in over 30 years (Order 2025-1); insurers may recoup up to 50% from policyholders</td>
+        </tr>
+        <tr>
+          <td>End 2025</td>
+          <td>FAIR Plan policy count climbs to ~668,600</td>
+          <td>Up 44% from ~464,900 in fall 2024; total exposure up ~230%</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>CDI complaint data for 2022 through 2025 shows non-renewal notices and premium increases as the leading complaint categories in Los Angeles, San Diego, Ventura, Riverside, and foothill counties statewide.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p>Several surplus lines carriers (not licensed the standard California way) remain active in wildfire-exposed areas, but at premiums that can run three to ten times the prior admitted-market rate. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — noted California as one of the clearest examples of admitted-market withdrawal forcing homeowners into the residual market or surplus lines.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>The California FAIR Plan (Fair Access to Insurance Requirements) is the state-mandated insurer of last resort. It is not a state agency. It is a private pool funded by all admitted carriers doing business in California, with assessments passed through to policyholders.</p>
+    <p><strong>What the FAIR Plan covers:</strong> As of 2025, California expanded the FAIR Plan to include a Comprehensive policy that adds liability and additional living expenses to the basic fire coverage. Basic coverage: dwelling, other structures, personal property — fire, lightning, internal explosion only. Comprehensive coverage adds liability and loss of use, but requires a separate "wrap" policy (called a Difference in Conditions, or DIC, policy) for theft, water damage, and other standard perils.</p>
+    <p><strong>Policy limits:</strong> Maximum $3 million per structure as of the 2024 expansion. This is adequate for most homes; check whether your home's replacement cost exceeds this threshold.</p>
+    <p><strong>What is not covered:</strong> Earthquake (separate policy required), flood (NFIP or private), and all perils not included in the Basic or Comprehensive options.</p>
+    <p><strong>Assessment risk — now realized:</strong> The January 2025 Los Angeles fires cost the FAIR Plan roughly $4 billion in claims. In February 2025, CDI approved a $1 billion assessment on member insurers (Order 2025-1) — the FAIR Plan's first assessment in over 30 years. Insurers may recoup up to 50 percent of that from policyholders with CDI approval, so this "FAIR Plan tax" can reach California homeowners who do not hold FAIR Plan policies.</p>
+    <p><strong>Premium levels:</strong> FAIR Plan premiums in wildfire-exposed areas typically run 50 to 200 percent above pre-crisis admitted market rates. They are not cheap. They are the coverage of last resort, not a bargain. In 2026, CDI approved a 29.1 percent FAIR Plan rate increase taking effect in late 2026, weighted toward the highest-wildfire-risk properties.</p>
+    <p><strong>How to apply:</strong> Through any licensed California property insurance agent. You must have been declined by at least one admitted carrier or received a non-renewal before the FAIR Plan can write you. The Comprehensive policy requires a DIC endorsement from a surplus lines carrier to fill coverage gaps.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for CA</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Highest nationally</td>
+          <td>California has the highest aggregate wildfire insured-loss history of any state. Wildland-urban interface (WUI) areas — foothills, canyons, coastal chaparral — are the primary exposure zones. Verisk FireLine and CoreLogic scores are used by most carriers to underwrite or decline.</td>
+        </tr>
+        <tr>
+          <td><strong>Earthquake</strong></td>
+          <td>Very high</td>
+          <td>Standard homeowners policies do not cover earthquake. California Earthquake Authority (CEA) is the dominant earthquake insurer. In the San Francisco Bay Area and greater Los Angeles, earthquake risk is significant and often overlooked while fire dominates the news cycle.</td>
+        </tr>
+        <tr>
+          <td><strong>Flooding</strong></td>
+          <td>Moderate — localized</td>
+          <td>Flash flooding in burn scars (post-fire debris flow) is a serious secondary hazard after wildfires. Standard homeowners policies do not cover flood. NFIP enrollment in coastal and valley areas.</td>
+        </tr>
+        <tr>
+          <td><strong>Landslide / debris flow</strong></td>
+          <td>High in coastal and mountain areas</td>
+          <td>Post-fire debris flows are increasingly common in Southern California. Generally not covered by standard homeowners policies. Some surplus lines endorsements available.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>California Department of Insurance (CDI) Commissioner Ricardo Lara has pursued a multi-pronged response to the market crisis, though the regulatory framework — especially Proposition 103, passed in 1988 — constrains CDI's ability to approve rate increases quickly.</p>
+    <ul>
+      <li><strong>Proposition 103:</strong> Requires CDI to approve rate increases, prohibits using forward-looking catastrophe models in rate-setting (insurers may only use historical loss data). This constraint has been a central insurer complaint and a primary reason cited for carrier exits. CDI began a regulatory reform process in 2023 to allow some forward-looking modeling in exchange for carrier commitments to write in distressed areas.</li>
+      <li><strong>Sustainable Insurance Strategy (2023–2024):</strong> Commissioner Lara proposed allowing carriers to use catastrophe models and reinsurance costs in rate filings in exchange for agreeing to write a proportional share of high-risk policies. As of Q1 2026, the regulatory implementation of this strategy is ongoing.</li>
+      <li><strong>State Farm emergency rate increase (2025):</strong> After the January 2025 LA fires, CDI approved a 17 percent interim homeowners rate increase for State Farm General (reduced from the 21.8 percent requested), effective June 2025, with State Farm adding a $400 million surplus note from its parent to shore up solvency. A three-party settlement confirmed the 17 percent in early 2026.</li>
+      <li><strong>FAIR Plan Comprehensive policy (2024):</strong> CDI required the FAIR Plan to add liability coverage and additional living expenses to its product — previously FAIR Plan was fire-only, leaving homeowners with a major coverage gap.</li>
+      <li><strong>Moratorium provisions:</strong> California law (Insurance Code Section 675.1) prohibits non-renewals in ZIP codes under a declared state of emergency for one year after the emergency ends. The January 2025 LA fires triggered these moratoriums in affected areas.</li>
+    </ul>
+    <p>The U.S. Senate Budget Committee, December 2024 staff report noted that California's regulatory constraints — particularly Prop 103's bar on forward-looking models — are directly contributing to the admitted market withdrawal, and that the Sustainable Insurance Strategy may take several years to show market effects.</p>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>IBHS FORTIFIED:</strong> No California state mandate for FORTIFIED certification, unlike Alabama or Louisiana. Some carriers offer premium discounts for FORTIFIED Roof or higher levels, but there is no statewide requirement. Ask your specific carrier about FORTIFIED credits before investing in certification.</p>
+    <p><strong>Wildfire home hardening (AB 38 / Defensible Space):</strong> California law (AB 38, 2019) requires sellers in high-risk fire areas to disclose compliance with defensible space laws. Defensible space (clearing vegetation within 100 feet of the home per CAL FIRE standards) is a baseline requirement in State Responsibility Areas and can affect insurability — some carriers require proof of compliance before writing a new policy.</p>
+    <p><strong>Insurance discounts for hardening:</strong> California Insurance Code Section 10103.7 (effective 2023 and strengthened in 2024) requires carriers to offer premium discounts for specific wildfire mitigation improvements, including: Class A fire-rated roofing, enclosed eaves and vents, tempered glass windows, ember-resistant decking, and 0–5 foot noncombustible zones around the home. Discounts vary by carrier and are not always large, but documentation of these features matters for both insurability and pricing.</p>
+    <p><strong>CAL FIRE grants:</strong> CAL FIRE administers the California Wildfire and Forest Resilience Action Plan, which includes some funding for homeowner defensible space work through local resource conservation districts. Availability is limited and varies by county.</p>
+    <p><strong>FEMA Flood Mitigation:</strong> For homes in flood-risk areas or post-fire burn scar zones, FEMA's FMA grant program can fund flood mitigation. Relevant for coastal and canyon areas and properties in debris-flow hazard zones.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>CDI complaint data and California press reporting for 2022 through early 2026 show these consistent patterns:</p>
+    <ul>
+      <li><strong>Non-renewal without alternatives</strong> — homeowners in ZIP codes like Pacific Palisades, Altadena, and foothill communities receiving State Farm and other carrier non-renewals with no comparable admitted-market replacement available at any price.</li>
+      <li><strong>FAIR Plan sticker shock</strong> — premiums for FAIR Plan Comprehensive policies in high-risk areas running $6,000 to $15,000 per year, with a DIC wrap adding another $2,000 to $5,000. Total insurance cost in some WUI areas exceeding $20,000 per year on a $1 million home.</li>
+      <li><strong>Mortgage complications</strong> — lenders requiring continuous coverage proof; some homeowners in the State Farm non-renewal wave describing a 30–60 day scramble to find replacement coverage before their lender force-placed coverage (which is typically more expensive and covers only the lender's interest, not the homeowner's).</li>
+      <li><strong>January 2025 LA fire claims delays</strong> — homeowners in the Palisades and Eaton fire areas reporting CDI-documented delays in claims handling, including disputes over replacement cost vs. actual cash value and difficulty finding licensed contractors for rebuilding in a compressed post-disaster market.</li>
+    </ul>
+    <p>CDI's 2024 annual report documented a 40 percent increase in homeowners insurance complaints versus 2021 levels, with non-renewal and premium increase complaints accounting for the largest share of that growth.</p>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>Check your wildfire score before doing anything else.</strong> First Street Foundation's risk scores are publicly accessible at riskfactor.com at no charge. Verisk FireLine scores (used by most major carriers) are not public, but a licensed agent can often tell you what score your property has in their system. Your score determines whether admitted carriers will quote you and at what price. Knowing it before you call agents saves time.</li>
+      <li><strong>Document your home's wildfire mitigation features before calling the FAIR Plan or surplus lines carriers.</strong> California now requires carriers to give premium discounts for Class A roofing, enclosed eaves, tempered glass, and noncombustible zones. Take photographs of these features now. Your agent will need this documentation to apply credits. If you haven't made these improvements, get a CAL FIRE defensible space inspection (free through your county fire department) as a starting point.</li>
+      <li><strong>If you're in a post-fire moratorium zone, understand your timeline.</strong> California's non-renewal moratorium protects you for one year after a declared emergency ends — not indefinitely. When the moratorium lifts, carriers can resume non-renewals. Use that window to document mitigation features, apply for any available hardening grants, and begin shopping replacement coverage before the protection expires.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>California Department of Insurance (CDI). Market data, complaint statistics, Order 2025-1 (FAIR Plan assessment), and State Farm interim rate filings, 2022 to 2026. Accessed June 2026.</li>
+      <li>California FAIR Plan Association. Policy count, exposure, and rate-filing data, 2024–2026. Accessed June 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). California market data, 2024. Accessed May 2026.</li>
+      <li>CAL FIRE. Defensible space and home hardening guidance. Accessed May 2026.</li>
+      <li>NOAA and USGS. California wildfire and post-fire debris flow hazard data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: June 2026.</em></p>
+  </Fragment>
+
+</StatePage>

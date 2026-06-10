@@ -1,0 +1,19 @@
+dist/
+node_modules/
+.astro/
+.claude/
+.env
+.env.*
+!.env.example
+.claude/settings.local.json
+
+# OS / IDE b8b2b87f-6b82-4934-a6f4-66be28281e0e
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+.vscode/
+.vscode-settings
+.idea/
+*.swp
+*.swo

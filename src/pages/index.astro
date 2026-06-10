@@ -1,0 +1,137 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+import Icons from '@components/Icons.astro';
+const title = "InsuranceExit.org — Homeowners Insurance Non-Renewal Guide";
+const description = "Straight information for US homeowners facing insurance non-renewal due to climate risk. No affiliate links, no quotes, no spin.";
+const canonicalURL = "https://insuranceexit.org/";
+
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "InsuranceExit.org",
+  "url": "https://insuranceexit.org/",
+  "logo": "https://insuranceexit.org/favicon.svg",
+  "description": "Independent, non-commercial information for US homeowners facing insurance non-renewal due to climate risk. No affiliate links, no quotes, no spin.",
+});
+
+const websiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "InsuranceExit.org",
+  "url": "https://insuranceexit.org/",
+});
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="InsuranceExit.org" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/global.css" />
+  <!-- Structured data -->
+  <script type="application/ld+json" set:html={organizationSchema} />
+  <script type="application/ld+json" set:html={websiteSchema} />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+          <path d="M3 10l9-9 9 9v11a2 2 0 01-2 2H5a2 2 0 01-2-2V10z" />
+          <path d="M9 21v-7h6v7" />
+        </svg>
+        InsuranceExit.org
+      </a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <Disclaimer />
+
+    <section class="home-hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading">
+        Your homeowners insurance was non-renewed.<br />What now?
+      </h1>
+      <p>
+        Straight information for US homeowners in high-risk states — no affiliate links, no quotes, no spin. Florida, California, Louisiana, Texas, and beyond.
+      </p>
+      <div class="home-cta">
+        <a href="/non-renewed/" class="cta-primary">Start here: I just got a non-renewal notice</a>
+        <a href="/is-my-zip-next/" class="cta-secondary">Check risk by state &rarr;</a>
+      </div>
+    </section>
+
+    <section class="triage" aria-labelledby="triage-heading">
+      <h2 id="triage-heading">The first 72 hours</h2>
+      <ol>
+        <li><strong>Find your coverage end date.</strong> It's on the non-renewal letter. That date is your real deadline — not the date the letter was mailed.</li>
+        <li><strong>Call your mortgage servicer.</strong> A lapse can trigger force-placed insurance — more expensive, worse coverage. Tell them you're actively working on it.</li>
+        <li><strong>Start shopping for replacement coverage now.</strong> Quotes take time in a stressed market. Don't wait until the deadline is close.</li>
+        <li><strong>Check your state's last-resort option.</strong> A FAIR Plan or Citizens program, depending on your state. <a href="/residual-markets/">See residual markets &rarr;</a></li>
+        <li><strong>Do not let coverage lapse — not even one day.</strong> A gap can raise future premiums and breach your mortgage terms.</li>
+      </ol>
+      <p class="triage-note">A fuller, dated walk-through is in <a href="/non-renewed/your-30-60-90-day-decision-tree/">your 30-60-90 day decision tree</a>.</p>
+    </section>
+
+    <section class="pillar-grid" aria-label="Site sections">
+      <a href="/non-renewed/" class="pillar-card">
+        <div class="pillar-card-icon"><Icons name="non-renewed" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>I Just Got Non-Renewed</h2>
+          <p>Decision trees and checklists for the first 72 hours. What the letter actually means. What to do before your policy expires.</p>
+        </div>
+      </a>
+      <a href="/is-my-zip-next/" class="pillar-card">
+        <div class="pillar-card-icon"><Icons name="zip-next" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>Is My ZIP Next</h2>
+          <p>State-by-state and ZIP-level risk explainers. Who's already leaving and where the market is heading.</p>
+        </div>
+      </a>
+      <a href="/fortifying-vs-selling/" class="pillar-card">
+        <div class="pillar-card-icon"><Icons name="fortifying" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>Fortifying vs. Selling</h2>
+          <p>Honest cost-benefit analysis. IBHS FORTIFIED standards, retrofit ROI, and the math on when selling makes more sense.</p>
+        </div>
+      </a>
+      <a href="/residual-markets/" class="pillar-card">
+        <div class="pillar-card-icon"><Icons name="residual" size={36} /></div>
+        <div class="pillar-card-text">
+          <h2>Residual Markets</h2>
+          <p>FAIR Plans, Citizens, and last-resort options explained state by state — what they cover, what they don't.</p>
+        </div>
+      </a>
+    </section>
+
+    <Disclaimer />
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/glossary/">Glossary</a></p>
+  </footer>
+</body>
+</html>

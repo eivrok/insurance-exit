@@ -1,0 +1,174 @@
+---
+import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.colorado;
+---
+<StatePage state="Colorado" slug="colorado" lastUpdated="June 2026" status="published" severity="high">
+
+  <Fragment slot="tldr">
+    <div style="background: var(--surface); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 0 0 2rem; border-radius: 4px;">
+      <p style="margin: 0; color: var(--text); line-height: 1.6;"><strong>What you need to know:</strong> Colorado faces two insurance crises: wildfire risk in mountain and foothill communities (especially since the 2021 Marshall Fire), and hail damage in Front Range metro areas. If you're non-renewed and in a WUI zone, options are limited — get a wildfire mitigation inspection immediately. Hail risk on the Front Range is also elevating premiums statewide. Colorado FAIR Plan is the backstop if private coverage isn't available.</p>
+    </div>
+  </Fragment>
+
+  <Fragment slot="summary">
+    <p>As of Q2 2026, Colorado's homeowners insurance market is under significant stress driven by two distinct hazard types: wildfire in the mountain and foothill WUI (wildland-urban interface) zones, and hail in the Front Range metropolitan areas. The December 2021 Marshall Fire — the most destructive wildfire in Colorado history — destroyed over 1,000 homes in Boulder County's suburban communities of Superior and Louisville and generated over $2 billion in insured losses. The Marshall Fire's suburban setting changed how carriers think about Colorado: it was not a remote mountain community but dense suburban neighborhoods adjacent to grasslands. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified Colorado as one of the states with accelerating non-renewal rates in fire-exposed counties. Hail loss frequency in Denver, Aurora, and the Front Range corridor also drives premium increases across the broader market, not just in WUI areas.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>Colorado's non-renewal and premium increase stress concentrates in two corridors: the mountain and foothill WUI zone (Jefferson, Boulder, Clear Creek, Park, Teller, and El Paso counties) and the Front Range hail belt (Denver metro, including Douglas, Arapahoe, and Adams counties).</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>June 2013</td>
+          <td>Black Forest Fire — El Paso County</td>
+          <td>486 homes destroyed near Colorado Springs; raised WUI carrier concerns</td>
+        </tr>
+        <tr>
+          <td>August 2020</td>
+          <td>Cameron Peak, East Troublesome fires — Larimer and Grand counties</td>
+          <td>Two of largest wildfires in CO history in one season; significant WUI exposure; accelerated carrier tightening</td>
+        </tr>
+        <tr>
+          <td>December 2021</td>
+          <td>Marshall Fire — Boulder County (Superior and Louisville)</td>
+          <td>Over 1,000 homes destroyed; $2B+ insured losses; changed carrier perception of suburban grassland wildfire risk</td>
+        </tr>
+        <tr>
+          <td>2022–2024</td>
+          <td>WUI non-renewals and market tightening</td>
+          <td>Multiple admitted carriers restricted or exited WUI ZIP codes in Jefferson, Boulder, Clear Creek, Park, and Teller counties</td>
+        </tr>
+        <tr>
+          <td>2022–2024 (hail)</td>
+          <td>Multiple severe hail events — Front Range</td>
+          <td>Multiple $500M+ hail events in Denver metro; carriers applying wind/hail deductibles statewide</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Colorado Division of Insurance data shows non-renewal complaints and premium increase complaints as the top categories from 2022 through 2025. Boulder County has the highest per-capita non-renewal complaint rate in the state, reflecting Marshall Fire aftermath. Douglas and Arapahoe counties show elevated hail-related claims dispute complaints.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p>Colorado has not experienced the mass carrier insolvencies seen in Florida and Louisiana, but the WUI withdrawal pattern closely resembles California's early-stage market deterioration. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — used the Marshall Fire as a case study in how climate-driven wildfires are moving from remote rural areas into suburban and exurban communities previously considered low-risk.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>Colorado created a FAIR Plan — its first insurer of last resort — under HB23-1288 (signed May 2023), and it became operational in 2024. Uptake has been very low so far: only about 140 policies across 34 counties as of December 2025, despite the state's wildfire exposure.</p>
+    <p><strong>Colorado FAIR Plan:</strong> A basic plan providing fire and allied-lines coverage for properties that cannot obtain admitted-market coverage. Coverage is narrower than a standard homeowners policy — primarily fire, lightning, and some allied perils, with no liability in the basic form. Two limits matter: the maximum dwelling coverage is $750,000 (excluding many higher-value WUI homes), and policies pay actual cash value, not replacement cost — so a $300,000 home might pay out only $150,000 to $180,000 after depreciation. Treat it as a last resort, not a substitute for a full policy.</p>
+    <p><strong>Surplus lines as the primary alternative:</strong> As in Arizona, many Colorado WUI homeowners who lose admitted coverage turn to surplus lines carriers. Surplus lines carriers are not covered by the Colorado Life and Health Insurance Protection Association — there is no guaranty fund coverage for surplus lines property carriers. If your surplus lines carrier becomes insolvent, your claims may go unpaid. Premiums for surplus lines wildfire coverage in Colorado WUI areas are running two to five times prior admitted-market rates.</p>
+    <p><strong>How to get the FAIR Plan:</strong> Through any licensed Colorado property insurance agent, after demonstrating that admitted coverage is unavailable.</p>
+    <p><strong>Coverage gap reality:</strong> A Colorado FAIR Plan policy plus a surplus lines policy for liability and other perils approximates a standard homeowners policy — but at higher combined cost and with less consumer protection.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for CO</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Very high — WUI areas</td>
+          <td>Mountain and foothill WUI zones from Fort Collins through Denver's western suburbs to Colorado Springs face significant wildfire exposure. The Marshall Fire (2021) demonstrated that suburban grassland communities are not immune — it was driven by wind through grass and shrub, not forest. Carriers now treat all grassland-adjacent suburban areas with elevated scrutiny.</td>
+        </tr>
+        <tr>
+          <td><strong>Hail</strong></td>
+          <td>Very high — Front Range</td>
+          <td>Colorado ranks second or third nationally in annual hail insured losses. The Denver-Aurora metropolitan area and the I-25 corridor are among the highest-frequency hail zones in the country. Wind/hail deductibles of 1 to 2 percent of insured value are now standard in most Colorado homeowners policies.</td>
+        </tr>
+        <tr>
+          <td><strong>Flooding</strong></td>
+          <td>Moderate — river valleys and burn scars</td>
+          <td>Colorado river valleys (South Platte, Arkansas, Colorado River tributaries) face flood risk. Post-fire debris flows are a significant secondary hazard in burned WUI areas. Standard homeowners policies do not cover flood.</td>
+        </tr>
+        <tr>
+          <td><strong>Winter weather / avalanche</strong></td>
+          <td>Low-moderate in mountain communities</td>
+          <td>Avalanche risk in mountain communities above snowline affects insurability for some properties. Most Front Range and foothill homes do not face direct avalanche exposure but do face ice-dam and freeze-related claims during harsh winters.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>Colorado Division of Insurance Commissioner Michael Conway (as of Q2 2026) has been among the most vocal state regulators nationally in raising the alarm about the insurance market crisis as a systemic financial stability issue rather than a consumer protection matter.</p>
+    <ul>
+      <li><strong>Non-renewal notice requirements:</strong> Colorado requires 45-day advance written notice for non-renewals. The Division can investigate complaints but has limited authority to block individual non-renewals based on risk assessment.</li>
+      <li><strong>Rate regulation:</strong> Colorado uses a "file and use" system similar to Texas. Carriers can implement rate increases upon filing without prior approval, subject to DOI review for reasonableness.</li>
+      <li><strong>Marshall Fire legislative response:</strong> Colorado passed HB 22-1301 following the Marshall Fire, requiring carriers to meet minimum replacement cost standards and improving rebuild cost estimation requirements. Prior to this legislation, some Marshall Fire victims discovered their coverage limits were significantly below actual rebuild costs.</li>
+      <li><strong>SB 23-198 (2023):</strong> Expanded consumer notification rights for non-renewals and required insurers to provide more specific explanations for non-renewals in wildfire-risk areas. Also created a working group to study wildfire mitigation discount incentives.</li>
+      <li><strong>No FORTIFIED mandate yet:</strong> As of Q2 2026, Colorado has not enacted a mandate requiring carriers to discount premiums for IBHS FORTIFIED certification, unlike Alabama and Louisiana.</li>
+      <li><strong>HB 1182 — wildfire risk transparency (effective July 2026):</strong> Requires insurers to disclose the wildfire risk models they use, factor a homeowner's mitigation work into rates, and share the homeowner's exact wildfire risk score. One of the first such transparency laws in the country.</li>
+      <li><strong>Polis affordability roadmap (April 2026):</strong> Governor Polis unveiled a plan the administration says could cut home insurance costs by up to $800 a year, centered on mitigation incentives and risk-model transparency.</li>
+    </ul>
+    <p>Commissioner Conway has testified before state legislative committees and participated in national discussions organized by the National Association of Insurance Commissioners (NAIC) on climate-related insurance market stress, positioning Colorado as a state watching the California experience closely and attempting to get ahead of it legislatively.</p>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>IBHS FORTIFIED — no Colorado mandate, growing carrier interest:</strong> Colorado has no statewide mandate requiring carrier discounts for FORTIFIED certification. However, some carriers writing in Colorado WUI areas voluntarily offer premium credits for FORTIFIED Roof or higher levels, and the Division of Insurance's working group has been examining a discount mandate similar to Louisiana's Act 145. Check with your specific carrier.</p>
+    <p><strong>Defensible space — Colorado State Forest Service standards:</strong> Colorado State Forest Service (CSFS) provides free wildfire risk assessments for WUI homeowners. The assessment documents defensible space, home hardening features, and access/egress conditions. Getting a CSFS assessment and implementing its recommendations is the most carrier-recognized mitigation action available in Colorado's WUI zones. Schedule through CSFS or your county extension office.</p>
+    <p><strong>Home hardening for grassland fires:</strong> The Marshall Fire demonstrated that ember wash from grass and shrub fires can ignite homes a significant distance from the fire front. Class A fire-rated roofing, enclosed eaves, ember-resistant vent covers, and noncombustible materials within 5 feet of the foundation are the most relevant hardening measures for Colorado's grassland-adjacent suburban areas — the same areas most affected by non-renewals.</p>
+    <p><strong>FEMA BRIC grants:</strong> FEMA mitigation grants are administered through Colorado Division of Homeland Security and Emergency Management (DHSEM). Post-Marshall Fire, some Boulder County communities received FEMA mitigation funding for community-level firebreak and vegetation management projects.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>Colorado Division of Insurance data and press reporting for 2021 through early 2026 show these patterns:</p>
+    <ul>
+      <li><strong>Marshall Fire underinsurance</strong> — a significant share of Marshall Fire victims discovered their coverage limits were below actual rebuild costs, sometimes by 30 to 50 percent. This exposed a systemic problem with how carriers were setting replacement cost estimates, which HB 22-1301 addressed — but only prospectively. Homeowners who renewed post-2022 should verify their coverage limits against actual rebuild cost estimates.</li>
+      <li><strong>Suburban WUI non-renewals</strong> — homeowners in Superior, Louisville, and the western Denver suburbs who did not think of themselves as living in a "wildfire area" receiving non-renewal notices citing fire score thresholds. The Marshall Fire changed carriers' view of what counts as a high-risk property.</li>
+      <li><strong>Hail deductible confusion</strong> — Denver metro homeowners discovering their wind/hail deductible is 1 to 2 percent of insured value only after a hail claim, when they expected a flat dollar deductible. This is the same issue seen in Texas: percentage deductibles are now standard in Colorado but many homeowners are not aware of them.</li>
+      <li><strong>Post-fire debris flow flooding</strong> — homeowners near burn scars (Cameron Peak, East Troublesome) filing homeowners claims for water damage from post-fire debris flows, only to learn standard homeowners policies do not cover flood or debris flow from external sources. NFIP or private flood coverage was needed.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>Check your coverage limit against actual rebuild cost — especially if you're in a Marshall Fire-adjacent area.</strong> Colorado's HB 22-1301 improved how carriers estimate rebuild costs going forward, but if your policy was set before 2022, your limit may be significantly below what it would cost to rebuild today. Contact a licensed public adjuster or contractor for an independent rebuild cost estimate. If there's a gap, ask your carrier about guaranteed replacement cost or extended replacement cost endorsements.</li>
+      <li><strong>Schedule a Colorado State Forest Service wildfire risk assessment.</strong> CSFS assessments are free and document defensible space, home hardening features, and access conditions. The written documentation can support conversations with your carrier about insurability and can help you prioritize mitigation investments. Schedule through CSFS or your local fire district.</li>
+      <li><strong>Understand your wind/hail deductible in dollar terms before hail season.</strong> Pull out your policy declarations page and find the wind/hail deductible. If it reads "1%" or "2%," calculate what that means for your home's insured value. Colorado's hail season runs May through September. Knowing your deductible before a storm — not after — lets you set aside reserves and avoid the shock of a claim settlement that's smaller than expected.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>Colorado Division of Insurance. Market data, complaint statistics, FAIR Plan enrollment, and HB 1182 / 2026 affordability roadmap. 2021 to 2026. Accessed June 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). Colorado market data, 2024. Accessed May 2026.</li>
+      <li>Colorado State Forest Service (CSFS). Wildfire risk assessment program. Accessed May 2026.</li>
+      <li>NOAA and USGS. Colorado wildfire and hail hazard data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: June 2026.</em></p>
+  </Fragment>
+
+</StatePage>

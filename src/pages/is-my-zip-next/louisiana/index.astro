@@ -1,0 +1,175 @@
+---
+import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.louisiana;
+---
+<StatePage state="Louisiana" slug="louisiana" lastUpdated="June 2026" status="published" severity="high">
+
+  <Fragment slot="tldr">
+    <div style="background: var(--surface); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 0 0 2rem; border-radius: 4px;">
+      <p style="margin: 0; color: var(--text); line-height: 1.6;"><strong>What you need to know:</strong> Louisiana has the second most stressed homeowners insurance market in the US, after only Florida. Hurricane Ida triggered a carrier exodus — at least 12 carriers exited since 2021. Louisiana Citizens still covers roughly 105,000–115,000 homes and is the only option for many coastal owners. Premiums in coastal parishes are up 40–150 percent from 2020, though 2025 brought the first carrier rate decreases in five years as reforms take hold. If you're non-renewed, particularly in coastal areas, private options are extremely limited. Louisiana Citizens is the backstop; start applications immediately.</p>
+    </div>
+  </Fragment>
+
+  <Fragment slot="summary">
+    <p>As of Q2 2026, Louisiana has one of the most stressed homeowners insurance markets in the United States, long ranked just behind Florida. Hurricane Ida (August 2021) generated roughly $23 billion in insured losses and triggered an immediate wave of carrier exits — at least 12 admitted carriers withdrew from Louisiana or became insolvent in the two years following Ida. Louisiana Citizens Property Insurance Corporation, the state's insurer of last resort, nearly tripled in size from roughly 60,000 policies in 2021 to approximately 155,000 policies by early 2024, before a state-mandated depopulation effort began reducing that count. Premiums in coastal parishes have increased 40 to 150 percent above 2020 levels in areas where admitted coverage is still available. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified Louisiana as among the states with the sharpest increases in non-renewal rates during the study period, with coastal parishes experiencing rates comparable to Florida's most stressed counties.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>Louisiana's non-renewal pattern follows two distinct events: Hurricane Laura (August 2020) began stressing the market in southwest Louisiana; Hurricane Ida (August 2021) was the shock that collapsed it.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>August 2020</td>
+          <td>Hurricane Laura — Category 4, made landfall near Lake Charles</td>
+          <td>~$10B insured losses; southwest LA market began showing stress</td>
+        </tr>
+        <tr>
+          <td>August 2021</td>
+          <td>Hurricane Ida — Category 4, made landfall in Lafourche Parish</td>
+          <td>~$23B insured losses; triggered carrier exit cascade</td>
+        </tr>
+        <tr>
+          <td>2021–2023</td>
+          <td>Admitted carrier exits and insolvencies</td>
+          <td>At least 12 carriers withdrew or became insolvent; per Louisiana Department of Insurance (LDI) data</td>
+        </tr>
+        <tr>
+          <td>Early 2024</td>
+          <td>Louisiana Citizens peak enrollment</td>
+          <td>Approximately 155,000 policies — near-triple its pre-Ida size</td>
+        </tr>
+        <tr>
+          <td>Q1 2026</td>
+          <td>Depopulation underway</td>
+          <td>Roughly 105,000–115,000 policies (late 2025); net count down only ~13% from peak despite ~30,000 sent to private insurers — many owners remain stuck on Citizens. Round 23 depopulation assumes April 2026</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>LDI data shows that Jefferson, Orleans, St. Bernard, and Lafourche parishes have the highest concentration of non-renewal complaints per capita since 2021. Non-renewal and premium increase notices account for the majority of LDI consumer complaints in the 2022 to 2025 period.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p>Louisiana Insurance Guaranty Association (LIGA) covered claims from insolvent carriers up to $500,000 for admitted carriers. Many homeowners affected by the 2021–2022 insolvency wave did not know LIGA existed and lost time and legal fees pursuing claims that were eligible for guaranty coverage. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — specifically cited Louisiana's post-Ida carrier exit cascade as a case study in how climate events can cause cascading market failures in a short window.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>Louisiana Citizens Property Insurance Corporation is the state's insurer of last resort. It operates similarly to Florida Citizens — a nonprofit governmental entity that can levy assessments on all Louisiana insurance policyholders if its claims exceed its reserves.</p>
+    <p><strong>What Louisiana Citizens covers:</strong> Dwelling, other structures, personal property, loss of use, personal liability, and medical payments. Coverage limits are lower than standard admitted market policies — maximum $500,000 for a dwelling. If your home's replacement cost exceeds this, Citizens is insufficient on its own.</p>
+    <p><strong>Wind deductible:</strong> Citizens applies a separate wind and hail deductible typically equal to 2 to 5 percent of the dwelling coverage amount in wind-exposed areas. On a $300,000 home, a 2 percent deductible means $6,000 out of pocket before wind coverage applies.</p>
+    <p><strong>Flood:</strong> Not covered. Louisiana has some of the highest NFIP enrollment in the country, and for good reason — flood coverage through the National Flood Insurance Program or a private flood insurer is not optional for most Louisiana coastal homeowners.</p>
+    <p><strong>Assessment risk:</strong> Louisiana Citizens can levy post-event assessments on all Louisiana policyholders — not just Citizens policyholders — if it runs short of funds after a major storm. The assessment can be structured as a surcharge on homeowners, auto, and commercial policies statewide.</p>
+    <p><strong>Act 145 (2023):</strong> Louisiana passed legislation requiring insurers to offer premium discounts for IBHS FORTIFIED certification — similar to Alabama's earlier mandate. This is specifically designed to reduce the cost of staying in or returning to the admitted market.</p>
+    <p><strong>How to apply:</strong> Through any licensed Louisiana insurance agent. Citizens is available only if you have been declined by the admitted market or if your admitted-market premium exceeds Citizens' rate by more than 10 percent.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for LA</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Hurricane / tropical storm</strong></td>
+          <td>Highest nationally (tied with FL)</td>
+          <td>Louisiana's coastline and low-lying geography make it extremely vulnerable to hurricane storm surge and wind damage. Coastal parishes including Lafourche, Terrebonne, and Jefferson face frequent direct-hit exposure.</td>
+        </tr>
+        <tr>
+          <td><strong>Flooding</strong></td>
+          <td>Very high</td>
+          <td>Louisiana has significant flood exposure from both storm surge and river flooding (Mississippi, Atchafalaya). NFIP enrollment is critical. Standard homeowners policies do not cover flood.</td>
+        </tr>
+        <tr>
+          <td><strong>Storm surge</strong></td>
+          <td>Extremely high in coastal areas</td>
+          <td>Storm surge from Gulf hurricanes is the leading cause of insured losses in Louisiana. Properties in coastal parishes without significant elevation may face uninsurable surge exposure at any price.</td>
+        </tr>
+        <tr>
+          <td><strong>Hail / severe thunderstorm</strong></td>
+          <td>Moderate — northern Louisiana higher risk</td>
+          <td>Northern Louisiana and the Florida Parishes face spring hail and tornado risk. Less of a market driver than hurricane but contributes to loss frequency.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>Louisiana Department of Insurance (LDI) Commissioner Tim Temple (as of Q2 2026) has pursued a combination of market stabilization through new entrant incentives and consumer protection through the depopulation framework. In January 2026 he said the market was showing early signs of stability, while stressing that coastal premiums remain high. Key actions since 2021:</p>
+    <ul>
+      <li><strong>Louisiana Fortify Homes program:</strong> Created by Act 403 (2022), this program provides grants of up to $10,000 per homeowner for IBHS FORTIFIED certification. As of Q1 2026, the program had distributed over $30 million in grants. Demand consistently exceeds funding; waiting lists are common.</li>
+      <li><strong>Act 145 (2023):</strong> Requires admitted carriers to offer premium discounts for IBHS FORTIFIED certification — minimum 5 percent for FORTIFIED Roof, higher for FORTIFIED Silver and Gold. This is a legally required discount, not optional.</li>
+      <li><strong>Citizens depopulation:</strong> LDI oversees Citizens' managed depopulation program, which pushes policies to private carriers when a private offer is within 10 percent of Citizens' rate. Policyholders have a limited window to decline transfers.</li>
+      <li><strong>New carrier incentives:</strong> LDI offered reinsurance support and streamlined licensing for new carriers willing to write in Louisiana. About a dozen new carriers entered the market from 2022 through 2025 with backing from national or regional reinsurers. Their long-term financial stability is unproven.</li>
+      <li><strong>Rate filing approvals — the 2025 turn:</strong> Through 2022–2024 LDI approved steep rate increases for surviving carriers — some exceeding 30 to 50 percent in a single filing year — as the price of keeping them in the market. That pressure eased in 2025: several carriers filed their first rate decreases in five years, helped by falling reinsurance costs, and statewide homeowners rates are projected to rise only about 4 percent in 2026.</li>
+      <li><strong>Citizens surcharge relief (2026):</strong> The 10 percent surcharge Louisiana Citizens applied to new and renewing policies is ending in April 2026, earlier than its scheduled June 2026 expiration — modest relief for Citizens policyholders.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>Louisiana Fortify Homes program:</strong> Grants up to $10,000 per homeowner for IBHS FORTIFIED Roof, Silver, or Gold certification. Apply through LDI's website (ldi.la.gov). Demand consistently exceeds annual funding appropriations; apply early in each program year. The program targets homes with older roofs in high-wind-exposure parishes.</p>
+    <p><strong>Act 145 discounts (mandatory):</strong> Louisiana carriers are legally required to offer premium discounts for FORTIFIED certification. Minimum discount for FORTIFIED Roof is 5 percent; Silver and Gold certification typically generate larger discounts. Ask your carrier for the exact discount schedule before undertaking certification — the discount varies by carrier and can range from 5 to 30 percent or more.</p>
+    <p><strong>IBHS FORTIFIED standards:</strong> FORTIFIED Roof addresses the most common cause of catastrophic home damage in hurricanes — roof failure. Upgrades typically include enhanced roof deck attachment, sealed roof deck, and impact-resistant roofing materials. Full FORTIFIED Gold also addresses wall and foundation connections. Costs range from roughly $5,000 to $15,000 for a standard Louisiana home, depending on existing conditions.</p>
+    <p><strong>FEMA BRIC and FMA grants:</strong> FEMA's Building Resilient Infrastructure and Communities (BRIC) and Flood Mitigation Assistance (FMA) programs fund mitigation for NFIP-insured properties. Louisiana local governments and the Governor's Office of Homeland Security administer these grants. Elevation certificates from a licensed surveyor document flood risk and can significantly reduce NFIP premiums.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>LDI complaint data and Louisiana press reporting for 2021 through early 2026 show these patterns:</p>
+    <ul>
+      <li><strong>Carrier insolvency confusion</strong> — homeowners whose carrier went into receivership after Ida often did not know Louisiana Insurance Guaranty Association (LIGA) covered their claims up to $500,000. Many paid attorneys to pursue claims that LIGA would have handled directly.</li>
+      <li><strong>Depopulation surprise</strong> — Citizens policyholders transferred to private carriers through the depopulation program often did not know they had a 30-day window to decline the transfer. Missing this window meant losing Citizens eligibility and paying private market rates.</li>
+      <li><strong>Premium doubling on renewal</strong> — homeowners in Jefferson, Lafourche, and Terrebonne parishes reporting renewal premiums 80 to 150 percent above pre-Ida levels, even for properties with no claims history and new roofs.</li>
+      <li><strong>Flood claims separate from wind claims</strong> — after Ida, many homeowners did not understand that their homeowners policy covered wind damage and their NFIP policy covered flood, requiring coordination between two separate claims processes simultaneously. Delays in NFIP payment extended displacement periods significantly.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>Apply for the Louisiana Fortify Homes program before the annual funding runs out.</strong> Grants of up to $10,000 for IBHS FORTIFIED certification are available through LDI (ldi.la.gov). Funding is appropriated annually and exhausted quickly. Even if you don't get a grant this cycle, completing a FORTIFIED assessment gives you documentation that reduces premiums under Act 145's mandatory discount requirements — carriers must discount your premium for certified work regardless of the grant.</li>
+      <li><strong>Get an elevation certificate if you don't have one.</strong> A licensed surveyor's elevation certificate costs roughly $300 to $600 and documents your home's flood risk relative to base flood elevation. This directly reduces your NFIP premium if your home is elevated above the base flood elevation. It also affects private flood insurance pricing. In Louisiana coastal areas, this is often the single highest-ROI documentation step you can take.</li>
+      <li><strong>If you receive a Citizens depopulation transfer notice, read the 30-day window carefully.</strong> Louisiana Citizens' depopulation program can transfer your policy to a private carrier if the private offer is within 10 percent of your Citizens rate. You have 30 days to decline. Before deciding, check the private carrier's AM Best financial strength rating (aim for A- or better) and compare coverage terms, not just premium. Some depopulation carriers have weaker financials than Citizens.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>Louisiana Department of Insurance (LDI). Market data, complaint statistics, and 2025–2026 rate-filing and stability statements, 2021 to 2026. Accessed June 2026.</li>
+      <li>Louisiana Citizens Property Insurance Corporation. Policy count, depopulation (Round 23), and surcharge data, 2024–2026. Accessed June 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). Louisiana market data, 2024. Accessed May 2026.</li>
+      <li>Louisiana Fortify Homes program. LDI. Accessed May 2026.</li>
+      <li>NOAA National Hurricane Center. Louisiana historical hurricane data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: June 2026.</em></p>
+  </Fragment>
+
+</StatePage>

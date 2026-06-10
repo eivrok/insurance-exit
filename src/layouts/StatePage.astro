@@ -1,0 +1,213 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+
+interface Props {
+  state: string;
+  slug: string;
+  lastUpdated: string;
+  status?: 'draft' | 'published';
+  // Current market stress for a homeowner seeking coverage now (not structural
+  // hazard). Assign per docs/severity-rubric.md; review each stat-refresh.
+  severity?: 'elevated' | 'high' | 'critical';
+}
+
+const { state, slug, lastUpdated, status = 'draft', severity } = Astro.props;
+
+const severityLabel: Record<string, string> = {
+  critical: 'Market Crisis',
+  high: 'High Stress',
+  elevated: 'Elevated Risk',
+};
+const severityColors: Record<string, string> = {
+  critical: 'oklch(50% 0.18 25)',
+  high:     'oklch(55% 0.18 52)',
+  elevated: 'oklch(56% 0.14 68)',
+};
+const title = `Insurance Crisis in ${state}`;
+const description = `Homeowners insurance non-renewal trends, carriers leaving, residual market options, and hazards in ${state}.`;
+const fullTitle = `${title} | InsuranceExit.org`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://insuranceexit.org/" },
+    { "@type": "ListItem", "position": 2, "name": "Is My ZIP Next", "item": "https://insuranceexit.org/is-my-zip-next/" },
+    { "@type": "ListItem", "position": 3, "name": state, "item": canonicalURL },
+  ]
+});
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  {status === 'draft' && <meta name="robots" content="noindex,nofollow" />}
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="InsuranceExit.org" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/global.css" />
+  <!-- Structured data -->
+  <script type="application/ld+json" set:html={breadcrumbSchema} />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+          <path d="M3 10l9-9 9 9v11a2 2 0 01-2 2H5a2 2 0 01-2-2V10z" />
+          <path d="M9 21v-7h6v7" />
+        </svg>
+        InsuranceExit.org
+      </a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Home</a> &rsaquo;
+      <a href="/is-my-zip-next/">Is My ZIP Next</a> &rsaquo;
+      <span>{state}</span>
+    </div>
+
+    <Disclaimer />
+
+    {status === 'draft' && (
+      <div class="draft-banner">
+        <strong>DRAFT — not for publication.</strong> This page is a structural stub. Content forthcoming.
+      </div>
+    )}
+
+    <div
+      class:list={['severity-band', severity && `severity-band--${severity}`]}
+      style={severity ? `--severity-color: ${severityColors[severity]}` : ''}
+    >
+    <article>
+      {severity && (
+        <div class={`severity-badge severity-badge--${severity}`}>
+          <span class="severity-dot"></span>
+          {severityLabel[severity]}
+        </div>
+      )}
+      <h1>{title}</h1>
+
+      <slot name="tldr">
+        {/* Summary slot — optional. Use "What you need to know:" as caption for clarity and accessibility. */}
+      </slot>
+
+      <h2 id="section-1">1. The one-paragraph summary</h2>
+      <slot name="summary"><p><em>[Forthcoming — most recent state-of-the-market summary for {state}, dated.]</em></p></slot>
+
+      <h2 id="section-2">2. Non-renewal and cancellation rates</h2>
+      <slot name="nonrenewal-rates"><p><em>[Forthcoming — most recent NAIC and {state} DOI data, in table form, with dates.]</em></p></slot>
+
+      <h2 id="section-3">3. Major carriers leaving, pausing, or shrinking</h2>
+      <slot name="carriers"><p><em>[Forthcoming — table of carriers with announcement dates.]</em></p></slot>
+
+      <h2 id="section-4">4. The residual market option in {state}</h2>
+      <slot name="residual-market"><p><em>[Forthcoming — what it covers, what it doesn't, how to apply.]</em></p></slot>
+
+      <h2 id="section-5">5. Top hazards driving the crisis</h2>
+      <slot name="hazards"><p><em>[Forthcoming — wildfire / hurricane / hail / flood / freeze ranked for {state}.]</em></p></slot>
+
+      <h2 id="section-6">6. What state regulators have done</h2>
+      <slot name="regulators"><p><em>[Forthcoming — recent rate filings, moratoriums, market-stabilization laws.]</em></p></slot>
+
+      <h2 id="section-7">7. Fortification programs available</h2>
+      <slot name="fortification"><p><em>[Forthcoming — state grants, IBHS FORTIFIED uptake, mandated premium discounts.]</em></p></slot>
+
+      <h2 id="section-8">8. What homeowners are reporting</h2>
+      <slot name="homeowners-reporting"><p><em>[Forthcoming — sourced from public {state} DOI complaint data or news reporting.]</em></p></slot>
+
+      <h2 id="section-9">9. Three things to do in the next 30 days</h2>
+      <slot name="next-steps"><p><em>[Forthcoming — concrete, dated, plain-English steps.]</em></p></slot>
+
+      <h2 id="section-10">10. Sources and date of last update</h2>
+      <slot name="sources"><p><em>[Forthcoming — Treasury FIO January 2025 report, Senate Budget Committee December 2024 staff report, NAIC, {state} DOI, plus state-specific filings.]</em></p></slot>
+    </article>
+    </div>
+
+    <footer class="article-footer">
+      <p class="last-updated">Last updated: {lastUpdated}</p>
+
+      {status === 'published' && (
+        <div style="margin: 2rem 0; padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px; background: var(--bg-subtle);">
+          <p style="margin: 0 0 0.75rem; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 500; color: var(--text);">Was this helpful?</p>
+          <button
+            id="helpful-btn"
+            type="button"
+            style="background: var(--accent); color: white; font-family: var(--font-ui); font-size: 0.875rem; font-weight: 600; padding: 0.5rem 1rem; border: none; border-radius: 4px; cursor: pointer; transition: all 120ms ease;"
+            onmouseover="this.style.background='var(--accent-hover)'"
+            onmouseout="this.style.background='var(--accent)'"
+            onclick="submitHelpful(event)"
+          >
+            👍 Yes, helpful
+          </button>
+          <span id="helpful-feedback" style="display: none; margin-left: 1rem; font-family: var(--font-ui); font-size: 0.875rem; color: var(--accent);">✓ Thanks for the feedback</span>
+        </div>
+      )}
+
+      <!-- Hidden form for vote capture (submits to Formspree) -->
+      <form name="votes" method="POST" action="https://formspree.io/f/xnjryebj" hidden style="display: none;">
+        <input type="hidden" name="article" id="article-slug" value={slug} />
+        <input type="hidden" name="helpful" value="yes" />
+      </form>
+
+      <script>
+        window.submitHelpful = async function(event) {
+          event.preventDefault();
+          const form = document.querySelector('form[name="votes"]');
+          const btn = document.getElementById('helpful-btn');
+          const feedback = document.getElementById('helpful-feedback');
+
+          // Acknowledge immediately: hides the button (preventing a double-vote
+          // while the request is in flight) and shows the thanks span.
+          btn.style.display = 'none';
+          feedback.style.display = 'inline';
+
+          // AJAX submit so the reader stays on the article — no navigation to
+          // Formspree's thank-you page. Fire-and-forget: a thumbs-up is
+          // non-critical, so a transport failure needs no user-facing handling.
+          try {
+            await fetch(form.action, {
+              method: 'POST',
+              body: new FormData(form),
+              headers: { Accept: 'application/json' },
+            });
+          } catch (err) {
+            // Intentionally non-fatal — see above.
+          }
+        };
+      </script>
+
+      <Disclaimer />
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/glossary/">Glossary</a></p>
+  </footer>
+</body>
+</html>

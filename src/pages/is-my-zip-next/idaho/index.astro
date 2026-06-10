@@ -1,0 +1,166 @@
+---
+import StatePage from '@layouts/StatePage.astro';
+import { carrierActions } from '@data/carrier-actions';
+const carriers = carrierActions.idaho;
+---
+<StatePage state="Idaho" slug="idaho" lastUpdated="June 2026" status="published" severity="elevated">
+
+  <Fragment slot="tldr">
+    <div style="background: var(--surface); border-left: 3px solid var(--accent); padding: 1.5rem; margin: 0 0 2rem; border-radius: 4px;">
+      <p style="margin: 0; color: var(--text); line-height: 1.6;"><strong>What you need to know:</strong> Idaho's insurance market is tightening in wildfire zones, especially in Boise foothills, northern Idaho (Kootenai County), and fast-growing areas (Ada, Canyon, Gem counties). Rapid population growth has placed more homes in wildfire-exposed zones. If you're non-renewed in a WUI area, options are limited. Wildfire mitigation and a certified inspection can improve your eligibility. Idaho FAIR Plan (Idaho Insurers Placement Facility) is available but limited.</p>
+    </div>
+  </Fragment>
+
+  <Fragment slot="summary">
+    <p>As of Q2 2026, Idaho's homeowners insurance market is experiencing stress driven by two forces: wildfire risk in the Boise foothills and northern Idaho, and the rapid population growth that has placed more insured structures in WUI (wildland-urban interface) zones over the past decade. Idaho was among the fastest-growing states in the country from 2015 to 2023, with much of that growth occurring in Ada, Canyon, Kootenai, and Gem counties — areas with significant WUI exposure. The U.S. Treasury Federal Insurance Office (FIO), January 2025 report — <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors</em> — identified Idaho among the states with rising non-renewal rates in wildfire-exposed counties during the study period. Smoke damage — from both Idaho fires and smoke drifting from neighboring states' fires during poor air quality years — is also emerging as an insurance coverage question in Idaho: standard policies typically cover smoke damage only from a fire at or near the insured property, not from regional smoke events. By the numbers: Idaho's average annual homeowners premium climbed from about $1,308 in 2022 to roughly $1,798 in 2024, and non-renewals spiked to 27,798 policies (6.55 percent of those in force) in 2023 before easing to 8,591 (2.02 percent) in 2024. Statewide homeowners policies fell about 9 percent between 2022 and 2023. The Insurance Information Institute expects the market to return to overall profitability in 2026.</p>
+  </Fragment>
+
+  <Fragment slot="nonrenewal-rates">
+    <p>Idaho's non-renewal stress is concentrated in the Boise foothills (Ada and Boise counties), the northern Idaho panhandle (Kootenai and Bonner counties), and rural WUI communities in central and southern Idaho.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Event</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2018–2021</td>
+          <td>Multiple large wildfire seasons — statewide</td>
+          <td>700,000+ acres burned in 2018 alone; ongoing fire seasons raised carrier awareness of Idaho's WUI exposure</td>
+        </tr>
+        <tr>
+          <td>2019–2023</td>
+          <td>Rapid population growth — Treasure Valley and north Idaho</td>
+          <td>Ada and Canyon counties among fastest-growing in US; new WUI development in Boise foothills and Eagle/Star areas increased carrier accumulation concerns</td>
+        </tr>
+        <tr>
+          <td>2021–2024</td>
+          <td>Admitted carrier tightening in WUI areas</td>
+          <td>Multiple carriers restricted new business or issued non-renewals in Boise foothills and northern Idaho WUI ZIP codes; non-renewal complaints to Idaho DOI increased</td>
+        </tr>
+        <tr>
+          <td>Q1 2026</td>
+          <td>Market pressure ongoing</td>
+          <td>Idaho Department of Insurance tracking elevated complaint rates in Ada, Kootenai, and Boise counties; statewide premiums up 20 to 40 percent from 2020 levels</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Idaho Department of Insurance (DOI) data for 2022 through 2025 shows non-renewal and premium increase complaints concentrated in Ada County (Boise foothills), Kootenai County (Coeur d'Alene area), and Bonner County (Sandpoint area). Idaho DOI does not publish detailed zip-code-level non-renewal rate data, but complaint patterns indicate where market stress is highest.</p>
+  </Fragment>
+
+  <Fragment slot="carriers">
+    <table>
+      <thead>
+        <tr>
+          <th>Carrier</th>
+          <th>Action</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        {carriers.map(c => (
+          <tr>
+            <td>{c.carrier}</td>
+            <td>{c.action}</td>
+            <td>{c.date}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    <p>Idaho has not experienced the mass carrier insolvencies seen in Florida and Louisiana. The stress is more consistent with the earlier stages of the California pattern — incremental WUI withdrawal by major carriers before broader market failure. The U.S. Senate Budget Committee, December 2024 staff report — <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse"</em> — noted Idaho and other rapidly growing western WUI states as markets at high risk of accelerating insurance market disruption as more structures move into historically fire-prone landscapes.</p>
+  </Fragment>
+
+  <Fragment slot="residual-market">
+    <p>Idaho does not have a well-capitalized state-run FAIR Plan equivalent comparable to California or Florida. The state's residual market is limited.</p>
+    <p><strong>Idaho FAIR Plan:</strong> Idaho maintains a basic FAIR Plan that provides fire and allied-lines coverage for properties that cannot obtain admitted market coverage. Coverage is narrow — primarily fire, lightning, and some allied perils. No liability coverage. Coverage limits may not be sufficient for higher-value WUI homes.</p>
+    <p><strong>Surplus lines as the primary alternative:</strong> Many Idaho WUI homeowners who lose admitted coverage end up with surplus lines carriers. Surplus lines carriers are not covered by the Idaho Insurance Guaranty Association for property claims — if a surplus lines carrier becomes insolvent, your claims may go unpaid. Premiums are typically two to four times prior admitted-market rates for WUI properties.</p>
+    <p><strong>How to get the FAIR Plan:</strong> Through any licensed Idaho property insurance agent, after demonstrating that admitted coverage is unavailable.</p>
+    <p><strong>Coverage gap reality:</strong> An Idaho FAIR Plan policy plus a surplus lines liability endorsement approximates a standard homeowners policy — but at higher combined cost and with significantly less consumer protection.</p>
+  </Fragment>
+
+  <Fragment slot="hazards">
+    <table>
+      <thead>
+        <tr>
+          <th>Hazard</th>
+          <th>Risk level for ID</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Wildfire</strong></td>
+          <td>Very high — WUI areas</td>
+          <td>Idaho has one of the highest annual burned acreage figures in the intermountain west. The Boise foothills above the Treasure Valley, the northern Idaho panhandle, and rural communities throughout central Idaho face significant wildfire exposure. Rapid WUI development in the 2015–2023 population boom placed more structures in historically fire-prone terrain.</td>
+        </tr>
+        <tr>
+          <td><strong>Smoke damage</strong></td>
+          <td>Emerging issue — statewide</td>
+          <td>Idaho and neighboring states' fire seasons generate regional smoke events lasting days to weeks. Standard homeowners policies generally cover smoke damage only from a fire at or originating on the insured property — not from regional smoke events. This exclusion is not well understood by many homeowners and has generated claims disputes.</td>
+        </tr>
+        <tr>
+          <td><strong>Flooding / snowmelt</strong></td>
+          <td>Moderate — river valleys</td>
+          <td>Idaho's river systems (Snake, Clearwater, Boise, Salmon) produce spring snowmelt flooding in valley areas. Standard homeowners policies do not cover flood. NFIP enrollment is relevant in valley communities and near river corridors.</td>
+        </tr>
+        <tr>
+          <td><strong>Winter weather / avalanche</strong></td>
+          <td>Low-moderate — mountain communities</td>
+          <td>Panhandle mountain communities face avalanche risk. Most valley and foothill homes do not face direct avalanche exposure but do face ice-dam and heavy snow-load issues during severe winters.</td>
+        </tr>
+      </tbody>
+    </table>
+  </Fragment>
+
+  <Fragment slot="regulators">
+    <p>Idaho Department of Insurance Director Dean Cameron (as of Q1 2026) leads a regulatory body with limited statutory tools to mandate carrier market participation or constrain non-renewals based on risk assessment.</p>
+    <ul>
+      <li><strong>Non-renewal notice requirements:</strong> Idaho requires 45-day advance written notice for non-renewals. The DOI can investigate complaints but has limited authority to block individual non-renewals.</li>
+      <li><strong>Rate regulation:</strong> Idaho uses a file-and-use framework. Carriers file rates and can use them immediately without prior DOI approval. DOI reviews for reasonableness.</li>
+      <li><strong>No FORTIFIED mandate:</strong> As of Q1 2026, Idaho has not enacted legislation requiring carrier discounts for IBHS FORTIFIED certification or other wildfire mitigation measures. Some carriers voluntarily offer discounts, but this is not uniform.</li>
+      <li><strong>DOI consumer assistance:</strong> Idaho DOI maintains a consumer affairs division that can help homeowners navigate non-renewal situations and identify available carriers. The DOI publishes a company lookup tool for checking carrier license status and complaint history.</li>
+      <li><strong>Smoke damage exclusion clarification:</strong> Idaho DOI has fielded complaints about smoke damage exclusions and published consumer guidance clarifying what standard policies cover — but has not required carriers to expand smoke coverage.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="fortification">
+    <p><strong>IBHS FORTIFIED — no Idaho mandate:</strong> Idaho has no statewide requirement that carriers offer discounts for FORTIFIED certification. Some carriers writing WUI properties in Idaho voluntarily offer credits for FORTIFIED Roof or higher levels, but this is not standard or required. Ask your specific carrier before investing.</p>
+    <p><strong>Idaho Department of Lands (IDL) — defensible space:</strong> IDL provides wildfire risk assessment and defensible space guidance for WUI properties in Idaho. Free assessments are available through local IDL offices or the Firewise program administered through your local fire district. A written IDL or Firewise assessment documents defensible space condition and is the most widely recognized mitigation documentation for Idaho carriers.</p>
+    <p><strong>Firewise USA communities:</strong> Several Idaho communities — particularly in the Boise foothills and Kootenai County — participate in the National Fire Protection Association's Firewise USA program. Homes in designated Firewise communities can sometimes access better carrier terms than equivalent homes in non-designated communities. Check whether your neighborhood has Firewise designation through your fire district.</p>
+    <p><strong>FEMA BRIC grants:</strong> FEMA hazard mitigation grants are administered through the Idaho Bureau of Homeland Security. Funding availability varies by year and is competitive.</p>
+  </Fragment>
+
+  <Fragment slot="homeowners-reporting">
+    <p>Idaho DOI complaint data and regional press reporting for 2021 through early 2026 show these patterns:</p>
+    <ul>
+      <li><strong>Boise foothills non-renewals</strong> — homeowners in the east Boise and Boise foothills ZIP codes (83712, 83702, 83716) reporting non-renewals from admitted carriers citing wildfire score thresholds. Many had owned these homes for decades without insurance issues, making the non-renewal a significant shock.</li>
+      <li><strong>Smoke damage claim disputes</strong> — homeowners filing claims for smoke-related HVAC damage, air filtration replacement, and interior cleaning after regional smoke events, only to find their carrier denying the claim on grounds that smoke coverage requires a proximate fire at or near the property. This exclusion is standard in most policies but not prominently disclosed at purchase.</li>
+      <li><strong>New construction WUI surprises</strong> — homeowners who bought newly built homes in WUI-adjacent developments in Ada or Canyon counties between 2019 and 2022 discovering at their first renewal that their carrier would not continue coverage at the previous rate, sometimes seeing premium increases of 50 to 100 percent in a single renewal cycle.</li>
+      <li><strong>Thin market in rural counties</strong> — homeowners in rural Boise, Camas, and Valley counties reporting that admitted market options are limited to one or two carriers, leaving them with little negotiating leverage on rates or coverage terms.</li>
+    </ul>
+  </Fragment>
+
+  <Fragment slot="next-steps">
+    <ol>
+      <li><strong>Get a Firewise or IDL defensible space assessment before your next renewal.</strong> A written assessment documenting your defensible space, vegetation management, and home hardening features is the most effective mitigation documentation for Idaho carriers. Contact your local fire district for a free Firewise assessment or reach out to your regional Idaho Department of Lands office. In a tightening WUI market, documented mitigation is your strongest argument for maintaining insurability with an admitted carrier.</li>
+      <li><strong>Read your smoke damage exclusion language.</strong> Pull out your policy and find the smoke damage section. Understand exactly what is covered — most policies cover smoke damage from a fire that originates at or near the insured premises, not from regional wildfire smoke events. If smoke damage from distant fires is a concern for your home's HVAC or interiors, ask your agent whether a smoke damage endorsement is available or whether a surplus lines carrier would offer broader smoke coverage.</li>
+      <li><strong>Check your carrier's AM Best rating if you're with a smaller admitted or surplus lines carrier.</strong> Idaho's admitted carrier market includes some smaller regional carriers that are not part of large national groups. For any carrier you're relying on for a home's insurance, check their AM Best rating (aim for A- or better). If you're with a surplus lines carrier, understand you have no guaranty fund protection — the carrier's financial strength is the only backstop. Idaho DOI's company lookup tool can confirm license status; AM Best ratings require a direct AM Best lookup or asking your agent.</li>
+    </ol>
+  </Fragment>
+
+  <Fragment slot="sources">
+    <ul>
+      <li>U.S. Treasury Federal Insurance Office (FIO). <em>Analyses of U.S. Homeowners Insurance Markets, 2018 to 2022: Climate-Related Risks and Other Factors.</em> January 2025.</li>
+      <li>U.S. Senate Budget Committee. <em>"Next to Fall: The Climate-Driven Insurance Crisis Is Here and Getting Worse."</em> Staff report, December 2024.</li>
+      <li>Idaho Department of Insurance (DOI). Market data, complaint statistics, and 2022–2024 premium and non-renewal figures. 2021 to 2026. Accessed June 2026.</li>
+      <li>National Association of Insurance Commissioners (NAIC). Idaho market data, 2024. Accessed May 2026.</li>
+      <li>Idaho Department of Lands (IDL). Wildfire risk assessment and defensible space resources. Accessed May 2026.</li>
+      <li>NOAA and USGS. Idaho wildfire and flood hazard data. Accessed May 2026.</li>
+    </ul>
+    <p><em>Last updated: June 2026.</em></p>
+  </Fragment>
+
+</StatePage>

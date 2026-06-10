@@ -1,0 +1,80 @@
+---
+import Disclaimer from '@components/Disclaimer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  intro: string;
+}
+
+const { title, description, intro } = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
+const fullTitle = `${title} | InsuranceExit.org`;
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:site_name" content="InsuranceExit.org" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
+          <path d="M3 10l9-9 9 9v11a2 2 0 01-2 2H5a2 2 0 01-2-2V10z" />
+          <path d="M9 21v-7h6v7" />
+        </svg>
+        InsuranceExit.org
+      </a>
+      <ul>
+        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/">Residual Markets</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+    </div>
+
+    <Disclaimer />
+
+    <article>
+      <h1 class="pillar-heading">{title}</h1>
+      <p style="font-size: 1.15rem; color: #444; margin: 1rem 0 2rem;">{intro}</p>
+      <slot />
+    </article>
+
+    <footer class="article-footer">
+      <Disclaimer />
+    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>InsuranceExit.org — General information only. Not legal, financial, or insurance advice. | <a href="/about/">About</a> | <a href="/contact/">Contact</a> | <a href="/glossary/">Glossary</a></p>
+  </footer>
+</body>
+</html>
