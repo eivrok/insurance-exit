@@ -1,5 +1,6 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
+import Search from '@components/Search.astro';
 
 interface Props {
   state: string;
@@ -18,17 +19,12 @@ const severityLabel: Record<string, string> = {
   high: 'High Stress',
   elevated: 'Elevated Risk',
 };
-const severityColors: Record<string, string> = {
-  critical: 'oklch(50% 0.18 25)',
-  high:     'oklch(55% 0.18 52)',
-  elevated: 'oklch(56% 0.14 68)',
-};
 const title = `Insurance Crisis in ${state}`;
 const description = `Homeowners insurance non-renewal trends, carriers leaving, residual market options, and hazards in ${state}.`;
 const fullTitle = `${title} | InsuranceExit.org`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
-const ogImageURL = new URL('/og-default.jpg', Astro.site).href;
-const ogImageAlt = 'Line drawing of a single-family house under rain — InsuranceExit.org';
+const ogImageURL = new URL('/og-default.png', Astro.site).href;
+const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insurance is non-renewed';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -77,15 +73,15 @@ const articleSchema = JSON.stringify({
   <meta name="twitter:image" content={ogImageURL} />
   <meta name="twitter:image:alt" content={ogImageAlt} />
   <!-- Fonts -->
-  <link rel="preload" href="/fonts/lora-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/dm-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/playfair-display-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/libre-franklin-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/source-serif-4-var-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles/global.css" />
   <!-- Structured data -->
   <script type="application/ld+json" set:html={breadcrumbSchema} />
   <script type="application/ld+json" set:html={articleSchema} />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
     <nav>
       <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
@@ -97,15 +93,16 @@ const articleSchema = JSON.stringify({
       </a>
       <ul>
         <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
-        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
+        <li><a href="/is-my-zip-next/" aria-current="page">Is My ZIP Next</a></li>
         <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
         <li><a href="/residual-markets/">Residual Markets</a></li>
       </ul>
+      <Search />
     </nav>
   </header>
 
-  <main>
-    <div class="breadcrumb">
+  <main id="main-content" data-pagefind-body>
+    <div class="breadcrumb" data-pagefind-ignore>
       <a href="/">Home</a> &rsaquo;
       <a href="/is-my-zip-next/">Is My ZIP Next</a> &rsaquo;
       <span>{state}</span>
@@ -119,14 +116,10 @@ const articleSchema = JSON.stringify({
       </div>
     )}
 
-    <div
-      class:list={['severity-band', severity && `severity-band--${severity}`]}
-      style={severity ? `--severity-color: ${severityColors[severity]}` : ''}
-    >
     <article>
       {severity && (
         <div class={`severity-badge severity-badge--${severity}`}>
-          <span class="severity-dot"></span>
+          <span class="severity-glyph" aria-hidden="true"></span>
           {severityLabel[severity]}
         </div>
       )}
@@ -166,9 +159,8 @@ const articleSchema = JSON.stringify({
       <h2 id="section-10">10. Sources and date of last update</h2>
       <slot name="sources"><p><em>[Forthcoming — Treasury FIO January 2025 report, Senate Budget Committee December 2024 staff report, NAIC, {state} DOI, plus state-specific filings.]</em></p></slot>
     </article>
-    </div>
 
-    <footer class="article-footer">
+    <footer class="article-footer" data-pagefind-ignore>
       <p class="last-updated">Last updated: {lastUpdated}</p>
 
       {status === 'published' && (

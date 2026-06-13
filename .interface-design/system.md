@@ -1,5 +1,13 @@
 # InsuranceExit.org — Interface Design System
 
+> **⚠️ SUPERSEDED (June 2026).** This file describes the original
+> editorial-magazine direction (Playfair Display + Lora + cream background +
+> forest-green accent + side-stripe callouts). That direction was retired in the
+> "Public Record" redesign. **The current source of truth is `DESIGN.md` at the
+> project root** (Libre Franklin + Source Serif 4, document paper + oxblood,
+> hairline rules, no side-stripes). Tokens live in `public/styles/global.css`.
+> Kept only for historical reference.
+
 **Aesthetic direction:** Archival document meets editorial journalism.
 Think: long-form investigative magazine, government report cover, Consumer Reports.
 Cold, serious, trustworthy. Not fintech. Not SaaS. Not startup.

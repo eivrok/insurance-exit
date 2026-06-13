@@ -6,6 +6,7 @@ node_modules/
 .env.*
 !.env.example
 .claude/settings.local.json
+*.md
 
 # OS / IDE b8b2b87f-6b82-4934-a6f4-66be28281e0e
 .DS_Store
@@ -17,3 +18,4 @@ npm-debug.log*
 .idea/
 *.swp
 *.swo
+*.shots/

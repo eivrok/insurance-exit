@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  @font-face {
+    font-family: 'Libre Franklin';
+    font-weight: 400 900;
+    src: url('file:///C:/dev/insurance_exit/public/fonts/libre-franklin-var-latin.woff2') format('woff2');
+  }
+  @font-face {
+    font-family: 'Source Serif 4';
+    font-weight: 400 700;
+    src: url('file:///C:/dev/insurance_exit/public/fonts/source-serif-4-var-latin.woff2') format('woff2');
+  }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    background: #f8f5f3;
+    border-top: 10px solid #8b2821;
+    padding: 64px 72px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'Libre Franklin', sans-serif;
+    color: #221b19;
+  }
+  .top { display: flex; align-items: center; gap: 14px; }
+  .top svg { color: #8b2821; }
+  .wordmark { font-weight: 800; font-size: 30px; letter-spacing: -0.02em; }
+  .dateline {
+    font-weight: 700; font-size: 21px; letter-spacing: 0.13em;
+    text-transform: uppercase; color: #8b2821; margin-bottom: 22px;
+  }
+  h1 {
+    font-weight: 800; font-size: 78px; line-height: 1.02;
+    letter-spacing: -0.025em; max-width: 18ch;
+  }
+  .sub {
+    font-family: 'Source Serif 4', serif; font-size: 30px; line-height: 1.4;
+    color: #4a3f3b; margin-top: 28px; max-width: 30ch;
+  }
+  .foot {
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 2px solid #221b19; padding-top: 20px;
+    font-weight: 600; font-size: 20px; color: #4a3f3b;
+  }
+  .foot .pill { color: #8b2821; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 17px; }
+</style>
+</head>
+<body>
+  <div class="top">
+    <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 10l9-9 9 9v11a2 2 0 01-2 2H5a2 2 0 01-2-2V10z"/><path d="M9 21v-7h6v7"/>
+    </svg>
+    <span class="wordmark">InsuranceExit.org</span>
+  </div>
+  <div>
+    <div class="dateline">The U.S. homeowners insurance crisis</div>
+    <h1>When your home insurance is non-renewed.</h1>
+    <div class="sub">Plain-English, sourced guidance for high-risk states. No quotes, no affiliates, no spin.</div>
+  </div>
+  <div class="foot">
+    <span>Independent &middot; non-commercial reference</span>
+    <span class="pill">Updated 2026</span>
+  </div>
+</body>
+</html>

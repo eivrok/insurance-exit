@@ -1,5 +1,6 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
+import Search from '@components/Search.astro';
 
 interface Props {
   title: string;
@@ -19,8 +20,8 @@ const pillarLabels: Record<string, string> = {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const fullTitle = `${title} | InsuranceExit.org`;
-const ogImageURL = new URL('/og-default.jpg', Astro.site).href;
-const ogImageAlt = 'Line drawing of a single-family house under rain — InsuranceExit.org';
+const ogImageURL = new URL('/og-default.png', Astro.site).href;
+const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insurance is non-renewed';
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -68,15 +69,15 @@ const articleSchema = JSON.stringify({
   <meta name="twitter:image" content={ogImageURL} />
   <meta name="twitter:image:alt" content={ogImageAlt} />
   <!-- Fonts -->
-  <link rel="preload" href="/fonts/lora-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/dm-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/playfair-display-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/libre-franklin-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/source-serif-4-var-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles/global.css" />
   <!-- Structured data -->
   <script type="application/ld+json" set:html={breadcrumbSchema} />
   <script type="application/ld+json" set:html={articleSchema} />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
     <nav>
       <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
@@ -87,16 +88,17 @@ const articleSchema = JSON.stringify({
         InsuranceExit.org
       </a>
       <ul>
-        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
-        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
-        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
-        <li><a href="/residual-markets/">Residual Markets</a></li>
+        <li><a href="/non-renewed/" aria-current={pillar === 'non-renewed' ? 'page' : undefined}>I Just Got Non-Renewed</a></li>
+        <li><a href="/is-my-zip-next/" aria-current={pillar === 'is-my-zip-next' ? 'page' : undefined}>Is My ZIP Next</a></li>
+        <li><a href="/fortifying-vs-selling/" aria-current={pillar === 'fortifying-vs-selling' ? 'page' : undefined}>Fortifying vs. Selling</a></li>
+        <li><a href="/residual-markets/" aria-current={pillar === 'residual-markets' ? 'page' : undefined}>Residual Markets</a></li>
       </ul>
+      <Search />
     </nav>
   </header>
 
-  <main>
-    <div class="breadcrumb">
+  <main id="main-content" data-pagefind-body>
+    <div class="breadcrumb" data-pagefind-ignore>
       <a href="/">Home</a> &rsaquo;
       <a href={`/${pillar}/`}>{pillarLabels[pillar]}</a>
     </div>
@@ -108,7 +110,7 @@ const articleSchema = JSON.stringify({
       <slot />
     </article>
 
-    <footer class="article-footer">
+    <footer class="article-footer" data-pagefind-ignore>
       <p class="last-updated">Last updated: {lastUpdated}</p>
       <Disclaimer />
     </footer>
