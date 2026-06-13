@@ -1,11 +1,12 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
+import Search from '@components/Search.astro';
 import Icons from '@components/Icons.astro';
 const title = "InsuranceExit.org — Homeowners Insurance Non-Renewal Guide";
 const description = "Straight information for US homeowners facing insurance non-renewal due to climate risk. No affiliate links, no quotes, no spin.";
 const canonicalURL = "https://insuranceexit.org/";
-const ogImageURL = "https://insuranceexit.org/og-default.jpg";
-const ogImageAlt = 'Line drawing of a single-family house under rain — InsuranceExit.org';
+const ogImageURL = "https://insuranceexit.org/og-default.png";
+const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insurance is non-renewed';
 
 const organizationSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -49,15 +50,15 @@ const websiteSchema = JSON.stringify({
   <meta name="twitter:image" content={ogImageURL} />
   <meta name="twitter:image:alt" content={ogImageAlt} />
   <!-- Fonts -->
-  <link rel="preload" href="/fonts/lora-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/dm-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/playfair-display-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/libre-franklin-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/source-serif-4-var-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles/global.css" />
   <!-- Structured data -->
   <script type="application/ld+json" set:html={organizationSchema} />
   <script type="application/ld+json" set:html={websiteSchema} />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
     <nav>
       <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
@@ -73,16 +74,16 @@ const websiteSchema = JSON.stringify({
         <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
         <li><a href="/residual-markets/">Residual Markets</a></li>
       </ul>
+      <Search />
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" data-pagefind-body>
     <Disclaimer />
 
     <section class="home-hero" aria-labelledby="hero-heading">
-      <h1 id="hero-heading">
-        Your homeowners insurance was non-renewed.<br />What now?
-      </h1>
+      <p class="home-dateline">The U.S. homeowners insurance crisis &middot; Updated June 2026</p>
+      <h1 id="hero-heading">Your homeowners insurance was non-renewed. What now?</h1>
       <p>
         Straight information for US homeowners in high-risk states — no affiliate links, no quotes, no spin. Florida, California, Louisiana, Texas, and beyond.
       </p>
@@ -104,35 +105,26 @@ const websiteSchema = JSON.stringify({
       <p class="triage-note">A fuller, dated walk-through is in <a href="/non-renewed/your-30-60-90-day-decision-tree/">your 30-60-90 day decision tree</a>.</p>
     </section>
 
-    <section class="pillar-grid" aria-label="Site sections">
-      <a href="/non-renewed/" class="pillar-card">
-        <div class="pillar-card-icon"><Icons name="non-renewed" size={36} /></div>
-        <div class="pillar-card-text">
-          <h2>I Just Got Non-Renewed</h2>
-          <p>Decision trees and checklists for the first 72 hours. What the letter actually means. What to do before your policy expires.</p>
-        </div>
-      </a>
-      <a href="/is-my-zip-next/" class="pillar-card">
-        <div class="pillar-card-icon"><Icons name="zip-next" size={36} /></div>
-        <div class="pillar-card-text">
-          <h2>Is My ZIP Next</h2>
-          <p>State-by-state and ZIP-level risk explainers. Who's already leaving and where the market is heading.</p>
-        </div>
-      </a>
-      <a href="/fortifying-vs-selling/" class="pillar-card">
-        <div class="pillar-card-icon"><Icons name="fortifying" size={36} /></div>
-        <div class="pillar-card-text">
-          <h2>Fortifying vs. Selling</h2>
-          <p>Honest cost-benefit analysis. IBHS FORTIFIED standards, retrofit ROI, and the math on when selling makes more sense.</p>
-        </div>
-      </a>
-      <a href="/residual-markets/" class="pillar-card">
-        <div class="pillar-card-icon"><Icons name="residual" size={36} /></div>
-        <div class="pillar-card-text">
-          <h2>Residual Markets</h2>
-          <p>FAIR Plans, Citizens, and last-resort options explained state by state — what they cover, what they don't.</p>
-        </div>
-      </a>
+    <section class="contents" aria-label="The four pillars">
+      <p class="contents-title">The guide, in four parts</p>
+      <div class="contents-list">
+        <a href="/non-renewed/" class="contents-row">
+          <span class="contents-mark"><Icons name="non-renewed" size={26} /></span>
+          <h2>I Just Got Non-Renewed</h2>          <p>Decision trees and checklists for the first 72 hours. What the letter actually means, and what to do before your policy expires.</p>
+        </a>
+        <a href="/is-my-zip-next/" class="contents-row">
+          <span class="contents-mark"><Icons name="zip-next" size={26} /></span>
+          <h2>Is My ZIP Next</h2>          <p>State-by-state and ZIP-level risk explainers. Who's already leaving, and where the market is heading.</p>
+        </a>
+        <a href="/fortifying-vs-selling/" class="contents-row">
+          <span class="contents-mark"><Icons name="fortifying" size={26} /></span>
+          <h2>Fortifying vs. Selling</h2>          <p>Honest cost-benefit analysis. IBHS FORTIFIED standards, retrofit ROI, and the math on when selling makes more sense.</p>
+        </a>
+        <a href="/residual-markets/" class="contents-row">
+          <span class="contents-mark"><Icons name="residual" size={26} /></span>
+          <h2>Residual Markets</h2>          <p>FAIR Plans, Citizens, and last-resort options explained state by state — what they cover, what they don't.</p>
+        </a>
+      </div>
     </section>
 
     <Disclaimer />

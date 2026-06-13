@@ -1,12 +1,13 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
+import Search from '@components/Search.astro';
 
 const title = 'Insurance Glossary — Plain-English Definitions';
 const description = 'Plain-English definitions of homeowners insurance terms — non-renewal, surplus lines, FAIR Plan, FORTIFIED, and more.';
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const fullTitle = `${title} | InsuranceExit.org`;
-const ogImageURL = new URL('/og-default.jpg', Astro.site).href;
-const ogImageAlt = 'Line drawing of a single-family house under rain — InsuranceExit.org';
+const ogImageURL = new URL('/og-default.png', Astro.site).href;
+const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insurance is non-renewed';
 ---
 <!doctype html>
 <html lang="en">
@@ -34,12 +35,12 @@ const ogImageAlt = 'Line drawing of a single-family house under rain — Insuran
   <meta name="twitter:image" content={ogImageURL} />
   <meta name="twitter:image:alt" content={ogImageAlt} />
   <!-- Fonts -->
-  <link rel="preload" href="/fonts/lora-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/dm-sans-var-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="/fonts/playfair-display-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/libre-franklin-var-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/source-serif-4-var-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles/global.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <header>
     <nav>
       <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
@@ -55,10 +56,11 @@ const ogImageAlt = 'Line drawing of a single-family house under rain — Insuran
         <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
         <li><a href="/residual-markets/">Residual Markets</a></li>
       </ul>
+      <Search />
     </nav>
   </header>
 
-  <main>
+  <main id="main-content" data-pagefind-body>
     <div class="breadcrumb">
       <a href="/">Home</a> &rsaquo;
       <span>Glossary</span>
