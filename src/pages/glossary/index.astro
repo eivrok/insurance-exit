@@ -1,6 +1,7 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
 import Search from '@components/Search.astro';
+import Analytics from '@components/Analytics.astro';
 
 const title = 'Insurance Glossary — Plain-English Definitions';
 const description = 'Plain-English definitions of homeowners insurance terms — non-renewal, surplus lines, FAIR Plan, FORTIFIED, and more.';
@@ -38,6 +39,7 @@ const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insu
   <link rel="preload" href="/fonts/libre-franklin-var-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/fonts/source-serif-4-var-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/styles/global.css" />
+  <Analytics />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>

@@ -1,0 +1,14 @@
+---
+// Cloudflare Web Analytics beacon. Cookieless, no consent banner needed.
+// Token is public (rendered into page HTML), not a secret. Set in .env as
+// PUBLIC_CF_BEACON_TOKEN. Beacon only loads in production builds.
+const token = import.meta.env.PUBLIC_CF_BEACON_TOKEN;
+const enabled = import.meta.env.PROD && token;
+---
+{enabled && (
+  <script
+    defer
+    src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon={`{"token": "${token}"}`}
+  ></script>
+)}

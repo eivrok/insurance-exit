@@ -2,6 +2,7 @@
 import Disclaimer from '@components/Disclaimer.astro';
 import Search from '@components/Search.astro';
 import Icons from '@components/Icons.astro';
+import Analytics from '@components/Analytics.astro';
 const title = "InsuranceExit.org — Homeowners Insurance Non-Renewal Guide";
 const description = "Straight information for US homeowners facing insurance non-renewal due to climate risk. No affiliate links, no quotes, no spin.";
 const canonicalURL = "https://insuranceexit.org/";
@@ -56,6 +57,7 @@ const websiteSchema = JSON.stringify({
   <!-- Structured data -->
   <script type="application/ld+json" set:html={organizationSchema} />
   <script type="application/ld+json" set:html={websiteSchema} />
+  <Analytics />
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
