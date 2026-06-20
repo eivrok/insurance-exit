@@ -34,14 +34,33 @@ const breadcrumbSchema = JSON.stringify({
   ]
 });
 
+// schema.org dates must be ISO 8601; the `lastUpdated` prop is a display
+// string like "June 2026", so map it to "YYYY-MM" (valid partial ISO).
+const months: Record<string, string> = {
+  January: '01', February: '02', March: '03', April: '04', May: '05', June: '06',
+  July: '07', August: '08', September: '09', October: '10', November: '11', December: '12',
+};
+const [monthName, year] = (lastUpdated || '').split(' ');
+const isoModified = months[monthName] && year ? `${year}-${months[monthName]}` : undefined;
+
 const articleSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": title,
   "description": description,
   "url": canonicalURL,
-  "publisher": { "@type": "Organization", "name": "InsuranceExit.org", "url": "https://insuranceexit.org" },
-  "dateModified": lastUpdated,
+  "mainEntityOfPage": canonicalURL,
+  "image": ogImageURL,
+  "inLanguage": "en-US",
+  "author": { "@type": "Organization", "name": "InsuranceExit.org", "url": "https://insuranceexit.org" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "InsuranceExit.org",
+    "url": "https://insuranceexit.org",
+    "logo": { "@type": "ImageObject", "url": "https://insuranceexit.org/og-default.png" },
+  },
+  "datePublished": isoModified,
+  "dateModified": isoModified,
 });
 ---
 <!doctype html>
