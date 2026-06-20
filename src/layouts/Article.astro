@@ -8,9 +8,12 @@ interface Props {
   description: string;
   pillar: 'non-renewed' | 'is-my-zip-next' | 'fortifying-vs-selling' | 'residual-markets';
   lastUpdated: string;
+  // Optional SEO <title> override; visible H1 always stays `title`. Falls back
+  // to `title` when unset, so already-search-strong headlines need no change.
+  seoTitle?: string;
 }
 
-const { title, description, pillar, lastUpdated } = Astro.props;
+const { title, description, pillar, lastUpdated, seoTitle } = Astro.props;
 
 const pillarLabels: Record<string, string> = {
   'non-renewed': 'I Just Got Non-Renewed',
@@ -20,7 +23,7 @@ const pillarLabels: Record<string, string> = {
 };
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
-const fullTitle = `${title} | InsuranceExit.org`;
+const fullTitle = `${seoTitle ?? title} | InsuranceExit.org`;
 const ogImageURL = new URL('/og-default.png', Astro.site).href;
 const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insurance is non-renewed';
 

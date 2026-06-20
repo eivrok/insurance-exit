@@ -20,9 +20,11 @@ const severityLabel: Record<string, string> = {
   high: 'High Stress',
   elevated: 'Elevated Risk',
 };
-const title = `Insurance Crisis in ${state}`;
+const title = `Insurance Crisis in ${state}`; // visible H1 + schema headline
+// SEO <title> only — front-loads the words a homeowner actually searches.
+const seoTitle = `${state} Homeowners Insurance Crisis 2026 — Non-Renewals & Options`;
 const description = `Homeowners insurance non-renewal trends, carriers leaving, residual market options, and hazards in ${state}.`;
-const fullTitle = `${title} | InsuranceExit.org`;
+const fullTitle = `${seoTitle} | InsuranceExit.org`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).href;
 const ogImageURL = new URL('/og-default.png', Astro.site).href;
 const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insurance is non-renewed';
