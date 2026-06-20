@@ -1,6 +1,6 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
-import Search from '@components/Search.astro';
+import Nav from '@components/Nav.astro';
 import Icons from '@components/Icons.astro';
 import Analytics from '@components/Analytics.astro';
 const title = "InsuranceExit.org — Homeowners Insurance Non-Renewal Guide";
@@ -61,24 +61,7 @@ const websiteSchema = JSON.stringify({
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header>
-    <nav>
-      <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
-          <path d="M3 10l9-9 9 9v11a2 2 0 01-2 2H5a2 2 0 01-2-2V10z" />
-          <path d="M9 21v-7h6v7" />
-        </svg>
-        InsuranceExit.org
-      </a>
-      <ul>
-        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
-        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
-        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
-        <li><a href="/residual-markets/">Residual Markets</a></li>
-      </ul>
-      <Search />
-    </nav>
-  </header>
+  <Nav />
 
   <main id="main-content" data-pagefind-body>
     <Disclaimer />

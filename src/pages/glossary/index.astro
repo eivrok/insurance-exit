@@ -1,6 +1,6 @@
 ---
 import Disclaimer from '@components/Disclaimer.astro';
-import Search from '@components/Search.astro';
+import Nav from '@components/Nav.astro';
 import Analytics from '@components/Analytics.astro';
 
 const title = 'Insurance Glossary — Plain-English Definitions';
@@ -43,24 +43,7 @@ const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insu
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
-  <header>
-    <nav>
-      <a href="/" class="site-name" style="display: flex; align-items: center; gap: 0.5rem;">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;">
-          <path d="M3 10l9-9 9 9v11a2 2 0 01-2 2H5a2 2 0 01-2-2V10z" />
-          <path d="M9 21v-7h6v7" />
-        </svg>
-        InsuranceExit.org
-      </a>
-      <ul>
-        <li><a href="/non-renewed/">I Just Got Non-Renewed</a></li>
-        <li><a href="/is-my-zip-next/">Is My ZIP Next</a></li>
-        <li><a href="/fortifying-vs-selling/">Fortifying vs. Selling</a></li>
-        <li><a href="/residual-markets/">Residual Markets</a></li>
-      </ul>
-      <Search />
-    </nav>
-  </header>
+  <Nav />
 
   <main id="main-content" data-pagefind-body>
     <div class="breadcrumb">
@@ -100,6 +83,9 @@ const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insu
           <dt>Admitted carrier</dt>
           <dd>An insurance company licensed in your state through the standard regulatory process. Admitted carriers must follow state-approved rate and form rules, and are covered by your state's insurance guaranty association if they become insolvent. When shopping for coverage, admitted status is a significant consumer protection. See also: <a href="#S">Surplus lines carrier</a>, <a href="#S">State guaranty association</a>.</dd>
 
+          <dt>Adverse action</dt>
+          <dd>Any unfavorable insurance decision — a denial, non-renewal, cancellation, or less favorable rate or terms — based on information in a consumer report. Under the federal Fair Credit Reporting Act (FCRA), when an insurer takes an adverse action based on such a report, it must notify you, identify the reporting agency it used, and let you obtain a free copy of that report. This notice is your starting point for appealing a non-renewal driven by a CLUE report or a credit-based insurance score: it tells you exactly what data to check and dispute. See also: <a href="#C">CLUE report (Comprehensive Loss Underwriting Exchange)</a>, <a href="#C">Credit-based insurance score</a>.</dd>
+
           <dt>Assignment of Benefits (AOB)</dt>
           <dd>A form that transfers your right to file an insurance claim — and receive the payout — to a third party, typically a contractor. In Florida, AOB abuse by contractors drove significant litigation costs and contributed to the carrier exit crisis. Florida restricted AOB in homeowners insurance through SB 2A (2022). If a contractor asks you to sign an AOB, have a licensed attorney review it first.</dd>
         </dl>
@@ -126,6 +112,9 @@ const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insu
 
           <dt>CoreLogic wildfire risk score</dt>
           <dd>A proprietary wildfire risk score on a 1-100 scale used by some insurers for underwriting decisions. Not publicly accessible. Competes with Verisk FireLine. If a carrier declines you citing a "wildfire score," ask which vendor's score they used. See also: <a href="#F">FireLine (Verisk FireLine)</a>, <a href="#F">First Street Foundation</a>.</dd>
+
+          <dt>Credit-based insurance score</dt>
+          <dd>A score derived from your credit history that many insurers use as one factor in deciding whether to offer coverage and at what price, where state law permits it. It is not the same as a lending credit score, though it draws on the same underlying credit data. Because errors on your credit record can lower it, a wrong entry can quietly drive an unfavorable insurance decision — which means correcting the credit error can change the insurance outcome. A few states restrict or ban its use in home insurance. See also: <a href="#A">Adverse action</a>, <a href="#U">Underwriting</a>.</dd>
         </dl>
       </section>
 
@@ -133,6 +122,9 @@ const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insu
       <section class="glossary-section" id="D" aria-labelledby="letter-D">
         <h2 class="glossary-letter-heading" id="letter-D">D</h2>
         <dl>
+          <dt>Disaster moratorium</dt>
+          <dd>A temporary, state-ordered ban on non-renewals and cancellations of residential policies in an area hit by a declared disaster. California's is the broadest: under Insurance Code § 675.1 (SB 824), once the Governor declares a wildfire emergency, insurers cannot non-renew or cancel policies within the fire perimeter and adjoining ZIP codes for one year, with extra renewals for total-loss homes. Several other wildfire and hurricane states have adopted narrower versions. If your area had a declared disaster in the past year, a moratorium may make a non-renewal unlawful right now — confirm your ZIP code with your state insurance department before doing anything else. See also: <a href="#N">Non-renewal</a>.</dd>
+
           <dt>Defensible space</dt>
           <dd>A zone of managed vegetation around a home designed to slow the spread of wildfire and reduce ignition from embers. Most western states define 0-30 foot (Zone 1) and 30-100 foot (Zone 2) zones with different vegetation management requirements at each distance. Many carriers now require proof of maintained defensible space before writing or renewing WUI properties. Free assessments are available through state forestry agencies and local fire districts. See also: <a href="#W">WUI (Wildland-Urban Interface)</a>.</dd>
 
@@ -288,7 +280,7 @@ const ogImageAlt = 'InsuranceExit.org — plain-English help when your home insu
         </dl>
       </section>
 
-      <p class="last-updated">Last updated: May 2026.</p>
+      <p class="last-updated">Last updated: June 2026.</p>
     </article>
 
     <footer class="article-footer">
